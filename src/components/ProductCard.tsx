@@ -19,15 +19,17 @@ interface ProductCardProps {
 
 const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
   return (
-    <Card className="group overflow-hidden border-primary/10 bg-card/80 backdrop-blur-sm hover-lift cursor-pointer">
+    <Card className="group overflow-hidden border-primary/10 bg-card/80 hover-lift cursor-pointer content-contain">
       <Link to={`/product/${product.id}`}>
         <div className="relative aspect-square overflow-hidden">
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t" />
         </div>
       </Link>
       
@@ -52,7 +54,7 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
               e.preventDefault();
               onAddToCart(product);
             }}
-            className="bg-primary hover:bg-primary/90 text-white hover:scale-110 transition-all duration-500 tech-glow"
+            className="transition-transform duration-300 hover:scale-105"
           >
             <ShoppingCart className="w-4 h-4 mr-2" />
             Añadir

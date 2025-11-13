@@ -4,14 +4,16 @@ import { ShoppingCart, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import logo from "@/assets/logo.png";
+import { useReducedMotionToggle } from "@/hooks/useReducedMotionToggle";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { cart } = useCart();
   const cartItemsCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+  const { reduced, toggle } = useReducedMotionToggle();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -22,44 +24,38 @@ const Header = () => {
             <img 
               src={logo} 
               alt="ALUDO Logo" 
-              className="h-10 w-auto transition-all duration-300 hover:scale-105 hover:brightness-110"
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              className="h-10 w-auto transition-transform duration-200 hover:scale-105"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             <Link 
               to="/" 
-              className="text-foreground/70 hover:text-primary transition-colors duration-400 font-medium"
+              className="text-foreground/70 hover:text-primary transition-colors duration-200 font-medium"
             >
               Inicio
             </Link>
             <Link 
               to="/shop" 
-              className="text-foreground/70 hover:text-primary transition-colors duration-400 font-medium"
+              className="text-foreground/70 hover:text-primary transition-colors duration-200 font-medium"
             >
               Tienda
             </Link>
-            <Link 
-              to="/cart" 
-              className="relative"
+            <button
+              onClick={toggle}
+              className="text-sm text-foreground/70 hover:text-primary transition-colors duration-200"
+              aria-pressed={reduced}
+              aria-label="Alternar animaciones"
+              title={reduced ? "Animaciones desactivadas" : "Animaciones activas"}
             >
-              <Button 
-                variant="outline" 
-                size="icon"
-                className="relative border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 transition-all duration-500"
-              >
-                <ShoppingCart className="w-5 h-5" />
-                {cartItemsCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-semibold animate-scale-in">
-                    {cartItemsCount}
-                  </span>
-                )}
-              </Button>
-            </Link>
+              {reduced ? "Animaciones: Off" : "Animaciones: On"}
+            </button>
           </nav>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-foreground hover:text-primary transition-colors duration-200"
@@ -70,7 +66,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 space-y-4 animate-fade-in">
+          <nav className="md:hidden mt-4 pb-4 space-y-4">
             <Link 
               to="/" 
               onClick={() => setIsMenuOpen(false)}
