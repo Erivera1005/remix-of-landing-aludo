@@ -45,16 +45,16 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
           </p>
         </div>
         
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-4">
           <span className="text-2xl font-bold text-primary">
-            €{product.price}
+            ${product.price.toLocaleString('es-CO')}
           </span>
           <Button
             onClick={(e) => {
               e.preventDefault();
               onAddToCart(product);
             }}
-            className="transition-transform duration-300 hover:scale-105"
+            className="transition-transform duration-200 hover:scale-105"
           >
             <ShoppingCart className="w-4 h-4 mr-2" />
             Añadir
