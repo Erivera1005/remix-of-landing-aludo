@@ -1,40 +1,44 @@
 import { Link } from "react-router-dom";
-import { Sparkles, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="relative mt-20 glass-effect border-t border-white/10">
-      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(195,100%,50%)]/5 to-transparent pointer-events-none" />
+    <footer className="relative mt-20 glass-effect border-t border-border">
+      <div className="absolute inset-0 bg-gradient-to-t from-accent/5 to-transparent pointer-events-none" />
       
       <div className="relative container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4 animate-fade-in">
-            <div className="flex items-center space-x-2">
-              <Sparkles className="w-6 h-6 text-[hsl(195,100%,50%)] animate-glow-pulse" />
-              <span className="text-xl font-bold gradient-text">ALUDO</span>
-            </div>
-            <p className="text-foreground/60 text-sm">
+            <Link to="/" className="inline-block">
+              <img 
+                src={logo} 
+                alt="ALUDO Logo" 
+                className="h-8 w-auto transition-all duration-300 hover:scale-105"
+              />
+            </Link>
+            <p className="text-muted-foreground text-sm max-w-xs">
               Collares inteligentes ecosostenibles para tus mascotas. Tecnología del futuro, hoy.
             </p>
           </div>
 
           {/* Links */}
           <div className="space-y-4 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            <h3 className="font-semibold text-[hsl(195,100%,50%)]">Navegación</h3>
+            <h3 className="font-semibold text-primary">Navegación</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/" className="text-foreground/60 hover:text-[hsl(195,100%,50%)] transition-colors">
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors duration-200">
                   Inicio
                 </Link>
               </li>
               <li>
-                <Link to="/shop" className="text-foreground/60 hover:text-[hsl(195,100%,50%)] transition-colors">
+                <Link to="/shop" className="text-muted-foreground hover:text-primary transition-colors duration-200">
                   Tienda
                 </Link>
               </li>
               <li>
-                <Link to="/cart" className="text-foreground/60 hover:text-[hsl(195,100%,50%)] transition-colors">
+                <Link to="/cart" className="text-muted-foreground hover:text-primary transition-colors duration-200">
                   Carrito
                 </Link>
               </li>
@@ -43,28 +47,28 @@ const Footer = () => {
 
           {/* Info */}
           <div className="space-y-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <h3 className="font-semibold text-[hsl(195,100%,50%)]">Información</h3>
-            <ul className="space-y-2 text-sm text-foreground/60">
-              <li>Sobre Nosotros</li>
-              <li>Tecnología IA</li>
-              <li>Sostenibilidad</li>
-              <li>Garantía</li>
+            <h3 className="font-semibold text-primary">Información</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li className="hover:text-primary transition-colors duration-200 cursor-pointer">Sobre Nosotros</li>
+              <li className="hover:text-primary transition-colors duration-200 cursor-pointer">Tecnología IA</li>
+              <li className="hover:text-primary transition-colors duration-200 cursor-pointer">Sostenibilidad</li>
+              <li className="hover:text-primary transition-colors duration-200 cursor-pointer">Garantía</li>
             </ul>
           </div>
 
           {/* Contact */}
           <div className="space-y-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-            <h3 className="font-semibold text-[hsl(195,100%,50%)]">Contacto</h3>
-            <ul className="space-y-3 text-sm text-foreground/60">
-              <li className="flex items-center space-x-2 hover:text-[hsl(195,100%,50%)] transition-colors cursor-pointer">
+            <h3 className="font-semibold text-primary">Contacto</h3>
+            <ul className="space-y-3 text-sm text-muted-foreground">
+              <li className="flex items-center space-x-2 hover:text-accent transition-colors duration-200 cursor-pointer">
                 <Mail className="w-4 h-4" />
                 <span>info@aludo.com</span>
               </li>
-              <li className="flex items-center space-x-2 hover:text-[hsl(195,100%,50%)] transition-colors cursor-pointer">
+              <li className="flex items-center space-x-2 hover:text-accent transition-colors duration-200 cursor-pointer">
                 <Phone className="w-4 h-4" />
                 <span>+1 234 567 890</span>
               </li>
-              <li className="flex items-center space-x-2 hover:text-[hsl(195,100%,50%)] transition-colors cursor-pointer">
+              <li className="flex items-center space-x-2 hover:text-accent transition-colors duration-200 cursor-pointer">
                 <MapPin className="w-4 h-4" />
                 <span>Tech Valley, CA</span>
               </li>
@@ -72,7 +76,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 text-center text-sm text-foreground/40">
+        <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
           <p>© 2025 ALUDO. Todos los derechos reservados. Hecho con IA y sostenibilidad.</p>
         </div>
       </div>
