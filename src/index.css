@@ -26,7 +26,7 @@ All colors MUST be HSL.
     --muted: 0 0% 94%;
     --muted-foreground: 237 50% 30%;
 
-    --accent: 195 100% 50%;
+    --accent: 237 100% 11%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -38,29 +38,29 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Futuristic colors */
-    --tech-glow: 195 100% 50%;
-    --tech-purple: 280 100% 70%;
-    --tech-cyan: 195 100% 50%;
-    --dark-blue: 237 100% 11%;
-    --deep-space: 237 80% 5%;
+    /* ALUDO colors - Only #000637, white, and grays */
+    --tech-blue: 237 100% 11%;
+    --tech-blue-light: 237 60% 20%;
+    --tech-blue-dark: 237 100% 8%;
+    --gray-light: 0 0% 85%;
+    --gray-medium: 0 0% 60%;
     
-    /* Gradients */
+    /* Gradients - Using only approved colors */
     --gradient-primary: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 0%, 98%) 100%);
-    --gradient-tech: linear-gradient(135deg, hsl(195, 100%, 50%) 0%, hsl(280, 100%, 70%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(237, 100%, 11%) 0%, hsl(237, 80%, 25%) 100%);
-    --gradient-glow: radial-gradient(circle at center, hsl(195, 100%, 50%, 0.15) 0%, transparent 70%);
+    --gradient-tech: linear-gradient(135deg, hsl(237, 100%, 11%) 0%, hsl(237, 60%, 20%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(237, 100%, 11%) 0%, hsl(237, 80%, 15%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(0, 0%, 98%) 100%);
     
-    /* Shadows */
-    --shadow-tech: 0 0 30px hsl(195, 100%, 50%, 0.3);
-    --shadow-glow: 0 0 40px hsl(195, 100%, 50%, 0.2);
-    --shadow-elevation: 0 4px 20px -2px hsl(0, 0%, 0%, 0.1);
-    --shadow-soft: 0 2px 10px -1px hsl(0, 0%, 0%, 0.06);
+    /* Shadows - Using navy blue tones */
+    --shadow-tech: 0 0 30px hsl(237, 100%, 11%, 0.15);
+    --shadow-glow: 0 0 40px hsl(237, 100%, 11%, 0.1);
+    --shadow-elevation: 0 4px 20px -2px hsl(0, 0%, 0%, 0.08);
+    --shadow-soft: 0 2px 10px -1px hsl(0, 0%, 0%, 0.05);
     
-    /* Animations - Optimized for smooth performance */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Animations - Ultra smooth and fluid */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-fast: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-bounce: all 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
   }
 }
 
@@ -82,7 +82,7 @@ All colors MUST be HSL.
 
 @layer utilities {
   .text-glow {
-    text-shadow: 0 0 20px hsl(var(--tech-glow) / 0.5);
+    text-shadow: 0 0 20px hsl(var(--tech-blue) / 0.3);
   }
   
   .tech-glow {
@@ -90,41 +90,42 @@ All colors MUST be HSL.
   }
   
   .glass-effect {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(0, 6, 55, 0.1);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(0, 6, 55, 0.08);
     box-shadow: var(--shadow-soft);
   }
   
   .hover-lift {
-    transition: var(--transition-smooth);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   
   .hover-lift:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-elevation);
   }
   
   .animate-float {
-    animation: float 6s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite;
   }
   
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-15px); }
   }
   
   .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 3s ease-in-out infinite alternate;
   }
   
   @keyframes glow {
-    from { box-shadow: 0 0 20px hsl(195, 100%, 50%, 0.5); }
-    to { box-shadow: 0 0 40px hsl(195, 100%, 50%, 0.8); }
+    from { box-shadow: 0 0 15px hsl(237, 100%, 11%, 0.2); }
+    to { box-shadow: 0 0 30px hsl(237, 100%, 11%, 0.4); }
   }
   
   .gradient-text {
-    background: linear-gradient(135deg, hsl(195, 100%, 50%) 0%, hsl(280, 100%, 70%) 100%);
+    background: var(--gradient-tech);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

@@ -30,13 +30,13 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <Link 
               to="/" 
-              className="text-foreground/70 hover:text-primary transition-colors duration-200 font-medium"
+              className="text-foreground/70 hover:text-primary transition-colors duration-400 font-medium"
             >
               Inicio
             </Link>
             <Link 
               to="/shop" 
-              className="text-foreground/70 hover:text-primary transition-colors duration-200 font-medium"
+              className="text-foreground/70 hover:text-primary transition-colors duration-400 font-medium"
             >
               Tienda
             </Link>
@@ -47,11 +47,11 @@ const Header = () => {
               <Button 
                 variant="outline" 
                 size="icon"
-                className="relative border-primary text-primary hover:bg-primary/5 transition-all duration-200"
+                className="relative border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 transition-all duration-500"
               >
                 <ShoppingCart className="w-5 h-5" />
                 {cartItemsCount > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-accent text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-semibold">
+                  <span className="absolute -top-2 -right-2 bg-primary text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-semibold animate-scale-in">
                     {cartItemsCount}
                   </span>
                 )}
