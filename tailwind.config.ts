@@ -93,8 +93,8 @@ export default {
           "100%": { transform: "translateX(0)", opacity: "1" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 10px hsl(237, 100%, 11%, 0.15)" },
-          "50%": { boxShadow: "0 0 20px hsl(237, 100%, 11%, 0.3)" },
+          "0%, 100%": { transform: "translateZ(0) scale(1)", opacity: "0.9" },
+          "50%": { transform: "translateZ(0) scale(1.02)", opacity: "1" },
         },
         "float": {
           "0%, 100%": { transform: "translateY(0px)" },
