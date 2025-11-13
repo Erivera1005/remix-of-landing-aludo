@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Shield, Zap, Heart, ChevronRight } from "lucide-react";
+import { Smartphone, Leaf, MapPin, Heart, ChevronRight, Nfc } from "lucide-react";
 import heroImage from "@/assets/hero-dog.png";
 import dogsGroup from "@/assets/dogs-group.png";
 import collarsImage from "@/assets/collars-product.jpeg";
@@ -25,22 +25,21 @@ const Index = () => {
             {/* Left Content */}
             <div className="space-y-8 animate-fade-in-up">
               <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-effect border border-primary/20 animate-glow-pulse">
-                <Sparkles className="w-4 h-4 text-primary" />
+                <Nfc className="w-4 h-4 text-primary" />
                 <span className="text-sm text-primary/80">
-                  Tecnología IA de Última Generación
+                  Tecnología NFC - Hecho en Colombia
                 </span>
               </div>
 
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                El Futuro del
-                <span className="block gradient-text mt-2">
-                  Cuidado Canino
+                Identidad Digital
+                <span className="block text-primary mt-2">
+                  para tu Mascota
                 </span>
               </h1>
 
               <p className="text-xl text-foreground/70 leading-relaxed">
-                Collares inteligentes con IA que monitorizan la salud de tu mascota 24/7. 
-                Sostenibles, elegantes y conectados al futuro.
+                Collares inteligentes con chip NFC que permiten identificar y proteger a tu mascota al instante. Ecológicos, elegantes y sin batería.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -58,23 +57,23 @@ const Index = () => {
                   size="lg"
                   className="border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 text-lg px-8 py-6 transition-all duration-500"
                 >
-                  Ver Demo
+                  Cómo Funciona
                 </Button>
               </div>
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 pt-8">
                 <div className="text-center space-y-1">
-                  <p className="text-3xl font-bold gradient-text">24/7</p>
-                  <p className="text-sm text-foreground/60">Monitoreo</p>
+                  <p className="text-3xl font-bold text-primary">NFC</p>
+                  <p className="text-sm text-foreground/60">Sin batería</p>
                 </div>
                 <div className="text-center space-y-1">
-                  <p className="text-3xl font-bold gradient-text">100%</p>
-                  <p className="text-sm text-foreground/60">Eco-friendly</p>
+                  <p className="text-3xl font-bold text-primary">100%</p>
+                  <p className="text-sm text-foreground/60">Ecológico</p>
                 </div>
                 <div className="text-center space-y-1">
-                  <p className="text-3xl font-bold gradient-text">30d</p>
-                  <p className="text-sm text-foreground/60">Batería</p>
+                  <p className="text-3xl font-bold text-primary">$2K</p>
+                  <p className="text-sm text-foreground/60">Donación COP</p>
                 </div>
               </div>
             </div>
@@ -99,37 +98,37 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text">Tecnología Avanzada</span> para tu Mascota
+              <span className="text-primary">Tecnología NFC</span> para el Bienestar Animal
             </h2>
-            <p className="text-xl text-foreground/60 max-w-3xl mx-auto">
-              Cada collar ALUDO integra sensores de última generación y algoritmos de IA para garantizar el bienestar total de tu compañero
+            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
+              Cada collar ALUDO integra un chip NFC que almacena el perfil digital de tu mascota. Identificación instantánea sin necesidad de baterías ni aplicaciones.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: Sparkles,
-                title: "IA Predictiva",
-                description: "Detecta problemas de salud antes de que aparezcan síntomas",
+                icon: Nfc,
+                title: "Chip NFC Integrado",
+                description: "Lectura instantánea con cualquier celular. Toda la información en un toque.",
                 delay: '0s',
               },
               {
-                icon: Shield,
-                title: "GPS Inteligente",
-                description: "Geofencing y tracking en tiempo real con alertas instantáneas",
+                icon: MapPin,
+                title: "Identificación Inmediata",
+                description: "Perfil digital con datos médicos, contacto y toda la información importante.",
                 delay: '0.1s',
               },
               {
-                icon: Zap,
-                title: "Batería Duradera",
-                description: "Hasta 30 días de autonomía con carga rápida",
+                icon: Leaf,
+                title: "Materiales Ecológicos",
+                description: "Cuero vegano premium y herrajes reciclables. Sin batería, 100% sostenible.",
                 delay: '0.2s',
               },
               {
                 icon: Heart,
-                title: "Ecosostenible",
-                description: "Materiales reciclados y proceso de fabricación carbono neutral",
+                title: "Compromiso Social",
+                description: "$2.000 COP por collar donados a fundaciones que rescatan perros vulnerables.",
                 delay: '0.3s',
               },
             ].map((feature, index) => (
@@ -155,11 +154,11 @@ const Index = () => {
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
               Nuestra Colección
             </h2>
-            <p className="text-xl text-foreground/60 max-w-2xl mx-auto">
-              Diseños únicos que combinan elegancia, tecnología y sostenibilidad
+            <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+              Diseños únicos fabricados en Colombia con materiales ecológicos y tecnología NFC integrada
             </p>
           </div>
 
@@ -176,7 +175,7 @@ const Index = () => {
                   Colección Premium
                 </h3>
                 <p className="text-primary/70 mb-4">
-                  Descubre nuestros diseños más exclusivos con acabados de lujo
+                  Cuero vegano premium con chip NFC integrado y herrajes reciclables
                 </p>
                 <Link to="/shop">
                   <Button 
@@ -198,10 +197,10 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <h3 className="text-3xl font-bold mb-3 text-primary">
-                  Para Todas las Razas
+                  Talla Única Ajustable
                 </h3>
                 <p className="text-primary/70 mb-4">
-                  Tallas y diseños adaptados para cada tipo de mascota
+                  De 30cm a 60cm. Se adapta desde perros pequeños hasta grandes
                 </p>
                 <Link to="/shop">
                   <Button 
@@ -238,11 +237,10 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8 glass-effect p-12 rounded-3xl border border-primary/20 animate-fade-in-up">
             <h2 className="text-4xl md:text-5xl font-bold text-primary">
-              Únete a la Revolución
+              Protege a tu Mascota Hoy
             </h2>
             <p className="text-xl text-foreground/70">
-              Miles de mascotas ya disfrutan de la tecnología ALUDO. 
-              Descubre cómo podemos mejorar la vida de tu compañero.
+              Únete a los cientos de familias que ya confían en ALUDO para mantener a sus mascotas seguras e identificadas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/shop">
@@ -258,7 +256,7 @@ const Index = () => {
                 size="lg"
                 className="border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 text-lg px-12 py-6 transition-all duration-500"
               >
-                Solicitar Demo
+                Conocer Más
               </Button>
             </div>
           </div>

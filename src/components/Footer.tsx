@@ -19,7 +19,7 @@ const Footer = () => {
               />
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
-              Collares inteligentes ecosostenibles para tus mascotas. Tecnología del futuro, hoy.
+              Collares inteligentes con tecnología NFC. Fabricados en Colombia con materiales ecológicos para el bienestar de tu mascota.
             </p>
           </div>
 
@@ -50,9 +50,9 @@ const Footer = () => {
             <h3 className="font-semibold text-primary">Información</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="hover:text-primary transition-colors duration-200 cursor-pointer">Sobre Nosotros</li>
-              <li className="hover:text-primary transition-colors duration-200 cursor-pointer">Tecnología IA</li>
+              <li className="hover:text-primary transition-colors duration-200 cursor-pointer">Tecnología NFC</li>
               <li className="hover:text-primary transition-colors duration-200 cursor-pointer">Sostenibilidad</li>
-              <li className="hover:text-primary transition-colors duration-200 cursor-pointer">Garantía</li>
+              <li className="hover:text-primary transition-colors duration-200 cursor-pointer">Compromiso Social</li>
             </ul>
           </div>
 
@@ -77,7 +77,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© 2025 ALUDO. Todos los derechos reservados. Hecho con IA y sostenibilidad.</p>
+          <p>© 2025 ALUDO. Todos los derechos reservados. Hecho en Colombia con tecnología y sostenibilidad.</p>
         </div>
       </div>
     </footer>

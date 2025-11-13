@@ -6,55 +6,55 @@ import { useCart } from "@/context/CartContext";
 import { Button } from "@/components/ui/button";
 import collarsImage from "@/assets/collars-product.jpeg";
 
-// Sample products
+// Productos reales de ALUDO
 const products: Product[] = [
   {
     id: 1,
-    name: "Collar ALUDO Classic Grey",
-    price: 89.99,
+    name: "Collar ALUDO Classic Gris",
+    price: 129900,
     image: collarsImage,
     color: "Grey",
-    description: "Collar inteligente con IA integrada. Monitoreo de salud 24/7 y materiales ecosostenibles.",
+    description: "Collar inteligente con chip NFC. Cuero vegano premium, herrajes reciclables. Talla ajustable 30-60cm.",
   },
   {
     id: 2,
-    name: "Collar ALUDO Premium Rose",
-    price: 99.99,
+    name: "Collar ALUDO Classic Negro",
+    price: 129900,
     image: collarsImage,
-    color: "Rose",
-    description: "Edición premium con acabado rosado. Tecnología de punta para el bienestar de tu mascota.",
+    color: "Black",
+    description: "Elegante diseño negro con tecnología NFC integrada. Resistente al agua y materiales ecológicos.",
   },
   {
     id: 3,
-    name: "Collar ALUDO Pro Black",
-    price: 109.99,
+    name: "Collar ALUDO Classic Café",
+    price: 129900,
     image: collarsImage,
-    color: "Black",
-    description: "Versión Pro con funciones avanzadas de IA. Análisis predictivo de comportamiento.",
+    color: "Brown",
+    description: "Estilo clásico en cuero vegano café. Chip NFC sin batería, perfecto para todas las razas.",
   },
   {
     id: 4,
-    name: "Collar ALUDO Elite Brown",
-    price: 94.99,
+    name: "Collar ALUDO Classic Rosado",
+    price: 129900,
     image: collarsImage,
-    color: "Brown",
-    description: "Elegancia y tecnología en cuero ecológico. Perfecto para razas medianas y grandes.",
+    color: "Rose",
+    description: "Diseño moderno con acabado rosado. Tecnología NFC, materiales sostenibles y ajuste universal.",
   },
   {
     id: 5,
-    name: "Collar ALUDO Smart Silver",
-    price: 89.99,
+    name: "Collar ALUDO Classic Azul",
+    price: 129900,
     image: collarsImage,
-    color: "Silver",
-    description: "Diseño futurista con acabado metálico. Resistente al agua y ultra duradero.",
+    color: "Blue",
+    description: "Collar con chip NFC en tono azul. Fabricado en Colombia con materiales ecológicos certificados.",
   },
   {
     id: 6,
-    name: "Collar ALUDO Eco Green",
-    price: 84.99,
+    name: "Collar ALUDO Classic Verde",
+    price: 129900,
     image: collarsImage,
     color: "Green",
-    description: "100% materiales reciclados. La opción más sostenible con IA completa.",
+    description: "Diseño eco en tono verde. Cuero vegano, herrajes reciclables y tecnología NFC integrada.",
   },
 ];
 
@@ -73,11 +73,11 @@ const Shop = () => {
       <main className="container mx-auto px-4 pt-32 pb-20">
         {/* Hero Section */}
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 gradient-text">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-primary">
             Nuestra Colección
           </h1>
-          <p className="text-xl text-foreground/60 max-w-2xl mx-auto">
-            Explora nuestra línea completa de collares inteligentes con IA. Tecnología avanzada para el cuidado de tu mascota.
+          <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+            Collares inteligentes con tecnología NFC. Fabricados en Colombia con materiales ecológicos. Cada compra dona $2.000 COP a fundaciones de rescate animal.
           </p>
         </div>
 
@@ -87,8 +87,8 @@ const Shop = () => {
             variant={filter === "all" ? "default" : "outline"}
             onClick={() => setFilter("all")}
             className={filter === "all" 
-              ? "bg-[hsl(195,100%,50%)] hover:bg-[hsl(195,100%,60%)] text-[hsl(237,100%,11%)]" 
-              : "border-[hsl(195,100%,50%)] text-[hsl(195,100%,50%)] hover:bg-[hsl(195,100%,50%)]/10"
+              ? "bg-primary hover:bg-primary/90 text-white transition-all duration-500" 
+              : "border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-500"
             }
           >
             Todos
@@ -97,31 +97,31 @@ const Shop = () => {
             variant={filter === "grey" ? "default" : "outline"}
             onClick={() => setFilter("grey")}
             className={filter === "grey" 
-              ? "bg-[hsl(195,100%,50%)] hover:bg-[hsl(195,100%,60%)] text-[hsl(237,100%,11%)]" 
-              : "border-[hsl(195,100%,50%)] text-[hsl(195,100%,50%)] hover:bg-[hsl(195,100%,50%)]/10"
+              ? "bg-primary hover:bg-primary/90 text-white transition-all duration-500" 
+              : "border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-500"
             }
           >
             Gris
           </Button>
           <Button
-            variant={filter === "rose" ? "default" : "outline"}
-            onClick={() => setFilter("rose")}
-            className={filter === "rose" 
-              ? "bg-[hsl(195,100%,50%)] hover:bg-[hsl(195,100%,60%)] text-[hsl(237,100%,11%)]" 
-              : "border-[hsl(195,100%,50%)] text-[hsl(195,100%,50%)] hover:bg-[hsl(195,100%,50%)]/10"
-            }
-          >
-            Rosado
-          </Button>
-          <Button
             variant={filter === "black" ? "default" : "outline"}
             onClick={() => setFilter("black")}
             className={filter === "black" 
-              ? "bg-[hsl(195,100%,50%)] hover:bg-[hsl(195,100%,60%)] text-[hsl(237,100%,11%)]" 
-              : "border-[hsl(195,100%,50%)] text-[hsl(195,100%,50%)] hover:bg-[hsl(195,100%,50%)]/10"
+              ? "bg-primary hover:bg-primary/90 text-white transition-all duration-500" 
+              : "border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-500"
             }
           >
             Negro
+          </Button>
+          <Button
+            variant={filter === "brown" ? "default" : "outline"}
+            onClick={() => setFilter("brown")}
+            className={filter === "brown" 
+              ? "bg-primary hover:bg-primary/90 text-white transition-all duration-500" 
+              : "border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-500"
+            }
+          >
+            Café
           </Button>
         </div>
 
@@ -137,6 +137,14 @@ const Shop = () => {
             </div>
           ))}
         </div>
+
+        {filteredProducts.length === 0 && (
+          <div className="text-center py-20 animate-fade-in">
+            <p className="text-xl text-foreground/70">
+              No se encontraron productos con ese filtro
+            </p>
+          </div>
+        )}
       </main>
 
       <Footer />
