@@ -32,10 +32,7 @@ const Index = () => {
               </div>
 
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                Identidad Digital
-                <span className="block text-primary mt-2">
-                  para tu Mascota
-                </span>
+                El Futuro del Cuidado para tu Mascota
               </h1>
 
               <p className="text-xl text-foreground/70 leading-relaxed">
