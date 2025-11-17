@@ -19,7 +19,7 @@ const Footer = () => {
               />
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
-              Collares inteligentes con tecnología NFC. Fabricados en Colombia con materiales ecológicos para el bienestar de tu mascota.
+              Collares inteligentes con Inteligencia Artificial. Fabricados en Colombia con materiales ecológicos para el bienestar de tu mascota.
             </p>
           </div>
 
@@ -50,7 +50,7 @@ const Footer = () => {
             <h3 className="font-semibold text-primary">Información</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="hover:text-primary transition-colors duration-200 cursor-pointer">Sobre Nosotros</li>
-              <li className="hover:text-primary transition-colors duration-200 cursor-pointer">Tecnología NFC</li>
+              <li className="hover:text-primary transition-colors duration-200 cursor-pointer">Tecnología de IA</li>
               <li className="hover:text-primary transition-colors duration-200 cursor-pointer">Sostenibilidad</li>
               <li className="hover:text-primary transition-colors duration-200 cursor-pointer">Compromiso Social</li>
             </ul>

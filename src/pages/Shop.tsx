@@ -15,7 +15,7 @@ const products: Product[] = [
     price: 109900,
     image: collarDarkGrey,
     color: "Dark Grey",
-    description: "Collar inteligente con chip NFC. Cuero vegano premium, herrajes reciclables. Talla ajustable 30-60cm. Fabricado en Colombia.",
+    description: "Collar inteligente con IA integrada. Cuero vegano premium, herrajes reciclables. Talla ajustable 30-60cm. Fabricado en Colombia.",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const products: Product[] = [
     price: 109900,
     image: collarRosewood,
     color: "Rosewood",
-    description: "Collar inteligente con chip NFC. Cuero vegano premium, herrajes reciclables. Talla ajustable 30-60cm. Fabricado en Colombia.",
+    description: "Collar inteligente con IA integrada. Cuero vegano premium, herrajes reciclables. Talla ajustable 30-60cm. Fabricado en Colombia.",
   },
 ];
 
@@ -46,7 +46,7 @@ const Shop = () => {
             Collar Inteligente ALUDO
           </h1>
           <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-            Collares con tecnología NFC integrada. Fabricados en Colombia con materiales ecológicos. 
+            Collares con Inteligencia Artificial integrada. Fabricados en Colombia con materiales ecológicos. 
             Cada compra dona $2.000 COP a fundaciones de rescate animal.
           </p>
         </div>

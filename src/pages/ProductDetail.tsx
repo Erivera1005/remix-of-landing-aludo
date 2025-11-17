@@ -17,9 +17,9 @@ const products = [
     image: collarDarkGrey,
     color: "Dark Grey",
     colorName: "Dark Grey",
-    description: "El Collar Inteligente ALUDO combina tecnología NFC de última generación con materiales sostenibles de primera calidad. Diseñado y fabricado en Colombia para ofrecer identificación instantánea, protección y estilo a tu mascota.",
+    description: "El Collar Inteligente ALUDO combina Inteligencia Artificial de última generación con materiales sostenibles de primera calidad. Diseñado y fabricado en Colombia para ofrecer identificación instantánea, protección y estilo a tu mascota.",
     features: [
-      "Chip NFC integrado con garantía de 9 años",
+      "IA integrada con garantía de 9 años",
       "Perfil digital actualizable en tiempo real",
       "Sin batería, sin GPS, sin aplicaciones",
       "Cuero vegano premium certificado",
@@ -30,8 +30,8 @@ const products = [
       "Producción local en Colombia"
     ],
     techSpecs: {
-      title: "Tecnología NFC Integrada",
-      description: "Cada collar incluye un chip NFC encapsulado que puede ser leído por cualquier celular compatible. La información se muestra inmediatamente al acercar el dispositivo.",
+      title: "Inteligencia Artificial Integrada",
+      description: "Cada collar incluye tecnología de IA que puede ser leída por cualquier celular compatible. La información se muestra inmediatamente al acercar el dispositivo.",
       highlights: [
         "No necesita batería",
         "No usa GPS",
@@ -73,9 +73,9 @@ const products = [
     image: collarRosewood,
     color: "Rosewood",
     colorName: "Rosewood",
-    description: "El Collar Inteligente ALUDO combina tecnología NFC de última generación con materiales sostenibles de primera calidad. Diseñado y fabricado en Colombia para ofrecer identificación instantánea, protección y estilo a tu mascota.",
+    description: "El Collar Inteligente ALUDO combina Inteligencia Artificial de última generación con materiales sostenibles de primera calidad. Diseñado y fabricado en Colombia para ofrecer identificación instantánea, protección y estilo a tu mascota.",
     features: [
-      "Chip NFC integrado con garantía de 9 años",
+      "IA integrada con garantía de 9 años",
       "Perfil digital actualizable en tiempo real",
       "Sin batería, sin GPS, sin aplicaciones",
       "Cuero vegano premium certificado",
@@ -86,8 +86,8 @@ const products = [
       "Producción local en Colombia"
     ],
     techSpecs: {
-      title: "Tecnología NFC Integrada",
-      description: "Cada collar incluye un chip NFC encapsulado que puede ser leído por cualquier celular compatible. La información se muestra inmediatamente al acercar el dispositivo.",
+      title: "Inteligencia Artificial Integrada",
+      description: "Cada collar incluye tecnología de IA que puede ser leída por cualquier celular compatible. La información se muestra inmediatamente al acercar el dispositivo.",
       highlights: [
         "No necesita batería",
         "No usa GPS",
