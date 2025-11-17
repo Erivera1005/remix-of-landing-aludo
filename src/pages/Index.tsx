@@ -6,8 +6,10 @@ import { Smartphone, Leaf, MapPin, Heart, ChevronRight, Nfc } from "lucide-react
 import heroImage from "@/assets/hero-dog.png";
 import dogsGroup from "@/assets/dogs-group.png";
 import collarsImage from "@/assets/collars-product.jpeg";
+
 const Index = () => {
-  return <div className="min-h-screen overflow-hidden">
+  return (
+    <div className="min-h-screen overflow-hidden">
       <Header />
       
       {/* Hero Section */}
@@ -15,9 +17,7 @@ const Index = () => {
         {/* Animated background effects */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/8 rounded-full blur-3xl animate-float" style={{
-          animationDelay: '5s'
-        }} />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/8 rounded-full blur-3xl animate-float" style={{ animationDelay: '5s' }} />
         </div>
 
         <div className="container mx-auto px-4 pt-32 pb-20 relative z-10">
@@ -32,8 +32,7 @@ const Index = () => {
               </div>
 
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                El Futuro del Cuidado 
-para tu Mascota
+                Identidad Digital
                 <span className="block text-primary mt-2">
                   para tu Mascota
                 </span>
@@ -45,12 +44,19 @@ para tu Mascota
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/shop">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6 hover:scale-105 transition-all duration-500 tech-glow group">
+                  <Button 
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6 hover:scale-105 transition-all duration-500 tech-glow group"
+                  >
                     Explorar Colección
                     <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-500" />
                   </Button>
                 </Link>
-                <Button variant="outline" size="lg" className="border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 text-lg px-8 py-6 transition-all duration-500">
+                <Button 
+                  variant="outline"
+                  size="lg"
+                  className="border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 text-lg px-8 py-6 transition-all duration-500"
+                >
                   Cómo Funciona
                 </Button>
               </div>
@@ -73,12 +79,14 @@ para tu Mascota
             </div>
 
             {/* Right Image */}
-            <div className="relative animate-fade-in" style={{
-            animationDelay: '0.2s'
-          }}>
+            <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <div className="relative">
                 <div className="absolute inset-0 bg-primary/10 rounded-3xl blur-2xl animate-glow-pulse" />
-                <img src={heroImage} alt="ALUDO Smart Collar" className="relative rounded-3xl shadow-2xl w-full animate-float" />
+                <img
+                  src={heroImage}
+                  alt="ALUDO Smart Collar"
+                  className="relative rounded-3xl shadow-2xl w-full animate-float"
+                />
               </div>
             </div>
           </div>
@@ -98,29 +106,37 @@ para tu Mascota
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[{
-            icon: Nfc,
-            title: "Chip NFC Integrado",
-            description: "Lectura instantánea con cualquier celular. Toda la información en un toque.",
-            delay: '0s'
-          }, {
-            icon: MapPin,
-            title: "Identificación Inmediata",
-            description: "Perfil digital con datos médicos, contacto y toda la información importante.",
-            delay: '0.1s'
-          }, {
-            icon: Leaf,
-            title: "Materiales Ecológicos",
-            description: "Cuero vegano premium y herrajes reciclables. Sin batería, 100% sostenible.",
-            delay: '0.2s'
-          }, {
-            icon: Heart,
-            title: "Compromiso Social",
-            description: "$2.000 COP por collar donados a fundaciones que rescatan perros vulnerables.",
-            delay: '0.3s'
-          }].map((feature, index) => <div key={index} className="glass-effect p-8 rounded-2xl border border-primary/10 hover-lift group animate-fade-in-up" style={{
-            animationDelay: feature.delay
-          }}>
+            {[
+              {
+                icon: Nfc,
+                title: "Chip NFC Integrado",
+                description: "Lectura instantánea con cualquier celular. Toda la información en un toque.",
+                delay: '0s',
+              },
+              {
+                icon: MapPin,
+                title: "Identificación Inmediata",
+                description: "Perfil digital con datos médicos, contacto y toda la información importante.",
+                delay: '0.1s',
+              },
+              {
+                icon: Leaf,
+                title: "Materiales Ecológicos",
+                description: "Cuero vegano premium y herrajes reciclables. Sin batería, 100% sostenible.",
+                delay: '0.2s',
+              },
+              {
+                icon: Heart,
+                title: "Compromiso Social",
+                description: "$2.000 COP por collar donados a fundaciones que rescatan perros vulnerables.",
+                delay: '0.3s',
+              },
+            ].map((feature, index) => (
+              <div
+                key={index}
+                className="glass-effect p-8 rounded-2xl border border-primary/10 hover-lift group animate-fade-in-up"
+                style={{ animationDelay: feature.delay }}
+              >
                 <feature.icon className="w-12 h-12 text-primary mb-6 group-hover:scale-110 transition-transform duration-500" />
                 <h3 className="text-xl font-bold mb-3 text-primary group-hover:text-primary/80 transition-colors duration-500">
                   {feature.title}
@@ -128,7 +144,8 @@ para tu Mascota
                 <p className="text-foreground/70">
                   {feature.description}
                 </p>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -147,7 +164,11 @@ para tu Mascota
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div className="relative group overflow-hidden rounded-3xl glass-effect border border-primary/10 hover-lift animate-fade-in-up">
-              <img src={collarsImage} alt="ALUDO Collars Collection" className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img
+                src={collarsImage}
+                alt="ALUDO Collars Collection"
+                className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <h3 className="text-3xl font-bold mb-3 text-primary">
@@ -157,7 +178,9 @@ para tu Mascota
                   Cuero vegano premium con chip NFC integrado y herrajes reciclables
                 </p>
                 <Link to="/shop">
-                  <Button className="bg-primary hover:bg-primary/90 text-white group transition-all duration-500">
+                  <Button 
+                    className="bg-primary hover:bg-primary/90 text-white group transition-all duration-500"
+                  >
                     Ver Más
                     <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-500" />
                   </Button>
@@ -165,10 +188,12 @@ para tu Mascota
               </div>
             </div>
 
-            <div className="relative group overflow-hidden rounded-3xl glass-effect border border-primary/10 hover-lift animate-fade-in-up" style={{
-            animationDelay: '0.1s'
-          }}>
-              <img src={dogsGroup} alt="Happy Dogs with ALUDO" className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div className="relative group overflow-hidden rounded-3xl glass-effect border border-primary/10 hover-lift animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+              <img
+                src={dogsGroup}
+                alt="Happy Dogs with ALUDO"
+                className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <h3 className="text-3xl font-bold mb-3 text-primary">
@@ -178,7 +203,9 @@ para tu Mascota
                   De 30cm a 60cm. Se adapta desde perros pequeños hasta grandes
                 </p>
                 <Link to="/shop">
-                  <Button className="bg-primary hover:bg-primary/90 text-white group transition-all duration-500">
+                  <Button 
+                    className="bg-primary hover:bg-primary/90 text-white group transition-all duration-500"
+                  >
                     Explorar
                     <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-500" />
                   </Button>
@@ -189,7 +216,11 @@ para tu Mascota
 
           <div className="text-center">
             <Link to="/shop">
-              <Button size="lg" variant="outline" className="border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 text-lg px-12 py-6 hover:scale-105 transition-all duration-500">
+              <Button 
+                size="lg"
+                variant="outline"
+                className="border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 text-lg px-12 py-6 hover:scale-105 transition-all duration-500"
+              >
                 Ver Toda la Colección
               </Button>
             </Link>
@@ -213,11 +244,18 @@ para tu Mascota
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/shop">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg px-12 py-6 hover:scale-105 transition-all duration-500 tech-glow">
+                <Button 
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-white text-lg px-12 py-6 hover:scale-105 transition-all duration-500 tech-glow"
+                >
                   Comprar Ahora
                 </Button>
               </Link>
-              <Button variant="outline" size="lg" className="border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 text-lg px-12 py-6 transition-all duration-500">
+              <Button 
+                variant="outline"
+                size="lg"
+                className="border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 text-lg px-12 py-6 transition-all duration-500"
+              >
                 Conocer Más
               </Button>
             </div>
@@ -226,6 +264,8 @@ para tu Mascota
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
