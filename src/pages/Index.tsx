@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Smartphone, Leaf, MapPin, Heart, ChevronRight, Nfc } from "lucide-react";
+import { Smartphone, Leaf, MapPin, Heart, ChevronRight, Nfc, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-dog.png";
 import dogsGroup from "@/assets/dogs-group.png";
 import collarsImage from "@/assets/collars-product.jpeg";
@@ -25,9 +25,9 @@ const Index = () => {
             {/* Left Content */}
             <div className="space-y-8 animate-fade-in-up">
               <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-effect border border-primary/20 animate-glow-pulse">
-                <Nfc className="w-4 h-4 text-primary" />
+                <Sparkles className="w-4 h-4 text-primary" />
                 <span className="text-sm text-primary/80">
-                  Tecnología NFC - Hecho en Colombia
+                  Tecnología de IA - Hecho en Colombia
                 </span>
               </div>
 
@@ -36,7 +36,7 @@ const Index = () => {
               </h1>
 
               <p className="text-xl text-foreground/70 leading-relaxed">
-                Collares inteligentes con chip NFC que permiten identificar y proteger a tu mascota al instante. Ecológicos, elegantes y sin batería.
+                Collares inteligentes con Inteligencia Artificial que permiten identificar y proteger a tu mascota al instante. Ecológicos, elegantes y sin batería.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -61,7 +61,7 @@ const Index = () => {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 pt-8">
                 <div className="text-center space-y-1">
-                  <p className="text-3xl font-bold text-primary">NFC</p>
+                  <p className="text-3xl font-bold text-primary">IA</p>
                   <p className="text-sm text-foreground/60">Sin batería</p>
                 </div>
                 <div className="text-center space-y-1">
@@ -95,10 +95,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in-up">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-primary">Tecnología NFC</span> para el Bienestar Animal
+              <span className="text-primary">Inteligencia Artificial</span> para el Bienestar Animal
             </h2>
             <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
-              Cada collar ALUDO integra un chip NFC que almacena el perfil digital de tu mascota. Identificación instantánea sin necesidad de baterías ni aplicaciones.
+              Cada collar ALUDO integra tecnología de IA que almacena el perfil inteligente de tu mascota. Identificación instantánea sin necesidad de baterías ni aplicaciones.
             </p>
           </div>
 
@@ -155,7 +155,7 @@ const Index = () => {
               Nuestra Colección
             </h2>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
-              Diseños únicos fabricados en Colombia con materiales ecológicos y tecnología NFC integrada
+              Diseños únicos fabricados en Colombia con materiales ecológicos e Inteligencia Artificial integrada
             </p>
           </div>
 
@@ -172,7 +172,7 @@ const Index = () => {
                   Colección Premium
                 </h3>
                 <p className="text-primary/70 mb-4">
-                  Cuero vegano premium con chip NFC integrado y herrajes reciclables
+                  Cuero vegano premium con IA integrada y herrajes reciclables
                 </p>
                 <Link to="/shop">
                   <Button 
