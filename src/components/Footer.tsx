@@ -60,17 +60,17 @@ const Footer = () => {
           <div className="space-y-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
             <h3 className="font-semibold text-primary">Contacto</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-center space-x-2 hover:text-primary transition-colors duration-400 cursor-pointer">
+              <li className="flex items-center space-x-2 hover:text-primary transition-colors duration-200 cursor-pointer">
                 <Mail className="w-4 h-4" />
-                <span>info@aludo.com</span>
+                <span>aludooficial@gmail.com</span>
               </li>
-              <li className="flex items-center space-x-2 hover:text-primary transition-colors duration-400 cursor-pointer">
+              <li className="flex items-center space-x-2 hover:text-primary transition-colors duration-200 cursor-pointer">
                 <Phone className="w-4 h-4" />
-                <span>+1 234 567 890</span>
+                <span>310 203 1996</span>
               </li>
-              <li className="flex items-center space-x-2 hover:text-primary transition-colors duration-400 cursor-pointer">
+              <li className="flex items-center space-x-2 hover:text-primary transition-colors duration-200 cursor-pointer">
                 <MapPin className="w-4 h-4" />
-                <span>Tech Valley, CA</span>
+                <span>Bogotá, Colombia</span>
               </li>
             </ul>
           </div>
