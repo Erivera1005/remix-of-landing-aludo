@@ -1,13 +1,17 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
-import { Trash2, Plus, Minus, ShoppingBag } from "lucide-react";
+import { Trash2, Plus, Minus, ShoppingBag, MessageCircle } from "lucide-react";
 
 const Cart = () => {
-  const { cart, removeFromCart, updateQuantity, getTotalPrice } = useCart();
-  const navigate = useNavigate();
+  const { cart, removeFromCart, updateQuantity, getTotalPrice, getWhatsAppMessage } = useCart();
+
+  const handleFinalizarPedido = () => {
+    const message = encodeURIComponent(getWhatsAppMessage());
+    window.open(`https://wa.me/573102031996?text=${message}`, "_blank");
+  };
 
   if (cart.length === 0) {
     return (
@@ -15,7 +19,7 @@ const Cart = () => {
         <Header />
         <main className="container mx-auto px-4 pt-32 pb-20">
           <div className="text-center space-y-6 animate-fade-in">
-            <ShoppingBag className="w-24 h-24 mx-auto text-[hsl(195,100%,50%)]/30" />
+            <ShoppingBag className="w-24 h-24 mx-auto text-primary/30" />
             <h1 className="text-4xl font-bold gradient-text">
               Tu carrito está vacío
             </h1>
@@ -25,7 +29,7 @@ const Cart = () => {
             <Link to="/shop">
               <Button 
                 size="lg"
-                className="bg-[hsl(195,100%,50%)] hover:bg-[hsl(195,100%,60%)] text-[hsl(237,100%,11%)] hover:scale-105 transition-all duration-300"
+                className="transition-all duration-300 hover:scale-105"
               >
                 Ir a la Tienda
               </Button>
@@ -51,8 +55,8 @@ const Cart = () => {
           <div className="lg:col-span-2 space-y-4">
             {cart.map((item, index) => (
               <div
-                key={item.id}
-                className="glass-effect p-6 rounded-xl border border-white/10 hover-lift animate-fade-in-up"
+                key={`${item.id}-${item.color}`}
+                className="glass-effect p-6 rounded-xl border border-border/50 hover-lift animate-fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex gap-6">
@@ -65,7 +69,7 @@ const Cart = () => {
                   <div className="flex-1 space-y-4">
                     <div className="flex justify-between">
                       <div>
-                        <h3 className="text-xl font-semibold mb-1">
+                        <h3 className="text-xl font-semibold mb-1 text-primary">
                           {item.name}
                         </h3>
                         <p className="text-foreground/60 text-sm">
@@ -76,7 +80,7 @@ const Cart = () => {
                         variant="ghost"
                         size="icon"
                         onClick={() => removeFromCart(item.id)}
-                        className="text-red-400 hover:text-red-300 hover:bg-red-400/10"
+                        className="text-destructive hover:text-destructive/80 hover:bg-destructive/10"
                       >
                         <Trash2 className="w-5 h-5" />
                       </Button>
@@ -89,7 +93,7 @@ const Cart = () => {
                           size="icon"
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
                           disabled={item.quantity <= 1}
-                          className="border-[hsl(195,100%,50%)] text-[hsl(195,100%,50%)] hover:bg-[hsl(195,100%,50%)]/10"
+                          className="border-primary/30 text-primary hover:bg-primary/10"
                         >
                           <Minus className="w-4 h-4" />
                         </Button>
@@ -100,14 +104,14 @@ const Cart = () => {
                           variant="outline"
                           size="icon"
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                          className="border-[hsl(195,100%,50%)] text-[hsl(195,100%,50%)] hover:bg-[hsl(195,100%,50%)]/10"
+                          className="border-primary/30 text-primary hover:bg-primary/10"
                         >
                           <Plus className="w-4 h-4" />
                         </Button>
                       </div>
                       
                       <p className="text-2xl font-bold gradient-text">
-                        €{(item.price * item.quantity).toFixed(2)}
+                        ${(item.price * item.quantity).toLocaleString('es-CO')} COP
                       </p>
                     </div>
                   </div>
@@ -118,46 +122,45 @@ const Cart = () => {
 
           {/* Order Summary */}
           <div className="lg:col-span-1">
-            <div className="glass-effect p-8 rounded-xl border border-white/10 sticky top-32 space-y-6 animate-fade-in-up">
-              <h2 className="text-2xl font-bold text-[hsl(195,100%,50%)]">
+            <div className="glass-effect p-8 rounded-xl border border-border/50 sticky top-32 space-y-6 animate-fade-in-up">
+              <h2 className="text-2xl font-bold text-primary">
                 Resumen del Pedido
               </h2>
               
-              <div className="space-y-4 py-4 border-y border-white/10">
-                <div className="flex justify-between text-foreground/60">
-                  <span>Subtotal</span>
-                  <span>€{getTotalPrice().toFixed(2)}</span>
-                </div>
-                <div className="flex justify-between text-foreground/60">
+              <div className="space-y-4 py-4 border-y border-border/50">
+                {cart.map((item) => (
+                  <div key={`${item.id}-${item.color}`} className="flex justify-between text-sm text-foreground/70">
+                    <span>{item.name} x{item.quantity}</span>
+                    <span>${(item.price * item.quantity).toLocaleString('es-CO')}</span>
+                  </div>
+                ))}
+                <div className="flex justify-between text-foreground/60 pt-2">
                   <span>Envío</span>
-                  <span className="text-[hsl(195,100%,50%)]">Gratis</span>
-                </div>
-                <div className="flex justify-between text-foreground/60">
-                  <span>IVA (21%)</span>
-                  <span>€{(getTotalPrice() * 0.21).toFixed(2)}</span>
+                  <span className="text-primary font-medium">Gratis</span>
                 </div>
               </div>
 
               <div className="flex justify-between text-2xl font-bold">
                 <span>Total</span>
                 <span className="gradient-text">
-                  €{(getTotalPrice() * 1.21).toFixed(2)}
+                  ${getTotalPrice().toLocaleString('es-CO')} COP
                 </span>
               </div>
 
               <Button
-                onClick={() => navigate("/checkout")}
+                onClick={handleFinalizarPedido}
                 size="lg"
-                className="w-full bg-[hsl(195,100%,50%)] hover:bg-[hsl(195,100%,60%)] text-[hsl(237,100%,11%)] text-lg py-6 hover:scale-105 transition-all duration-300 tech-glow"
+                className="w-full text-lg py-6 hover:scale-105 transition-all duration-300 tech-glow"
               >
-                Proceder al Pago
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Finaliza tu pedido
               </Button>
 
               <Link to="/shop">
                 <Button 
                   variant="outline"
                   size="lg"
-                  className="w-full border-[hsl(195,100%,50%)] text-[hsl(195,100%,50%)] hover:bg-[hsl(195,100%,50%)]/10"
+                  className="w-full border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50"
                 >
                   Seguir Comprando
                 </Button>

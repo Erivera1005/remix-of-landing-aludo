@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { toast } from "sonner";
 
 export interface CartItem {
@@ -12,37 +12,53 @@ export interface CartItem {
 
 interface CartContextType {
   cart: CartItem[];
-  addToCart: (item: Omit<CartItem, "quantity">) => void;
+  addToCart: (item: Omit<CartItem, "quantity">, quantity?: number) => void;
   removeFromCart: (id: number) => void;
   updateQuantity: (id: number, quantity: number) => void;
   clearCart: () => void;
   getTotalPrice: () => number;
+  getWhatsAppMessage: () => string;
 }
+
+const CART_STORAGE_KEY = "aludo_cart";
+
+const loadCartFromStorage = (): CartItem[] => {
+  try {
+    const stored = localStorage.getItem(CART_STORAGE_KEY);
+    return stored ? JSON.parse(stored) : [];
+  } catch {
+    return [];
+  }
+};
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cart, setCart] = useState<CartItem[]>(loadCartFromStorage);
 
-  const addToCart = (item: Omit<CartItem, "quantity">) => {
+  useEffect(() => {
+    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+  }, [cart]);
+
+  const addToCart = (item: Omit<CartItem, "quantity">, quantity: number = 1) => {
     setCart((prevCart) => {
-      const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
+      const existingItem = prevCart.find((cartItem) => cartItem.id === item.id && cartItem.color === item.color);
       
       if (existingItem) {
         toast.success("Cantidad actualizada en el carrito", {
-          description: `${item.name} x${existingItem.quantity + 1}`,
+          description: `${item.name} x${existingItem.quantity + quantity}`,
         });
         return prevCart.map((cartItem) =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+          cartItem.id === item.id && cartItem.color === item.color
+            ? { ...cartItem, quantity: cartItem.quantity + quantity }
             : cartItem
         );
       }
       
       toast.success("Añadido al carrito", {
-        description: item.name,
+        description: `${item.name} x${quantity}`,
       });
-      return [...prevCart, { ...item, quantity: 1 }];
+      return [...prevCart, { ...item, quantity }];
     });
   };
 
@@ -68,6 +84,15 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     return cart.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
+  const getWhatsAppMessage = () => {
+    const lines = cart.map(
+      (item) =>
+        `- Producto: ${item.name}\n  Color: ${item.color}\n  Cantidad: ${item.quantity}\n  Subtotal: $${(item.price * item.quantity).toLocaleString("es-CO")} COP`
+    );
+    const total = getTotalPrice();
+    return `Hola, quiero finalizar mi pedido de ALUDO:\n\n${lines.join("\n\n")}\n\nTotal: $${total.toLocaleString("es-CO")} COP\n\nQuedo atento/a a la confirmación.`;
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -77,6 +102,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         updateQuantity,
         clearCart,
         getTotalPrice,
+        getWhatsAppMessage,
       }}
     >
       {children}
