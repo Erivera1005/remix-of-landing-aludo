@@ -49,13 +49,15 @@ const Index = () => {
                     <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-500" />
                   </Button>
                 </Link>
-                <Button 
-                  variant="outline"
-                  size="lg"
-                  className="border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 text-lg px-8 py-6 transition-all duration-500"
-                >
-                  Cómo Funciona
-                </Button>
+                <a href="https://www.instagram.com/reel/DMLae2GRQmc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">
+                  <Button 
+                    variant="outline"
+                    size="lg"
+                    className="border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 text-lg px-8 py-6 transition-all duration-500"
+                  >
+                    Cómo Funciona
+                  </Button>
+                </a>
               </div>
 
               {/* Stats */}
@@ -248,13 +250,15 @@ const Index = () => {
                   Comprar Ahora
                 </Button>
               </Link>
-              <Button 
-                variant="outline"
-                size="lg"
-                className="border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 text-lg px-12 py-6 transition-all duration-500"
-              >
-                Conocer Más
-              </Button>
+              <a href="https://wa.me/573102031996" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  variant="outline"
+                  size="lg"
+                  className="border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 text-lg px-12 py-6 transition-all duration-500"
+                >
+                  Conocer Más
+                </Button>
+              </a>
             </div>
           </div>
         </div>
