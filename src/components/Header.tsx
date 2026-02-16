@@ -31,7 +31,14 @@ const Header = () => {
             <Link to="/shop" className="text-foreground/70 hover:text-primary transition-colors duration-200 font-medium">
               Tienda
             </Link>
-            
+            <Link to="/cart" className="relative text-foreground/70 hover:text-primary transition-colors duration-200">
+              <ShoppingCart className="w-5 h-5" />
+              {cartItemsCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                  {cartItemsCount}
+                </span>
+              )}
+            </Link>
           </nav>
 
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-foreground hover:text-primary transition-colors duration-200">

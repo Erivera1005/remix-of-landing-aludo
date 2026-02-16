@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
-import { ShoppingCart, Nfc, Leaf, Heart, Droplet, Shield, Ruler, Package } from "lucide-react";
+import { ShoppingCart, Nfc, Leaf, Heart, Droplet, Shield, Ruler, Package, Plus, Minus } from "lucide-react";
 import collarDarkGrey from "@/assets/collar-dark-grey.jpeg";
 import collarRosewood from "@/assets/collar-rosewood.jpeg";
 
@@ -129,6 +129,7 @@ const ProductDetail = () => {
   const navigate = useNavigate();
   const { addToCart } = useCart();
   const [selectedColor, setSelectedColor] = useState<string>("Dark Grey");
+  const [quantity, setQuantity] = useState<number>(1);
 
   // Encontrar el producto actual basado en el color seleccionado
   const currentProduct = products.find(p => p.colorName === selectedColor) || products[0];
@@ -141,7 +142,8 @@ const ProductDetail = () => {
         price: currentProduct.price,
         image: currentProduct.image,
         color: currentProduct.colorName,
-      });
+      }, quantity);
+      setQuantity(1);
     }
   };
 
@@ -219,6 +221,31 @@ const ProductDetail = () => {
               <p className="text-sm text-foreground/60 mt-2">
                 Color seleccionado: <span className="font-medium text-primary">{selectedColor}</span>
               </p>
+            </div>
+
+            {/* Quantity Selector */}
+            <div>
+              <h3 className="text-xl font-semibold mb-4 text-primary">Cantidad</h3>
+              <div className="flex items-center gap-4">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                  disabled={quantity <= 1}
+                  className="h-12 w-12 border-primary/30 text-primary hover:bg-primary/10"
+                >
+                  <Minus className="w-5 h-5" />
+                </Button>
+                <span className="text-2xl font-bold w-12 text-center">{quantity}</span>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => setQuantity(quantity + 1)}
+                  className="h-12 w-12 border-primary/30 text-primary hover:bg-primary/10"
+                >
+                  <Plus className="w-5 h-5" />
+                </Button>
+              </div>
             </div>
 
             {/* Action Buttons */}
