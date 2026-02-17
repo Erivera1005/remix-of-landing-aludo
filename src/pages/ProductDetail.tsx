@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { ShoppingCart, Nfc, Leaf, Heart, Droplet, Shield, Ruler, Package, Plus, Minus } from "lucide-react";
 import collarDarkGrey from "@/assets/collar-dark-grey.jpeg";
+import collarDarkGrey2 from "@/assets/collar-darkgrey-2.jpeg";
+import collarDarkGrey3 from "@/assets/collar-darkgrey-3.jpeg";
 import collarRosewood from "@/assets/collar-rosewood.jpeg";
 
 // Productos oficiales de ALUDO
@@ -15,6 +17,7 @@ const products = [
     name: "Collar Inteligente ALUDO",
     price: 109900,
     image: collarDarkGrey,
+    images: [collarDarkGrey, collarDarkGrey2, collarDarkGrey3],
     color: "Dark Grey",
     colorName: "Dark Grey",
     description: "El Collar Inteligente ALUDO combina Inteligencia Artificial de última generación con materiales sostenibles de primera calidad. Diseñado y fabricado en Colombia para ofrecer identificación instantánea, protección y estilo a tu mascota.",
@@ -71,6 +74,7 @@ const products = [
     name: "Collar Inteligente ALUDO",
     price: 109900,
     image: collarRosewood,
+    images: [collarRosewood],
     color: "Rosewood",
     colorName: "Rosewood",
     description: "El Collar Inteligente ALUDO combina Inteligencia Artificial de última generación con materiales sostenibles de primera calidad. Diseñado y fabricado en Colombia para ofrecer identificación instantánea, protección y estilo a tu mascota.",
@@ -129,7 +133,7 @@ const ProductDetail = () => {
   const navigate = useNavigate();
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState<number>(1);
-
+  const [selectedImage, setSelectedImage] = useState<number>(0);
   // Encontrar el producto basado en el ID de la URL
   const currentProduct = products.find(p => p.id === Number(id)) || products[0];
   
@@ -170,14 +174,33 @@ const ProductDetail = () => {
         {/* Product Grid */}
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           {/* Product Image */}
-          <div className="relative aspect-square overflow-hidden rounded-2xl bg-card/50 animate-fade-in">
-            <img
-              src={currentProduct.image}
-              alt={currentProduct.name}
-              loading="eager"
-              fetchPriority="high"
-              className="w-full h-full object-cover"
-            />
+          <div className="space-y-4 animate-fade-in">
+            <div className="relative aspect-square overflow-hidden rounded-2xl bg-card/50">
+              <img
+                src={currentProduct.images[selectedImage]}
+                alt={currentProduct.name}
+                loading="eager"
+                fetchPriority="high"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            {currentProduct.images.length > 1 && (
+              <div className="flex gap-3">
+                {currentProduct.images.map((img, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedImage(index)}
+                    className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-all duration-300 ${
+                      selectedImage === index
+                        ? "border-primary scale-105"
+                        : "border-border hover:border-primary/50"
+                    }`}
+                  >
+                    <img src={img} alt={`Vista ${index + 1}`} className="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Product Info */}
