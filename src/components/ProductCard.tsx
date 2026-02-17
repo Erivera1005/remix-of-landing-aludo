@@ -19,7 +19,7 @@ interface ProductCardProps {
 
 const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
   return (
-    <Card className="group overflow-hidden border-primary/10 bg-card/80 hover-lift cursor-pointer content-contain">
+    <Card className="group overflow-hidden border-primary/10 bg-card/80 hover-lift cursor-pointer content-contain flex flex-col">
       <Link to={`/product/${product.id}`}>
         <div className="relative aspect-square overflow-hidden">
           <img
@@ -33,8 +33,8 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
         </div>
       </Link>
       
-      <CardContent className="p-6 space-y-4">
-        <div>
+      <CardContent className="p-6 flex flex-col flex-1">
+        <div className="flex-1">
           <Link to={`/product/${product.id}`}>
             <h3 className="text-xl font-semibold mb-2 text-primary group-hover:text-primary/80 transition-colors duration-500">
               {product.name}
@@ -45,7 +45,7 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
           </p>
         </div>
         
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-4 mt-4">
           <span className="text-2xl font-bold text-primary">
             ${product.price.toLocaleString('es-CO')}
           </span>
