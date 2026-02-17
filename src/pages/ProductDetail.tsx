@@ -128,11 +128,10 @@ const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { addToCart } = useCart();
-  const [selectedColor, setSelectedColor] = useState<string>("Dark Grey");
   const [quantity, setQuantity] = useState<number>(1);
 
-  // Encontrar el producto actual basado en el color seleccionado
-  const currentProduct = products.find(p => p.colorName === selectedColor) || products[0];
+  // Encontrar el producto basado en el ID de la URL
+  const currentProduct = products.find(p => p.id === Number(id)) || products[0];
   
   const handleAddToCart = () => {
     if (currentProduct) {
@@ -195,32 +194,10 @@ const ProductDetail = () => {
               </p>
             </div>
 
-            {/* Color Selection */}
+            {/* Color Info */}
             <div>
-              <h3 className="text-xl font-semibold mb-4 text-primary">Selecciona el color</h3>
-              <div className="flex gap-4">
-                {products.map((product) => (
-                  <button
-                    key={product.id}
-                    onClick={() => setSelectedColor(product.colorName)}
-                    className={`relative w-24 h-24 rounded-xl overflow-hidden border-2 transition-all duration-300 ${
-                      selectedColor === product.colorName
-                        ? "border-primary scale-105"
-                        : "border-border hover:border-primary/50"
-                    }`}
-                  >
-                    <img
-                      src={product.image}
-                      alt={product.colorName}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-background/0 hover:bg-background/10 transition-colors duration-300" />
-                  </button>
-                ))}
-              </div>
-              <p className="text-sm text-foreground/60 mt-2">
-                Color seleccionado: <span className="font-medium text-primary">{selectedColor}</span>
-              </p>
+              <h3 className="text-xl font-semibold mb-2 text-primary">Color</h3>
+              <p className="text-foreground/70 text-lg">{currentProduct.colorName}</p>
             </div>
 
             {/* Quantity Selector */}
