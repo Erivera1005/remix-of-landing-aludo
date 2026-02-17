@@ -20,7 +20,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <img src={logo} alt="ALUDO Logo" loading="eager" decoding="async" fetchPriority="high" className="h-14 w-auto transition-transform duration-200 hover:scale-105" />
+            <img src={logo} alt="ALUDO Logo" loading="eager" decoding="async" fetchPriority="high" className="h-20 w-auto transition-transform duration-200 hover:scale-105" />
           </Link>
 
           {/* Desktop Navigation */}
