@@ -12,7 +12,6 @@ import collarRosewood from "@/assets/collar-rosewood.jpeg";
 import collarRosewood2 from "@/assets/collar-rosewood-2.jpeg";
 import collarRosewood3 from "@/assets/collar-rosewood-3.jpeg";
 
-// Productos oficiales de ALUDO
 const products = [
   {
     id: 1,
@@ -136,7 +135,6 @@ const ProductDetail = () => {
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState<number>(1);
   const [selectedImage, setSelectedImage] = useState<number>(0);
-  // Encontrar el producto basado en el ID de la URL
   const currentProduct = products.find(p => p.id === Number(id)) || products[0];
   
   const handleAddToCart = () => {
@@ -164,19 +162,19 @@ const ProductDetail = () => {
     <div className="min-h-screen">
       <Header />
       
-      <main className="container mx-auto px-4 pt-32 pb-20">
+      <main className="container mx-auto px-5 sm:px-6 pt-28 md:pt-32 pb-16 md:pb-20">
         <Button 
           variant="ghost" 
           onClick={() => navigate("/shop")}
-          className="mb-8 hover:bg-primary/10 transition-all duration-300"
+          className="mb-6 md:mb-8 hover:bg-primary/10 transition-all duration-300"
         >
           ← Volver a la tienda
         </Button>
 
         {/* Product Grid */}
-        <div className="grid md:grid-cols-2 gap-12 mb-16">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
           {/* Product Image */}
-          <div className="space-y-4 animate-fade-in">
+          <div className="space-y-3 md:space-y-4 animate-fade-in">
             <div className="relative aspect-square overflow-hidden rounded-2xl bg-card/50">
               <img
                 src={currentProduct.images[selectedImage]}
@@ -187,12 +185,12 @@ const ProductDetail = () => {
               />
             </div>
             {currentProduct.images.length > 1 && (
-              <div className="flex gap-3">
+              <div className="flex gap-2 md:gap-3">
                 {currentProduct.images.map((img, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImage(index)}
-                    className={`w-20 h-20 rounded-xl overflow-hidden border-2 transition-all duration-300 ${
+                    className={`w-16 h-16 md:w-20 md:h-20 rounded-lg md:rounded-xl overflow-hidden border-2 transition-all duration-300 ${
                       selectedImage === index
                         ? "border-primary scale-105"
                         : "border-border hover:border-primary/50"
@@ -206,104 +204,104 @@ const ProductDetail = () => {
           </div>
 
           {/* Product Info */}
-          <div className="space-y-8 animate-fade-in">
+          <div className="space-y-6 md:space-y-8 animate-fade-in">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-primary">
                 {currentProduct.name}
               </h1>
-              <p className="text-3xl font-bold text-primary mb-6">
+              <p className="text-2xl md:text-3xl font-bold text-primary mb-4 md:mb-6">
                 ${currentProduct.price.toLocaleString('es-CO')} COP
               </p>
-              <p className="text-foreground/70 text-lg leading-relaxed">
+              <p className="text-foreground/70 text-base md:text-lg leading-relaxed">
                 {currentProduct.description}
               </p>
             </div>
 
             {/* Color Info */}
             <div>
-              <h3 className="text-xl font-semibold mb-2 text-primary">Color</h3>
-              <p className="text-foreground/70 text-lg">{currentProduct.colorName}</p>
+              <h3 className="text-lg md:text-xl font-semibold mb-1.5 md:mb-2 text-primary">Color</h3>
+              <p className="text-foreground/70 text-base md:text-lg">{currentProduct.colorName}</p>
             </div>
 
             {/* Quantity Selector */}
             <div>
-              <h3 className="text-xl font-semibold mb-4 text-primary">Cantidad</h3>
-              <div className="flex items-center gap-4">
+              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 text-primary">Cantidad</h3>
+              <div className="flex items-center gap-3 md:gap-4">
                 <Button
                   variant="outline"
                   size="icon"
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
                   disabled={quantity <= 1}
-                  className="h-12 w-12 border-primary/30 text-primary hover:bg-primary/10"
+                  className="h-10 w-10 md:h-12 md:w-12 border-primary/30 text-primary hover:bg-primary/10"
                 >
-                  <Minus className="w-5 h-5" />
+                  <Minus className="w-4 h-4 md:w-5 md:h-5" />
                 </Button>
-                <span className="text-2xl font-bold w-12 text-center">{quantity}</span>
+                <span className="text-xl md:text-2xl font-bold w-10 md:w-12 text-center">{quantity}</span>
                 <Button
                   variant="outline"
                   size="icon"
                   onClick={() => setQuantity(quantity + 1)}
-                  className="h-12 w-12 border-primary/30 text-primary hover:bg-primary/10"
+                  className="h-10 w-10 md:h-12 md:w-12 border-primary/30 text-primary hover:bg-primary/10"
                 >
-                  <Plus className="w-5 h-5" />
+                  <Plus className="w-4 h-4 md:w-5 md:h-5" />
                 </Button>
               </div>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex gap-4">
+            <div className="flex gap-3 md:gap-4">
               <Button 
                 onClick={handleAddToCart}
-                className="flex-1 h-14 text-lg transition-all duration-300 hover:scale-105"
+                className="flex-1 h-12 md:h-14 text-base md:text-lg transition-all duration-300 hover:scale-105"
               >
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 Añadir al carrito
               </Button>
               <Button 
                 variant="outline" 
-                className="h-14 px-6 border-primary/30 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
+                className="h-12 md:h-14 px-4 md:px-6 border-primary/30 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
               >
                 <Heart className="w-5 h-5" />
               </Button>
             </div>
 
             {/* Key Features Cards */}
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="p-4 rounded-xl bg-card/50 border border-border/50">
-                <Leaf className="w-6 h-6 text-primary mb-2" />
-                <p className="text-sm font-medium text-primary">Materiales Ecológicos</p>
-                <p className="text-xs text-foreground/60 mt-1">Cuero vegano premium</p>
+            <div className="grid grid-cols-2 gap-3 md:gap-4 pt-2 md:pt-4">
+              <div className="p-3 md:p-4 rounded-xl bg-card/50 border border-border/50">
+                <Leaf className="w-5 h-5 md:w-6 md:h-6 text-primary mb-1.5 md:mb-2" />
+                <p className="text-xs md:text-sm font-medium text-primary">Materiales Ecológicos</p>
+                <p className="text-[10px] md:text-xs text-foreground/60 mt-0.5 md:mt-1">Cuero vegano premium</p>
               </div>
-              <div className="p-4 rounded-xl bg-card/50 border border-border/50">
-                <Droplet className="w-6 h-6 text-primary mb-2" />
-                <p className="text-sm font-medium text-primary">Resistente al Agua</p>
-                <p className="text-xs text-foreground/60 mt-1">Lluvia y salpicaduras</p>
+              <div className="p-3 md:p-4 rounded-xl bg-card/50 border border-border/50">
+                <Droplet className="w-5 h-5 md:w-6 md:h-6 text-primary mb-1.5 md:mb-2" />
+                <p className="text-xs md:text-sm font-medium text-primary">Resistente al Agua</p>
+                <p className="text-[10px] md:text-xs text-foreground/60 mt-0.5 md:mt-1">Lluvia y salpicaduras</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Detailed Sections */}
-        <div className="space-y-12">
+        <div className="space-y-8 md:space-y-12">
           {/* Technology Section */}
-          <div className="bg-card/30 rounded-2xl p-8 border border-border/50 animate-fade-in-up">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="p-3 bg-primary/10 rounded-xl">
-                <Nfc className="w-8 h-8 text-primary" />
+          <div className="bg-card/30 rounded-2xl p-5 md:p-8 border border-border/50 animate-fade-in-up">
+            <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
+              <div className="p-2.5 md:p-3 bg-primary/10 rounded-xl flex-shrink-0">
+                <Nfc className="w-6 h-6 md:w-8 md:h-8 text-primary" />
               </div>
               <div>
-                <h2 className="text-3xl font-bold mb-2 text-primary">
+                <h2 className="text-xl md:text-3xl font-bold mb-1.5 md:mb-2 text-primary">
                   {currentProduct.techSpecs.title}
                 </h2>
-                <p className="text-foreground/70 text-lg">
+                <p className="text-sm md:text-lg text-foreground/70">
                   {currentProduct.techSpecs.description}
                 </p>
               </div>
             </div>
-            <ul className="grid md:grid-cols-2 gap-3 mt-6">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-3 mt-4 md:mt-6">
               {currentProduct.techSpecs.highlights.map((highlight, index) => (
-                <li key={index} className="flex items-center gap-3 text-foreground/80">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
+                <li key={index} className="flex items-center gap-2.5 md:gap-3 text-sm md:text-base text-foreground/80">
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-primary flex-shrink-0" />
                   {highlight}
                 </li>
               ))}
@@ -311,19 +309,19 @@ const ProductDetail = () => {
           </div>
 
           {/* Materials Section */}
-          <div className="bg-card/30 rounded-2xl p-8 border border-border/50 animate-fade-in-up">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="p-3 bg-primary/10 rounded-xl">
-                <Leaf className="w-8 h-8 text-primary" />
+          <div className="bg-card/30 rounded-2xl p-5 md:p-8 border border-border/50 animate-fade-in-up">
+            <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
+              <div className="p-2.5 md:p-3 bg-primary/10 rounded-xl flex-shrink-0">
+                <Leaf className="w-6 h-6 md:w-8 md:h-8 text-primary" />
               </div>
-              <h2 className="text-3xl font-bold text-primary">
+              <h2 className="text-xl md:text-3xl font-bold text-primary">
                 {currentProduct.materials.title}
               </h2>
             </div>
-            <ul className="grid md:grid-cols-2 gap-3">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-2.5 md:gap-3">
               {currentProduct.materials.items.map((item, index) => (
-                <li key={index} className="flex items-center gap-3 text-foreground/80">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
+                <li key={index} className="flex items-center gap-2.5 md:gap-3 text-sm md:text-base text-foreground/80">
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-primary flex-shrink-0" />
                   {item}
                 </li>
               ))}
@@ -331,55 +329,55 @@ const ProductDetail = () => {
           </div>
 
           {/* Sizing and Water Resistance */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             {/* Sizing */}
-            <div className="bg-card/30 rounded-2xl p-8 border border-border/50 animate-fade-in-up">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="p-3 bg-primary/10 rounded-xl">
-                  <Ruler className="w-8 h-8 text-primary" />
+            <div className="bg-card/30 rounded-2xl p-5 md:p-8 border border-border/50 animate-fade-in-up">
+              <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
+                <div className="p-2.5 md:p-3 bg-primary/10 rounded-xl flex-shrink-0">
+                  <Ruler className="w-6 h-6 md:w-8 md:h-8 text-primary" />
                 </div>
-                <h2 className="text-2xl font-bold text-primary">
+                <h2 className="text-lg md:text-2xl font-bold text-primary">
                   {currentProduct.sizing.title}
                 </h2>
               </div>
-              <p className="text-3xl font-bold text-primary mb-2">
+              <p className="text-2xl md:text-3xl font-bold text-primary mb-1.5 md:mb-2">
                 {currentProduct.sizing.range}
               </p>
-              <p className="text-foreground/70">
+              <p className="text-sm md:text-base text-foreground/70">
                 {currentProduct.sizing.description}
               </p>
             </div>
 
             {/* Water Resistance */}
-            <div className="bg-card/30 rounded-2xl p-8 border border-border/50 animate-fade-in-up">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="p-3 bg-primary/10 rounded-xl">
-                  <Droplet className="w-8 h-8 text-primary" />
+            <div className="bg-card/30 rounded-2xl p-5 md:p-8 border border-border/50 animate-fade-in-up">
+              <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
+                <div className="p-2.5 md:p-3 bg-primary/10 rounded-xl flex-shrink-0">
+                  <Droplet className="w-6 h-6 md:w-8 md:h-8 text-primary" />
                 </div>
-                <h2 className="text-2xl font-bold text-primary">
+                <h2 className="text-lg md:text-2xl font-bold text-primary">
                   {currentProduct.waterResistance.title}
                 </h2>
               </div>
-              <p className="text-foreground/70">
+              <p className="text-sm md:text-base text-foreground/70">
                 {currentProduct.waterResistance.description}
               </p>
             </div>
           </div>
 
           {/* Scan Info */}
-          <div className="bg-card/30 rounded-2xl p-8 border border-border/50 animate-fade-in-up">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="p-3 bg-primary/10 rounded-xl">
-                <Shield className="w-8 h-8 text-primary" />
+          <div className="bg-card/30 rounded-2xl p-5 md:p-8 border border-border/50 animate-fade-in-up">
+            <div className="flex items-start gap-3 md:gap-4 mb-4 md:mb-6">
+              <div className="p-2.5 md:p-3 bg-primary/10 rounded-xl flex-shrink-0">
+                <Shield className="w-6 h-6 md:w-8 md:h-8 text-primary" />
               </div>
-              <h2 className="text-3xl font-bold text-primary">
+              <h2 className="text-xl md:text-3xl font-bold text-primary">
                 {currentProduct.scanInfo.title}
               </h2>
             </div>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5 md:space-y-3">
               {currentProduct.scanInfo.items.map((item, index) => (
-                <li key={index} className="flex items-center gap-3 text-foreground/80">
-                  <div className="w-2 h-2 rounded-full bg-primary" />
+                <li key={index} className="flex items-center gap-2.5 md:gap-3 text-sm md:text-base text-foreground/80">
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-primary flex-shrink-0" />
                   {item}
                 </li>
               ))}
@@ -387,47 +385,45 @@ const ProductDetail = () => {
           </div>
 
           {/* Packaging and Social Commitment */}
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Eco Packaging */}
-            <div className="bg-card/30 rounded-2xl p-8 border border-border/50 animate-fade-in-up">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="p-3 bg-primary/10 rounded-xl">
-                  <Package className="w-8 h-8 text-primary" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+            <div className="bg-card/30 rounded-2xl p-5 md:p-8 border border-border/50 animate-fade-in-up">
+              <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
+                <div className="p-2.5 md:p-3 bg-primary/10 rounded-xl flex-shrink-0">
+                  <Package className="w-6 h-6 md:w-8 md:h-8 text-primary" />
                 </div>
-                <h2 className="text-2xl font-bold text-primary">
+                <h2 className="text-lg md:text-2xl font-bold text-primary">
                   Empaque Ecológico
                 </h2>
               </div>
-              <p className="text-foreground/70">
+              <p className="text-sm md:text-base text-foreground/70">
                 Cada collar se entrega en una bolsa ecológica reciclable, alineada a los valores de sostenibilidad de ALUDO.
               </p>
             </div>
 
-            {/* Social Commitment */}
-            <div className="bg-card/30 rounded-2xl p-8 border border-border/50 animate-fade-in-up">
-              <div className="flex items-start gap-4 mb-4">
-                <div className="p-3 bg-primary/10 rounded-xl">
-                  <Heart className="w-8 h-8 text-primary" />
+            <div className="bg-card/30 rounded-2xl p-5 md:p-8 border border-border/50 animate-fade-in-up">
+              <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
+                <div className="p-2.5 md:p-3 bg-primary/10 rounded-xl flex-shrink-0">
+                  <Heart className="w-6 h-6 md:w-8 md:h-8 text-primary" />
                 </div>
-                <h2 className="text-2xl font-bold text-primary">
+                <h2 className="text-lg md:text-2xl font-bold text-primary">
                   Compromiso Social
                 </h2>
               </div>
-              <p className="text-foreground/70">
+              <p className="text-sm md:text-base text-foreground/70">
                 Por cada collar vendido, ALUDO dona <span className="font-bold text-primary">$2.000 COP</span> a fundaciones que rescatan y cuidan perros en situación vulnerable.
               </p>
             </div>
           </div>
 
           {/* Features List */}
-          <div className="bg-card/30 rounded-2xl p-8 border border-border/50 animate-fade-in-up">
-            <h2 className="text-3xl font-bold mb-6 text-primary">
+          <div className="bg-card/30 rounded-2xl p-5 md:p-8 border border-border/50 animate-fade-in-up">
+            <h2 className="text-xl md:text-3xl font-bold mb-4 md:mb-6 text-primary">
               Características Clave
             </h2>
-            <ul className="grid md:grid-cols-2 gap-4">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
               {currentProduct.features.map((feature, index) => (
-                <li key={index} className="flex items-start gap-3 text-foreground/80">
-                  <div className="w-2 h-2 rounded-full bg-primary mt-2" />
+                <li key={index} className="flex items-start gap-2.5 md:gap-3 text-sm md:text-base text-foreground/80">
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-primary mt-1.5 md:mt-2 flex-shrink-0" />
                   <span>{feature}</span>
                 </li>
               ))}
