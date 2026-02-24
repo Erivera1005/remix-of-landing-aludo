@@ -33,20 +33,20 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
         </div>
       </Link>
       
-      <CardContent className="p-6 flex flex-col flex-1">
+      <CardContent className="p-4 md:p-6 flex flex-col flex-1">
         <div className="flex-1">
           <Link to={`/product/${product.id}`}>
-            <h3 className="text-xl font-semibold mb-2 text-primary group-hover:text-primary/80 transition-colors duration-500">
+            <h3 className="text-base md:text-xl font-semibold mb-1.5 md:mb-2 text-primary group-hover:text-primary/80 transition-colors duration-500">
               {product.name}
             </h3>
           </Link>
-          <p className="text-foreground/70 text-sm line-clamp-2">
+          <p className="text-foreground/70 text-xs md:text-sm line-clamp-2">
             {product.description}
           </p>
         </div>
         
-        <div className="flex items-center justify-between gap-4 mt-4">
-          <span className="text-2xl font-bold text-primary">
+        <div className="flex items-center justify-between gap-3 mt-3 md:mt-4">
+          <span className="text-xl md:text-2xl font-bold text-primary">
             ${product.price.toLocaleString('es-CO')}
           </span>
           <Button
@@ -54,9 +54,10 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
               e.preventDefault();
               onAddToCart(product);
             }}
-            className="transition-transform duration-200 hover:scale-105"
+            size="sm"
+            className="transition-transform duration-200 hover:scale-105 text-xs md:text-sm"
           >
-            <ShoppingCart className="w-4 h-4 mr-2" />
+            <ShoppingCart className="w-3.5 h-3.5 md:w-4 md:h-4 mr-1.5 md:mr-2" />
             Añadir
           </Button>
         </div>
