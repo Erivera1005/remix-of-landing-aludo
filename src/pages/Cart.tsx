@@ -134,11 +134,9 @@ const Cart = () => {
                     <span className="whitespace-nowrap">${(item.price * item.quantity).toLocaleString('es-CO')}</span>
                   </div>
                 ))}
-                <div className="flex justify-between text-foreground/60 pt-2">
-                  <span>Envío</span>
-                  <span className="text-primary font-medium">Gratis</span>
+                <div className="pt-2 text-xs md:text-sm text-foreground/60">
+                  <span className="font-medium text-foreground/70">Envío:</span> Por transportadora (Interrapidísimo, TCC, Servientrega, Coordinadora). El costo se calcula según destino.
                 </div>
-              </div>
 
               <div className="flex justify-between items-baseline text-xl md:text-2xl font-bold">
                 <span>Total</span>
