@@ -87,10 +87,9 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const getWhatsAppMessage = () => {
     const lines = cart.map(
       (item) =>
-        `- Producto: ${item.name}\n  Color: ${item.color}\n  Cantidad: ${item.quantity}\n  Subtotal: $${(item.price * item.quantity).toLocaleString("es-CO")} COP`
+        `• Producto: ${item.name}\n• Color: ${item.color}\n• Cantidad: ${item.quantity}\n• Precio unitario: $${item.price.toLocaleString("es-CO")} COP`
     );
-    const total = getTotalPrice();
-    return `Hola, quiero finalizar mi pedido de ALUDO:\n\n${lines.join("\n\n")}\n\nTotal: $${total.toLocaleString("es-CO")} COP\n\nQuedo atento/a a la confirmación.`;
+    return `🐾 *Nuevo pedido ALUDO*\n\n🛍️ *Detalle del pedido:*\n${lines.join("\n\n")}\n\n📦 *Datos de envío:*\nPor favor indícame los siguientes datos:\n• Nombre completo:\n• Cédula de ciudadanía:\n• Celular:\n• Dirección de entrega:\n• Ciudad:\n\n¡Gracias por tu compra! Enseguida te confirmamos tu pedido y el costo de envío 🙌`;
   };
 
   return (
