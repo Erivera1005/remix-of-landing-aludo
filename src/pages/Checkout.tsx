@@ -12,7 +12,7 @@ const Checkout = () => {
       return;
     }
     const message = encodeURIComponent(getWhatsAppMessage());
-    window.open(`https://wa.me/573102031996?text=${message}`, "_blank");
+    window.open(`https://wa.me/573128642686?text=${message}`, "_blank");
     navigate("/cart");
   }, []);
 
