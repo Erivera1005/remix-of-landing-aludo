@@ -89,7 +89,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       (item) =>
         `• Producto: ${item.name}\n• Color: ${item.color}\n• Cantidad: ${item.quantity}\n• Precio unitario: $${item.price.toLocaleString("es-CO")} COP`
     );
-    return `🐾 *Nuevo pedido ALUDO*\n\n🛍️ *Detalle del pedido:*\n${lines.join("\n\n")}\n\n📦 *Datos de envío:*\nPor favor indícame los siguientes datos:\n• Nombre completo:\n• Cédula de ciudadanía:\n• Celular:\n• Dirección de entrega:\n• Ciudad:\n\n¡Gracias por tu compra! Enseguida te confirmamos tu pedido y el costo de envío 🙌`;
+    return `🐾 *Nuevo pedido ALUDO* 🐾\n\n*Detalle del pedido:*\n${lines.join("\n\n")}\n\n¡Gracias por tu compra! Enseguida te confirmamos tu pedido y el costo de envío 🙌`;
   };
 
   return (
