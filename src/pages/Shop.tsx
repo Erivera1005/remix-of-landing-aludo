@@ -12,7 +12,9 @@ const products: Product[] = [
   {
     id: 1,
     name: "Collar Inteligente ALUDO - Dark Grey",
-    price: 109900,
+    price: 89900,
+    originalPrice: 119900,
+    discount: 25,
     image: collarDarkGrey,
     color: "Dark Grey",
     description: "Collar inteligente con IA integrada. Cuero vegano premium, herrajes reciclables. Talla ajustable 30-60cm. Fabricado en Colombia.",
@@ -20,7 +22,9 @@ const products: Product[] = [
   {
     id: 2,
     name: "Collar Inteligente ALUDO - Rosewood",
-    price: 109900,
+    price: 89900,
+    originalPrice: 119900,
+    discount: 25,
     image: collarRosewood,
     color: "Rosewood",
     description: "Collar inteligente con IA integrada. Cuero vegano premium, herrajes reciclables. Talla ajustable 30-60cm. Fabricado en Colombia.",
