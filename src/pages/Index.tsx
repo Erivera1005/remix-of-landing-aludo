@@ -250,7 +250,7 @@ const Index = () => {
                   Comprar Ahora
                 </Button>
               </Link>
-              <a href="https://wa.me/573102031996" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <a href="https://wa.me/573128642686" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                 <Button 
                   variant="outline"
                   size="lg"
