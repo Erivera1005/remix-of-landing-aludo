@@ -137,6 +137,7 @@ const Cart = () => {
                 <div className="pt-2 text-xs md:text-sm text-foreground/60">
                   <span className="font-medium text-foreground/70">Envío:</span> Por transportadora (Interrapidísimo, TCC, Servientrega, Coordinadora). El costo se calcula según destino.
                 </div>
+              </div>
 
               <div className="flex justify-between items-baseline text-xl md:text-2xl font-bold">
                 <span>Total</span>
