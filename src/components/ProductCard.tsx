@@ -47,10 +47,24 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
           </p>
         </div>
         
-        <div className="flex items-center justify-between gap-3 mt-3 md:mt-4">
-          <span className="text-xl md:text-2xl font-bold text-primary">
-            ${product.price.toLocaleString('es-CO')}
-          </span>
+        <div className="flex items-center justify-between gap-2 mt-3 md:mt-4">
+          <div className="flex flex-col gap-1">
+            <div className="flex items-center gap-2">
+              {product.discount && (
+                <span className="inline-flex items-center rounded-full bg-destructive px-2 py-0.5 text-[10px] md:text-xs font-bold text-destructive-foreground">
+                  {product.discount}% OFF
+                </span>
+              )}
+              {product.originalPrice && (
+                <span className="text-xs md:text-sm text-muted-foreground line-through">
+                  ${product.originalPrice.toLocaleString('es-CO')}
+                </span>
+              )}
+            </div>
+            <span className="text-xl md:text-2xl font-bold text-primary">
+              ${product.price.toLocaleString('es-CO')}
+            </span>
+          </div>
           <Button
             onClick={(e) => {
               e.preventDefault();
