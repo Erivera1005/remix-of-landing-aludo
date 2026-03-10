@@ -10,6 +10,7 @@ export interface Product {
   originalPrice?: number;
   discount?: number;
   image: string;
+  hoverImage?: string;
   color: string;
   description: string;
 }
