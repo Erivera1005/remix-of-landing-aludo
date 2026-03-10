@@ -19,7 +19,7 @@ const products = [
     name: "Collar Inteligente ALUDO",
     price: 109900,
     image: collarDarkGrey,
-    images: [collarDarkGrey, collarDarkGrey2, collarDarkGrey3],
+    images: [collarDarkGrey, collarDarkGrey2, collarDarkGrey3, collarDarkGreyLifestyle],
     color: "Dark Grey",
     colorName: "Dark Grey",
     description: "El Collar Inteligente ALUDO combina Inteligencia Artificial de última generación con materiales sostenibles de primera calidad. Diseñado y fabricado en Colombia para ofrecer identificación instantánea, protección y estilo a tu mascota.",
