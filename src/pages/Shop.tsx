@@ -29,6 +29,7 @@ const products: Product[] = [
     originalPrice: 119900,
     discount: 25,
     image: collarRosewood,
+    hoverImage: collarRosewoodLifestyle,
     color: "Rosewood",
     description: "Collar inteligente con IA integrada. Cuero vegano premium, herrajes reciclables. Talla ajustable 30-60cm. Fabricado en Colombia.",
   },
