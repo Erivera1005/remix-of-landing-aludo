@@ -5,6 +5,7 @@ import ProductCard, { Product } from "@/components/ProductCard";
 import { useCart } from "@/context/CartContext";
 import { Button } from "@/components/ui/button";
 import collarDarkGrey from "@/assets/collar-dark-grey.jpeg";
+import collarDarkGreyLifestyle from "@/assets/collar-darkgrey-lifestyle.png";
 import collarRosewood from "@/assets/collar-rosewood.jpeg";
 
 // Productos oficiales de ALUDO
