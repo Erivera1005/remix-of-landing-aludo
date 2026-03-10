@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead, { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Smartphone, Leaf, MapPin, Heart, ChevronRight, Nfc, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-dog.png";
@@ -10,6 +11,12 @@ import collarsImage from "@/assets/collars-product.jpeg";
 const Index = () => {
   return (
     <div className="min-h-screen overflow-hidden">
+      <SEOHead
+        title="Collar Inteligente para Perros con IA | ALUDO Colombia"
+        description="Collares inteligentes con IA para perros. Identificación digital instantánea, cuero vegano premium y fabricación colombiana. Sin batería, sin app. Envío a todo Colombia."
+        path="/"
+        jsonLd={[ORGANIZATION_SCHEMA, WEBSITE_SCHEMA]}
+      />
       <Header />
       
       {/* Hero Section */}
@@ -83,7 +90,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-primary/10 rounded-3xl blur-2xl animate-glow-pulse" />
                 <img
                   src={heroImage}
-                  alt="ALUDO Smart Collar"
+                  alt="Collar inteligente ALUDO con IA para perros - Identificación digital instantánea Colombia"
                   className="relative rounded-3xl shadow-2xl w-full animate-float"
                 />
               </div>
@@ -165,7 +172,7 @@ const Index = () => {
             <div className="relative group overflow-hidden rounded-2xl md:rounded-3xl glass-effect border border-primary/10 hover-lift animate-fade-in-up">
               <img
                 src={collarsImage}
-                alt="ALUDO Collars Collection"
+                alt="Colección de collares inteligentes ALUDO premium para perros Colombia"
                 className="w-full h-64 sm:h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
@@ -190,7 +197,7 @@ const Index = () => {
             <div className="relative group overflow-hidden rounded-2xl md:rounded-3xl glass-effect border border-primary/10 hover-lift animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
               <img
                 src={dogsGroup}
-                alt="Happy Dogs with ALUDO"
+                alt="Perros felices usando collares inteligentes ALUDO con IA - Talla única ajustable"
                 className="w-full h-64 sm:h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />

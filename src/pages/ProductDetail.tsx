@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead, { createProductSchema, createBreadcrumbSchema } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { ShoppingCart, Nfc, Leaf, Heart, Droplet, Shield, Ruler, Package, Plus, Minus } from "lucide-react";
@@ -162,6 +163,27 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title={`Collar Inteligente ALUDO ${currentProduct.colorName} | Collar con IA para Perros Colombia`}
+        description={`Compra el Collar Inteligente ALUDO ${currentProduct.colorName}. IA integrada, cuero vegano premium, talla ajustable 30-60cm. $${currentProduct.price.toLocaleString('es-CO')} COP. Envío a toda Colombia.`}
+        path={`/product/${currentProduct.id}`}
+        type="product"
+        jsonLd={[
+          createProductSchema({
+            id: currentProduct.id,
+            name: currentProduct.name,
+            price: currentProduct.price,
+            description: currentProduct.description,
+            image: currentProduct.image,
+            color: currentProduct.colorName,
+          }),
+          createBreadcrumbSchema([
+            { name: "Inicio", url: "/" },
+            { name: "Tienda", url: "/shop" },
+            { name: `Collar ALUDO ${currentProduct.colorName}`, url: `/product/${currentProduct.id}` },
+          ]),
+        ]}
+      />
       <Header />
       
       <main className="container mx-auto px-5 sm:px-6 pt-28 md:pt-32 pb-16 md:pb-20">
@@ -180,7 +202,7 @@ const ProductDetail = () => {
             <div className="relative aspect-square overflow-hidden rounded-2xl bg-card/50">
               <img
                 src={currentProduct.images[selectedImage]}
-                alt={currentProduct.name}
+                alt={`Collar inteligente ALUDO ${currentProduct.colorName} para perros - Vista ${selectedImage + 1}`}
                 loading="eager"
                 fetchPriority="high"
                 className="w-full h-full object-cover"

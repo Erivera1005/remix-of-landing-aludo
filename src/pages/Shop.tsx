@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead, { createBreadcrumbSchema, createProductSchema } from "@/components/SEOHead";
 import ProductCard, { Product } from "@/components/ProductCard";
 import { useCart } from "@/context/CartContext";
 import { Button } from "@/components/ui/button";
@@ -45,6 +46,28 @@ const Shop = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Comprar Collar Inteligente para Perros con IA | Tienda ALUDO Colombia"
+        description="Compra collares inteligentes con IA para perros. Cuero vegano premium, chip NFC integrado, talla ajustable 30-60cm. Envío a toda Colombia. Desde $89.900 COP."
+        path="/shop"
+        type="website"
+        jsonLd={[
+          createBreadcrumbSchema([
+            { name: "Inicio", url: "/" },
+            { name: "Tienda", url: "/shop" },
+          ]),
+          ...products.map((p) =>
+            createProductSchema({
+              id: p.id,
+              name: p.name,
+              price: p.price,
+              description: p.description,
+              image: p.image,
+              color: p.color,
+            })
+          ),
+        ]}
+      />
       <Header />
       
       <main className="container mx-auto px-5 sm:px-6 pt-28 md:pt-32 pb-16 md:pb-20">

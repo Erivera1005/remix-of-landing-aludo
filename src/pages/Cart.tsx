@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { Trash2, Plus, Minus, ShoppingBag, MessageCircle } from "lucide-react";
@@ -16,6 +17,12 @@ const Cart = () => {
   if (cart.length === 0) {
     return (
       <div className="min-h-screen">
+        <SEOHead
+          title="Carrito de Compras | ALUDO Colombia"
+          description="Revisa tu carrito de compras ALUDO. Collares inteligentes con IA para perros. Finaliza tu pedido por WhatsApp."
+          path="/cart"
+          noindex
+        />
         <Header />
         <main className="container mx-auto px-5 sm:px-6 pt-28 md:pt-32 pb-20">
           <div className="text-center space-y-5 md:space-y-6 animate-fade-in">
@@ -43,6 +50,12 @@ const Cart = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Carrito de Compras | ALUDO Colombia"
+        description="Revisa tu carrito de compras ALUDO. Collares inteligentes con IA para perros. Finaliza tu pedido por WhatsApp."
+        path="/cart"
+        noindex
+      />
       <Header />
       
       <main className="container mx-auto px-5 sm:px-6 pt-28 md:pt-32 pb-20">
@@ -62,7 +75,7 @@ const Cart = () => {
                 <div className="flex gap-4 md:gap-6">
                   <img
                     src={item.image}
-                    alt={item.name}
+                    alt={`Collar inteligente ALUDO ${item.color} para perros Colombia`}
                     className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-lg flex-shrink-0"
                   />
                   
