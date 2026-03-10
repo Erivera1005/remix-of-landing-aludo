@@ -163,6 +163,27 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title={`Collar Inteligente ALUDO ${currentProduct.colorName} | Collar con IA para Perros Colombia`}
+        description={`Compra el Collar Inteligente ALUDO ${currentProduct.colorName}. IA integrada, cuero vegano premium, talla ajustable 30-60cm. $${currentProduct.price.toLocaleString('es-CO')} COP. Envío a toda Colombia.`}
+        path={`/product/${currentProduct.id}`}
+        type="product"
+        jsonLd={[
+          createProductSchema({
+            id: currentProduct.id,
+            name: currentProduct.name,
+            price: currentProduct.price,
+            description: currentProduct.description,
+            image: currentProduct.image,
+            color: currentProduct.colorName,
+          }),
+          createBreadcrumbSchema([
+            { name: "Inicio", url: "/" },
+            { name: "Tienda", url: "/shop" },
+            { name: `Collar ALUDO ${currentProduct.colorName}`, url: `/product/${currentProduct.id}` },
+          ]),
+        ]}
+      />
       <Header />
       
       <main className="container mx-auto px-5 sm:px-6 pt-28 md:pt-32 pb-16 md:pb-20">

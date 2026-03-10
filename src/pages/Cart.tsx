@@ -75,7 +75,7 @@ const Cart = () => {
                 <div className="flex gap-4 md:gap-6">
                   <img
                     src={item.image}
-                    alt={item.name}
+                    alt={`Collar inteligente ALUDO ${item.color} para perros Colombia`}
                     className="w-20 h-20 md:w-24 md:h-24 object-cover rounded-lg flex-shrink-0"
                   />
                   
