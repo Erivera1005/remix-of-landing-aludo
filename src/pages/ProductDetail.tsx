@@ -202,7 +202,7 @@ const ProductDetail = () => {
             <div className="relative aspect-square overflow-hidden rounded-2xl bg-card/50">
               <img
                 src={currentProduct.images[selectedImage]}
-                alt={currentProduct.name}
+                alt={`Collar inteligente ALUDO ${currentProduct.colorName} para perros - Vista ${selectedImage + 1}`}
                 loading="eager"
                 fetchPriority="high"
                 className="w-full h-full object-cover"

@@ -27,7 +27,7 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
         <div className="relative aspect-square overflow-hidden">
           <img
             src={product.image}
-            alt={product.name}
+            alt={`Collar inteligente ALUDO ${product.color} para perros Colombia`}
             loading="lazy"
             decoding="async"
             className={`w-full h-full object-cover transition-opacity duration-500 ${product.hoverImage ? 'group-hover:opacity-0' : 'group-hover:scale-105 transition-transform duration-300'}`}
