@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import collarDarkGrey from "@/assets/collar-dark-grey.jpeg";
 import collarDarkGreyLifestyle from "@/assets/collar-darkgrey-lifestyle.png";
 import collarRosewood from "@/assets/collar-rosewood.jpeg";
+import collarRosewoodLifestyle from "@/assets/collar-rosewood-lifestyle.png";
 
 // Productos oficiales de ALUDO
 const products: Product[] = [
