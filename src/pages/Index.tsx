@@ -172,7 +172,7 @@ const Index = () => {
             <div className="relative group overflow-hidden rounded-2xl md:rounded-3xl glass-effect border border-primary/10 hover-lift animate-fade-in-up">
               <img
                 src={collarsImage}
-                alt="ALUDO Collars Collection"
+                alt="Colección de collares inteligentes ALUDO premium para perros Colombia"
                 className="w-full h-64 sm:h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
