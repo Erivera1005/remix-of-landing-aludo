@@ -12,6 +12,7 @@ import collarDarkGreyLifestyle from "@/assets/collar-darkgrey-lifestyle.png";
 import collarRosewood from "@/assets/collar-rosewood.jpeg";
 import collarRosewood2 from "@/assets/collar-rosewood-2.jpeg";
 import collarRosewood3 from "@/assets/collar-rosewood-3.jpeg";
+import collarRosewoodLifestyle from "@/assets/collar-rosewood-lifestyle.png";
 
 const products = [
   {
