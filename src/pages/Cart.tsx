@@ -50,6 +50,12 @@ const Cart = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Carrito de Compras | ALUDO Colombia"
+        description="Revisa tu carrito de compras ALUDO. Collares inteligentes con IA para perros. Finaliza tu pedido por WhatsApp."
+        path="/cart"
+        noindex
+      />
       <Header />
       
       <main className="container mx-auto px-5 sm:px-6 pt-28 md:pt-32 pb-20">
