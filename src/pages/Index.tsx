@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead, { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Smartphone, Leaf, MapPin, Heart, ChevronRight, Nfc, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-dog.png";
