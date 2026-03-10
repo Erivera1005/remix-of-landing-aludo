@@ -8,6 +8,7 @@ import { ShoppingCart, Nfc, Leaf, Heart, Droplet, Shield, Ruler, Package, Plus, 
 import collarDarkGrey from "@/assets/collar-dark-grey.jpeg";
 import collarDarkGrey2 from "@/assets/collar-darkgrey-2.jpeg";
 import collarDarkGrey3 from "@/assets/collar-darkgrey-3.jpeg";
+import collarDarkGreyLifestyle from "@/assets/collar-darkgrey-lifestyle.png";
 import collarRosewood from "@/assets/collar-rosewood.jpeg";
 import collarRosewood2 from "@/assets/collar-rosewood-2.jpeg";
 import collarRosewood3 from "@/assets/collar-rosewood-3.jpeg";
