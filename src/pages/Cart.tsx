@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { Trash2, Plus, Minus, ShoppingBag, MessageCircle } from "lucide-react";
