@@ -11,6 +11,12 @@ import collarsImage from "@/assets/collars-product.jpeg";
 const Index = () => {
   return (
     <div className="min-h-screen overflow-hidden">
+      <SEOHead
+        title="Collar Inteligente para Perros con IA | ALUDO Colombia"
+        description="Collares inteligentes con IA para perros. Identificación digital instantánea, cuero vegano premium y fabricación colombiana. Sin batería, sin app. Envío a todo Colombia."
+        path="/"
+        jsonLd={[ORGANIZATION_SCHEMA, WEBSITE_SCHEMA]}
+      />
       <Header />
       
       {/* Hero Section */}
