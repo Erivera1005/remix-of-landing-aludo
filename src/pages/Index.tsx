@@ -197,7 +197,7 @@ const Index = () => {
             <div className="relative group overflow-hidden rounded-2xl md:rounded-3xl glass-effect border border-primary/10 hover-lift animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
               <img
                 src={dogsGroup}
-                alt="Happy Dogs with ALUDO"
+                alt="Perros felices usando collares inteligentes ALUDO con IA - Talla única ajustable"
                 className="w-full h-64 sm:h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />

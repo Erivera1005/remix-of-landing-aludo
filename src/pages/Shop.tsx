@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEOHead, { createBreadcrumbSchema, createProductSchema } from "@/components/SEOHead";
 import ProductCard, { Product } from "@/components/ProductCard";
 import { useCart } from "@/context/CartContext";
 import { Button } from "@/components/ui/button";
