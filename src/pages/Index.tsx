@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead, { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { Smartphone, Leaf, MapPin, Heart, ChevronRight, Nfc, Sparkles } from "lucide-react";
+import { Smartphone, Leaf, HeartHandshake, Heart, ChevronRight, Nfc, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-dog.png";
 import dogsGroup from "@/assets/dogs-group.png";
 import collarsImage from "@/assets/collars-product.jpeg";
@@ -120,9 +120,9 @@ const Index = () => {
                 delay: '0s',
               },
               {
-                icon: MapPin,
-                title: "Comunicación Interactiva",
-                description: "Perfil digital protegido con inicio de sesión. Datos médicos, contacto y compromiso con el bienestar animal.",
+                icon: HeartHandshake,
+                title: "Bienestar Animal",
+                description: "Perfil digital protegido con inicio de sesión. Comunicación interactiva con datos médicos, contacto e información importante.",
                 delay: '0.1s',
               },
               {
