@@ -19,7 +19,9 @@ const products = [
   {
     id: 1,
     name: "Collar Inteligente ALUDO",
-    price: 109900,
+    price: 89900,
+    originalPrice: 119900,
+    discount: 25,
     image: collarDarkGrey,
     images: [collarDarkGrey, collarDarkGrey2, collarDarkGrey3, collarDarkGreyLifestyle],
     color: "Dark Grey",
