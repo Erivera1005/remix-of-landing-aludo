@@ -19,7 +19,9 @@ const products = [
   {
     id: 1,
     name: "Collar Inteligente ALUDO",
-    price: 109900,
+    price: 89900,
+    originalPrice: 119900,
+    discount: 25,
     image: collarDarkGrey,
     images: [collarDarkGrey, collarDarkGrey2, collarDarkGrey3, collarDarkGreyLifestyle],
     color: "Dark Grey",
@@ -76,7 +78,9 @@ const products = [
   {
     id: 2,
     name: "Collar Inteligente ALUDO",
-    price: 109900,
+    price: 89900,
+    originalPrice: 119900,
+    discount: 25,
     image: collarRosewood,
     images: [collarRosewood, collarRosewood2, collarRosewood3, collarRosewoodLifestyle],
     color: "Rosewood",
@@ -233,6 +237,18 @@ const ProductDetail = () => {
               <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-primary">
                 {currentProduct.name}
               </h1>
+              <div className="flex flex-wrap items-center gap-3 mb-4 md:mb-6">
+                {currentProduct.discount && (
+                  <span className="inline-flex items-center rounded-full bg-destructive px-2.5 py-1 text-xs md:text-sm font-bold text-destructive-foreground">
+                    {currentProduct.discount}% OFF
+                  </span>
+                )}
+                {currentProduct.originalPrice && (
+                  <span className="text-base md:text-lg text-muted-foreground line-through">
+                    ${currentProduct.originalPrice.toLocaleString('es-CO')} COP
+                  </span>
+                )}
+              </div>
               <p className="text-2xl md:text-3xl font-bold text-primary mb-4 md:mb-6">
                 ${currentProduct.price.toLocaleString('es-CO')} COP
               </p>
