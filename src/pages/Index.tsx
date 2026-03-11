@@ -107,7 +107,7 @@ const Index = () => {
               <span className="text-primary">Inteligencia Artificial</span> para el Bienestar Animal
             </h2>
             <p className="text-base md:text-xl text-foreground/70 max-w-3xl mx-auto">
-              Cada collar ALUDO integra tecnología de IA que almacena el perfil inteligente de tu mascota. Identificación instantánea sin necesidad de baterías ni aplicaciones.
+              Cada collar ALUDO integra tecnología de IA que almacena el perfil inteligente de tu mascota. Comunicación interactiva sin necesidad de baterías ni aplicaciones.
             </p>
           </div>
 
