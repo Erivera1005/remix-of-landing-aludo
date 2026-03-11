@@ -121,8 +121,8 @@ const Index = () => {
               },
               {
                 icon: MapPin,
-                title: "Identificación Inmediata",
-                description: "Perfil digital con datos médicos, contacto y toda la información importante.",
+                title: "Comunicación Interactiva",
+                description: "Perfil digital protegido con inicio de sesión. Datos médicos, contacto y compromiso con el bienestar animal.",
                 delay: '0.1s',
               },
               {
