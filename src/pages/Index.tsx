@@ -120,9 +120,9 @@ const Index = () => {
                 delay: '0s',
               },
               {
-                icon: MapPin,
-                title: "Comunicación Interactiva",
-                description: "Perfil digital protegido con inicio de sesión. Datos médicos, contacto y compromiso con el bienestar animal.",
+                icon: HeartHandshake,
+                title: "Bienestar Animal",
+                description: "Perfil digital protegido con inicio de sesión. Comunicación interactiva con datos médicos, contacto e información importante.",
                 delay: '0.1s',
               },
               {
