@@ -206,11 +206,11 @@ const Index = () => {
                   className="w-full h-72 sm:h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-primary">
+                <div className="absolute bottom-0 left-0 right-0 p-7 md:p-8">
+                  <h3 className="text-[1.6rem] md:text-3xl font-bold mb-2 md:mb-3 text-primary">
                     Talla Única Ajustable
                   </h3>
-                  <p className="text-base md:text-base text-primary/70 mb-4 md:mb-4">
+                  <p className="text-[1.05rem] md:text-base text-primary/70 mb-4">
                     De 30cm a 60cm. Se adapta desde perros pequeños hasta grandes
                   </p>
                   <Link to="/shop">
