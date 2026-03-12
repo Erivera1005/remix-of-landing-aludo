@@ -82,10 +82,10 @@ const Cart = () => {
                   <div className="flex-1 min-w-0 space-y-3 md:space-y-4">
                     <div className="flex justify-between items-start gap-2">
                       <div className="min-w-0">
-                        <h3 className="text-base md:text-xl font-semibold mb-0.5 md:mb-1 text-primary truncate">
+                        <h3 className="text-lg md:text-xl font-semibold mb-0.5 md:mb-1 text-primary truncate">
                           {item.name}
                         </h3>
-                        <p className="text-foreground/60 text-xs md:text-sm">
+                        <p className="text-foreground/60 text-sm md:text-sm">
                           Color: {item.color}
                         </p>
                       </div>

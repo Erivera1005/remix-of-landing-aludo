@@ -252,7 +252,7 @@ const ProductDetail = () => {
               <p className="text-2xl md:text-3xl font-bold text-primary mb-4 md:mb-6">
                 ${currentProduct.price.toLocaleString('es-CO')} COP
               </p>
-              <p className="text-foreground/70 text-base md:text-lg leading-relaxed">
+              <p className="text-foreground/70 text-[1.05rem] md:text-lg leading-relaxed">
                 {currentProduct.description}
               </p>
             </div>

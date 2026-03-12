@@ -249,10 +249,10 @@ const Index = () => {
         <div className="container mx-auto px-5 sm:px-6 relative z-10">
           <ScrollReveal>
             <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8 glass-effect p-8 sm:p-10 md:p-12 rounded-2xl md:rounded-3xl border border-primary/20">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary">
+              <h2 className="text-[1.85rem] sm:text-4xl md:text-5xl font-bold text-primary leading-tight">
                 Protege a tu Mascota Hoy
               </h2>
-              <p className="text-lg md:text-xl text-foreground/70">
+              <p className="text-[1.1rem] md:text-xl text-foreground/70 leading-relaxed">
                 Únete a los cientos de familias que ya confían en ALUDO para mantener a sus mascotas seguras e identificadas.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">

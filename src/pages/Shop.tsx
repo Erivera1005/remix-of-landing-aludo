@@ -74,10 +74,10 @@ const Shop = () => {
       <main className="container mx-auto px-5 sm:px-6 pt-28 md:pt-32 pb-16 md:pb-20">
         {/* Hero Section */}
         <div className="text-center mb-10 md:mb-16 animate-fade-in">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-5 md:mb-6 text-primary">
+          <h1 className="text-[1.85rem] sm:text-4xl md:text-6xl font-bold mb-5 md:mb-6 text-primary leading-tight">
             Collar Inteligente ALUDO
           </h1>
-          <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-[1.1rem] md:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed">
             Collares con Inteligencia Artificial integrada. Fabricados en Colombia con materiales ecológicos. 
             Cada compra dona $2.000 COP a fundaciones de rescate animal.
           </p>
