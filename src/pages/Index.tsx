@@ -39,7 +39,7 @@ const Index = () => {
                 </span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight">
+              <h1 className="text-[2.75rem] sm:text-5xl md:text-7xl font-bold leading-[1.1]">
                 El Futuro del Cuidado para tu Mascota
               </h1>
 
