@@ -92,7 +92,7 @@ const Index = () => {
                 <img
                   src={heroImage}
                   alt="Collar inteligente ALUDO con IA para perros - Identificación digital instantánea Colombia"
-                  className="relative rounded-3xl shadow-2xl w-full animate-float"
+                  className="relative rounded-3xl shadow-2xl w-full md:animate-float"
                 />
               </div>
             </div>
