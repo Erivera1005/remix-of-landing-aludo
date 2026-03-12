@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 import SEOHead, { createBreadcrumbSchema, createProductSchema } from "@/components/SEOHead";
 import ProductCard, { Product } from "@/components/ProductCard";
 import { useCart } from "@/context/CartContext";
@@ -73,23 +74,23 @@ const Shop = () => {
       <main className="container mx-auto px-5 sm:px-6 pt-28 md:pt-32 pb-16 md:pb-20">
         {/* Hero Section */}
         <div className="text-center mb-10 md:mb-16 animate-fade-in">
-          <h1 className="text-2xl sm:text-3xl md:text-6xl font-bold mb-4 md:mb-6 text-primary">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-5 md:mb-6 text-primary">
             Collar Inteligente ALUDO
           </h1>
-          <p className="text-base md:text-xl text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto">
             Collares con Inteligencia Artificial integrada. Fabricados en Colombia con materiales ecológicos. 
             Cada compra dona $2.000 COP a fundaciones de rescate animal.
           </p>
         </div>
 
         {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-8 md:mb-12 animate-fade-in-up">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-10 md:mb-12 animate-fade-in-up">
           <Button
             variant={filter === "all" ? "default" : "outline"}
             onClick={() => setFilter("all")}
             className={filter === "all" 
-              ? "bg-primary hover:bg-primary/90 text-white transition-all duration-300" 
-              : "border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
+              ? "bg-primary hover:bg-primary/90 text-white transition-all duration-300 text-base px-5 py-5" 
+              : "border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 text-base px-5 py-5"
             }
           >
             Todos
@@ -98,8 +99,8 @@ const Shop = () => {
             variant={filter === "darkgrey" ? "default" : "outline"}
             onClick={() => setFilter("darkgrey")}
             className={filter === "darkgrey" 
-              ? "bg-primary hover:bg-primary/90 text-white transition-all duration-300" 
-              : "border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
+              ? "bg-primary hover:bg-primary/90 text-white transition-all duration-300 text-base px-5 py-5" 
+              : "border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 text-base px-5 py-5"
             }
           >
             Dark Grey
@@ -108,8 +109,8 @@ const Shop = () => {
             variant={filter === "rosewood" ? "default" : "outline"}
             onClick={() => setFilter("rosewood")}
             className={filter === "rosewood" 
-              ? "bg-primary hover:bg-primary/90 text-white transition-all duration-300" 
-              : "border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
+              ? "bg-primary hover:bg-primary/90 text-white transition-all duration-300 text-base px-5 py-5" 
+              : "border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 text-base px-5 py-5"
             }
           >
             Rosewood
@@ -117,27 +118,29 @@ const Shop = () => {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 animate-fade-in-up">
-          {filteredProducts.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              onAddToCart={(product) => {
-                addToCart({
-                  id: product.id,
-                  name: product.name,
-                  price: product.price,
-                  image: product.image,
-                  color: product.color,
-                });
-              }}
-            />
-          ))}
-        </div>
+        <ScrollReveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {filteredProducts.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                onAddToCart={(product) => {
+                  addToCart({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    color: product.color,
+                  });
+                }}
+              />
+            ))}
+          </div>
+        </ScrollReveal>
 
         {filteredProducts.length === 0 && (
           <div className="text-center py-16 md:py-20">
-            <p className="text-base md:text-xl text-foreground/70">
+            <p className="text-lg md:text-xl text-foreground/70">
               No hay productos disponibles con este filtro.
             </p>
           </div>
