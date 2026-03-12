@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 import SEOHead, { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Smartphone, Leaf, HeartHandshake, Heart, ChevronRight, Nfc, Sparkles } from "lucide-react";
@@ -31,18 +32,18 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-6 md:space-y-8 animate-fade-in-up">
-              <div className="inline-flex items-center space-x-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full glass-effect border border-primary/20 animate-glow-pulse">
-                <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
-                <span className="text-xs md:text-sm text-primary/80">
+              <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-effect border border-primary/20 animate-glow-pulse">
+                <Sparkles className="w-4 h-4 md:w-4 md:h-4 text-primary" />
+                <span className="text-sm md:text-sm text-primary/80">
                   Tecnología de IA - Hecho en Colombia
                 </span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight">
                 El Futuro del Cuidado para tu Mascota
               </h1>
 
-              <p className="text-base md:text-xl text-foreground/70 leading-relaxed">
+              <p className="text-lg md:text-xl text-foreground/70 leading-relaxed">
                 Collares inteligentes con Inteligencia Artificial que permiten identificar y proteger a tu mascota al instante. Ecológicos, elegantes y sin batería.
               </p>
 
@@ -50,7 +51,7 @@ const Index = () => {
                 <Link to="/shop" className="w-full sm:w-auto">
                   <Button 
                     size="lg"
-                    className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white text-base md:text-lg px-6 md:px-8 py-5 md:py-6 hover:scale-105 transition-all duration-500 tech-glow group"
+                    className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white text-lg md:text-lg px-8 md:px-8 py-6 md:py-6 hover:scale-105 transition-all duration-500 tech-glow group"
                   >
                     Explorar Colección
                     <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-500" />
@@ -60,7 +61,7 @@ const Index = () => {
                   <Button 
                     variant="outline"
                     size="lg"
-                    className="w-full sm:w-auto border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 text-base md:text-lg px-6 md:px-8 py-5 md:py-6 transition-all duration-500"
+                    className="w-full sm:w-auto border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 text-lg md:text-lg px-8 md:px-8 py-6 md:py-6 transition-all duration-500"
                   >
                     Cómo Funciona
                   </Button>
@@ -69,17 +70,17 @@ const Index = () => {
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-4 md:gap-6 pt-6 md:pt-8">
-                <div className="text-center space-y-0.5 md:space-y-1">
-                  <p className="text-2xl md:text-3xl font-bold text-primary">IA</p>
-                  <p className="text-xs md:text-sm text-foreground/60">Sin batería</p>
+                <div className="text-center space-y-1">
+                  <p className="text-3xl md:text-3xl font-bold text-primary">IA</p>
+                  <p className="text-sm md:text-sm text-foreground/60">Sin batería</p>
                 </div>
-                <div className="text-center space-y-0.5 md:space-y-1">
-                  <p className="text-2xl md:text-3xl font-bold text-primary">100%</p>
-                  <p className="text-xs md:text-sm text-foreground/60">Ecológico</p>
+                <div className="text-center space-y-1">
+                  <p className="text-3xl md:text-3xl font-bold text-primary">100%</p>
+                  <p className="text-sm md:text-sm text-foreground/60">Ecológico</p>
                 </div>
-                <div className="text-center space-y-0.5 md:space-y-1">
-                  <p className="text-2xl md:text-3xl font-bold text-primary">$2K</p>
-                  <p className="text-xs md:text-sm text-foreground/60">Donación COP</p>
+                <div className="text-center space-y-1">
+                  <p className="text-3xl md:text-3xl font-bold text-primary">$2K</p>
+                  <p className="text-sm md:text-sm text-foreground/60">Donación COP</p>
                 </div>
               </div>
             </div>
@@ -100,18 +101,18 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-12 md:py-20 relative">
+      <section className="py-16 md:py-20 relative">
         <div className="container mx-auto px-5 sm:px-6">
-          <div className="text-center mb-10 md:mb-16 animate-fade-in-up">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6">
+          <ScrollReveal className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 md:mb-6">
               <span className="text-primary">Inteligencia Artificial</span> para el Bienestar Animal
             </h2>
-            <p className="text-base md:text-xl text-foreground/70 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto">
               Cada collar ALUDO integra tecnología de IA que almacena el perfil inteligente de tu mascota. Comunicación interactiva sin necesidad de baterías ni aplicaciones.
             </p>
-          </div>
+          </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
             {[
               {
                 icon: Nfc,
@@ -138,86 +139,91 @@ const Index = () => {
                 delay: '0.3s',
               },
             ].map((feature, index) => (
-              <div
+              <ScrollReveal
                 key={index}
-                className="glass-effect p-6 md:p-8 rounded-2xl border border-primary/10 hover-lift group animate-fade-in-up"
-                style={{ animationDelay: feature.delay }}
+                delay={feature.delay}
               >
-                <feature.icon className="w-10 h-10 md:w-12 md:h-12 text-primary mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-500" />
-                <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-primary group-hover:text-primary/80 transition-colors duration-500">
-                  {feature.title}
-                </h3>
-                <p className="text-sm md:text-base text-foreground/70">
-                  {feature.description}
-                </p>
-              </div>
+                <div className="glass-effect p-7 md:p-8 rounded-2xl border border-primary/10 hover-lift group h-full">
+                  <feature.icon className="w-12 h-12 md:w-12 md:h-12 text-primary mb-5 md:mb-6 group-hover:scale-110 transition-transform duration-500" />
+                  <h3 className="text-xl md:text-xl font-bold mb-3 md:mb-3 text-primary group-hover:text-primary/80 transition-colors duration-500">
+                    {feature.title}
+                  </h3>
+                  <p className="text-base md:text-base text-foreground/70">
+                    {feature.description}
+                  </p>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* Products Preview */}
-      <section className="py-12 md:py-20 relative">
+      <section className="py-16 md:py-20 relative">
         <div className="container mx-auto px-5 sm:px-6">
-          <div className="text-center mb-10 md:mb-16 animate-fade-in-up">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-primary">
+          <ScrollReveal className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 md:mb-6 text-primary">
               Nuestra Colección
             </h2>
-            <p className="text-base md:text-xl text-foreground/70 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto">
               Diseños únicos fabricados en Colombia con materiales ecológicos e Inteligencia Artificial integrada
             </p>
-          </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-10 md:mb-12">
-            <div className="relative group overflow-hidden rounded-2xl md:rounded-3xl glass-effect border border-primary/10 hover-lift animate-fade-in-up">
-              <img
-                src={collarsImage}
-                alt="Colección de collares inteligentes ALUDO premium para perros Colombia"
-                className="w-full h-64 sm:h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8">
-                <h3 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-primary">
-                  Colección Premium
-                </h3>
-                <p className="text-sm md:text-base text-primary/70 mb-3 md:mb-4">
-                  Cuero vegano premium con IA integrada y herrajes reciclables
-                </p>
-                <Link to="/shop">
-                  <Button 
-                    className="bg-primary hover:bg-primary/90 text-white group transition-all duration-500"
-                  >
-                    Ver Más
-                    <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-500" />
-                  </Button>
-                </Link>
+            <ScrollReveal>
+              <div className="relative group overflow-hidden rounded-2xl md:rounded-3xl glass-effect border border-primary/10 hover-lift">
+                <img
+                  src={collarsImage}
+                  alt="Colección de collares inteligentes ALUDO premium para perros Colombia"
+                  className="w-full h-72 sm:h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-primary">
+                    Colección Premium
+                  </h3>
+                  <p className="text-base md:text-base text-primary/70 mb-4 md:mb-4">
+                    Cuero vegano premium con IA integrada y herrajes reciclables
+                  </p>
+                  <Link to="/shop">
+                    <Button 
+                      className="bg-primary hover:bg-primary/90 text-white group transition-all duration-500 text-base px-6 py-5"
+                    >
+                      Ver Más
+                      <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-500" />
+                    </Button>
+                  </Link>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
 
-            <div className="relative group overflow-hidden rounded-2xl md:rounded-3xl glass-effect border border-primary/10 hover-lift animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-              <img
-                src={dogsGroup}
-                alt="Perros felices usando collares inteligentes ALUDO con IA - Talla única ajustable"
-                className="w-full h-64 sm:h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8">
-                <h3 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-primary">
-                  Talla Única Ajustable
-                </h3>
-                <p className="text-sm md:text-base text-primary/70 mb-3 md:mb-4">
-                  De 30cm a 60cm. Se adapta desde perros pequeños hasta grandes
-                </p>
-                <Link to="/shop">
-                  <Button 
-                    className="bg-primary hover:bg-primary/90 text-white group transition-all duration-500"
-                  >
-                    Explorar
-                    <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-500" />
-                  </Button>
-                </Link>
+            <ScrollReveal delay="0.1s">
+              <div className="relative group overflow-hidden rounded-2xl md:rounded-3xl glass-effect border border-primary/10 hover-lift">
+                <img
+                  src={dogsGroup}
+                  alt="Perros felices usando collares inteligentes ALUDO con IA - Talla única ajustable"
+                  className="w-full h-72 sm:h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-primary">
+                    Talla Única Ajustable
+                  </h3>
+                  <p className="text-base md:text-base text-primary/70 mb-4 md:mb-4">
+                    De 30cm a 60cm. Se adapta desde perros pequeños hasta grandes
+                  </p>
+                  <Link to="/shop">
+                    <Button 
+                      className="bg-primary hover:bg-primary/90 text-white group transition-all duration-500 text-base px-6 py-5"
+                    >
+                      Explorar
+                      <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-500" />
+                    </Button>
+                  </Link>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
 
           <div className="text-center">
@@ -225,7 +231,7 @@ const Index = () => {
               <Button 
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 text-base md:text-lg px-8 md:px-12 py-5 md:py-6 hover:scale-105 transition-all duration-500"
+                className="w-full sm:w-auto border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 text-lg md:text-lg px-8 md:px-12 py-6 md:py-6 hover:scale-105 transition-all duration-500"
               >
                 Ver Toda la Colección
               </Button>
@@ -235,39 +241,41 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 md:py-20 relative overflow-hidden">
+      <section className="py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10" />
         </div>
         
         <div className="container mx-auto px-5 sm:px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8 glass-effect p-6 sm:p-8 md:p-12 rounded-2xl md:rounded-3xl border border-primary/20 animate-fade-in-up">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-primary">
-              Protege a tu Mascota Hoy
-            </h2>
-            <p className="text-base md:text-xl text-foreground/70">
-              Únete a los cientos de familias que ya confían en ALUDO para mantener a sus mascotas seguras e identificadas.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-              <Link to="/shop" className="w-full sm:w-auto">
-                <Button 
-                  size="lg"
-                  className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white text-base md:text-lg px-8 md:px-12 py-5 md:py-6 hover:scale-105 transition-all duration-500 tech-glow"
-                >
-                  Comprar Ahora
-                </Button>
-              </Link>
-              <a href="https://wa.me/573128642686" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                <Button 
-                  variant="outline"
-                  size="lg"
-                  className="w-full sm:w-auto border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 text-base md:text-lg px-8 md:px-12 py-5 md:py-6 transition-all duration-500"
-                >
-                  Conocer Más
-                </Button>
-              </a>
+          <ScrollReveal>
+            <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8 glass-effect p-8 sm:p-10 md:p-12 rounded-2xl md:rounded-3xl border border-primary/20">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary">
+                Protege a tu Mascota Hoy
+              </h2>
+              <p className="text-lg md:text-xl text-foreground/70">
+                Únete a los cientos de familias que ya confían en ALUDO para mantener a sus mascotas seguras e identificadas.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+                <Link to="/shop" className="w-full sm:w-auto">
+                  <Button 
+                    size="lg"
+                    className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white text-lg md:text-lg px-8 md:px-12 py-6 md:py-6 hover:scale-105 transition-all duration-500 tech-glow"
+                  >
+                    Comprar Ahora
+                  </Button>
+                </Link>
+                <a href="https://wa.me/573128642686" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                  <Button 
+                    variant="outline"
+                    size="lg"
+                    className="w-full sm:w-auto border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 text-lg md:text-lg px-8 md:px-12 py-6 md:py-6 transition-all duration-500"
+                  >
+                    Conocer Más
+                  </Button>
+                </a>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
