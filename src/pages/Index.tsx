@@ -43,7 +43,7 @@ const Index = () => {
                 El Futuro del Cuidado para tu Mascota
               </h1>
 
-              <p className="text-lg md:text-xl text-foreground/70 leading-relaxed">
+              <p className="text-[1.15rem] md:text-xl text-foreground/70 leading-relaxed">
                 Collares inteligentes con Inteligencia Artificial que permiten identificar y proteger a tu mascota al instante. Ecológicos, elegantes y sin batería.
               </p>
 
