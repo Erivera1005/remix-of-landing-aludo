@@ -234,7 +234,7 @@ const ProductDetail = () => {
           {/* Product Info */}
           <div className="space-y-6 md:space-y-8 animate-fade-in">
             <div>
-              <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-primary">
+              <h1 className="text-[1.75rem] sm:text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-primary leading-tight">
                 {currentProduct.name}
               </h1>
               <div className="flex flex-wrap items-center gap-3 mb-4 md:mb-6">
@@ -252,7 +252,7 @@ const ProductDetail = () => {
               <p className="text-2xl md:text-3xl font-bold text-primary mb-4 md:mb-6">
                 ${currentProduct.price.toLocaleString('es-CO')} COP
               </p>
-              <p className="text-foreground/70 text-base md:text-lg leading-relaxed">
+              <p className="text-foreground/70 text-[1.05rem] md:text-lg leading-relaxed">
                 {currentProduct.description}
               </p>
             </div>

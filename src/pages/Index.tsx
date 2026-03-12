@@ -39,11 +39,11 @@ const Index = () => {
                 </span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight">
+              <h1 className="text-[2.75rem] sm:text-5xl md:text-7xl font-bold leading-[1.1]">
                 El Futuro del Cuidado para tu Mascota
               </h1>
 
-              <p className="text-lg md:text-xl text-foreground/70 leading-relaxed">
+              <p className="text-[1.15rem] md:text-xl text-foreground/70 leading-relaxed">
                 Collares inteligentes con Inteligencia Artificial que permiten identificar y proteger a tu mascota al instante. Ecológicos, elegantes y sin batería.
               </p>
 
@@ -92,7 +92,7 @@ const Index = () => {
                 <img
                   src={heroImage}
                   alt="Collar inteligente ALUDO con IA para perros - Identificación digital instantánea Colombia"
-                  className="relative rounded-3xl shadow-2xl w-full animate-float"
+                  className="relative rounded-3xl shadow-2xl w-full md:animate-float"
                 />
               </div>
             </div>
@@ -104,15 +104,15 @@ const Index = () => {
       <section className="py-16 md:py-20 relative">
         <div className="container mx-auto px-5 sm:px-6">
           <ScrollReveal className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 md:mb-6">
+            <h2 className="text-[1.85rem] sm:text-4xl md:text-5xl font-bold mb-5 md:mb-6 leading-tight">
               <span className="text-primary">Inteligencia Artificial</span> para el Bienestar Animal
             </h2>
-            <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto">
+            <p className="text-[1.1rem] md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
               Cada collar ALUDO integra tecnología de IA que almacena el perfil inteligente de tu mascota. Comunicación interactiva sin necesidad de baterías ni aplicaciones.
             </p>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
               {
                 icon: Nfc,
@@ -143,12 +143,12 @@ const Index = () => {
                 key={index}
                 delay={feature.delay}
               >
-                <div className="glass-effect p-7 md:p-8 rounded-2xl border border-primary/10 hover-lift group h-full">
-                  <feature.icon className="w-12 h-12 md:w-12 md:h-12 text-primary mb-5 md:mb-6 group-hover:scale-110 transition-transform duration-500" />
-                  <h3 className="text-xl md:text-xl font-bold mb-3 md:mb-3 text-primary group-hover:text-primary/80 transition-colors duration-500">
+                <div className="glass-effect p-8 md:p-8 rounded-2xl border border-primary/10 hover-lift group h-full">
+                  <feature.icon className="w-14 h-14 md:w-12 md:h-12 text-primary mb-5 md:mb-6 group-hover:scale-110 transition-transform duration-500" />
+                  <h3 className="text-[1.3rem] md:text-xl font-bold mb-3 text-primary group-hover:text-primary/80 transition-colors duration-500">
                     {feature.title}
                   </h3>
-                  <p className="text-base md:text-base text-foreground/70">
+                  <p className="text-[1.05rem] md:text-base text-foreground/70 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -162,10 +162,10 @@ const Index = () => {
       <section className="py-16 md:py-20 relative">
         <div className="container mx-auto px-5 sm:px-6">
           <ScrollReveal className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 md:mb-6 text-primary">
+            <h2 className="text-[1.85rem] sm:text-4xl md:text-5xl font-bold mb-5 md:mb-6 text-primary leading-tight">
               Nuestra Colección
             </h2>
-            <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto">
+            <p className="text-[1.1rem] md:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed">
               Diseños únicos fabricados en Colombia con materiales ecológicos e Inteligencia Artificial integrada
             </p>
           </ScrollReveal>
@@ -179,11 +179,11 @@ const Index = () => {
                   className="w-full h-72 sm:h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-primary">
+                <div className="absolute bottom-0 left-0 right-0 p-7 md:p-8">
+                  <h3 className="text-[1.6rem] md:text-3xl font-bold mb-2 md:mb-3 text-primary">
                     Colección Premium
                   </h3>
-                  <p className="text-base md:text-base text-primary/70 mb-4 md:mb-4">
+                  <p className="text-[1.05rem] md:text-base text-primary/70 mb-4">
                     Cuero vegano premium con IA integrada y herrajes reciclables
                   </p>
                   <Link to="/shop">
@@ -206,11 +206,11 @@ const Index = () => {
                   className="w-full h-72 sm:h-80 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3 text-primary">
+                <div className="absolute bottom-0 left-0 right-0 p-7 md:p-8">
+                  <h3 className="text-[1.6rem] md:text-3xl font-bold mb-2 md:mb-3 text-primary">
                     Talla Única Ajustable
                   </h3>
-                  <p className="text-base md:text-base text-primary/70 mb-4 md:mb-4">
+                  <p className="text-[1.05rem] md:text-base text-primary/70 mb-4">
                     De 30cm a 60cm. Se adapta desde perros pequeños hasta grandes
                   </p>
                   <Link to="/shop">
@@ -249,10 +249,10 @@ const Index = () => {
         <div className="container mx-auto px-5 sm:px-6 relative z-10">
           <ScrollReveal>
             <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8 glass-effect p-8 sm:p-10 md:p-12 rounded-2xl md:rounded-3xl border border-primary/20">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary">
+              <h2 className="text-[1.85rem] sm:text-4xl md:text-5xl font-bold text-primary leading-tight">
                 Protege a tu Mascota Hoy
               </h2>
-              <p className="text-lg md:text-xl text-foreground/70">
+              <p className="text-[1.1rem] md:text-xl text-foreground/70 leading-relaxed">
                 Únete a los cientos de familias que ya confían en ALUDO para mantener a sus mascotas seguras e identificadas.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
