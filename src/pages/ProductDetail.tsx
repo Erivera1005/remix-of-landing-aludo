@@ -234,7 +234,7 @@ const ProductDetail = () => {
           {/* Product Info */}
           <div className="space-y-6 md:space-y-8 animate-fade-in">
             <div>
-              <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-primary">
+              <h1 className="text-[1.75rem] sm:text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-primary leading-tight">
                 {currentProduct.name}
               </h1>
               <div className="flex flex-wrap items-center gap-3 mb-4 md:mb-6">
