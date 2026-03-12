@@ -59,7 +59,7 @@ const Cart = () => {
       <Header />
       
       <main className="container mx-auto px-5 sm:px-6 pt-28 md:pt-32 pb-20">
-        <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-8 md:mb-12 gradient-text animate-fade-in">
+        <h1 className="text-[1.85rem] sm:text-3xl md:text-5xl font-bold mb-8 md:mb-12 gradient-text animate-fade-in leading-tight">
           Tu Carrito
         </h1>
 
