@@ -162,10 +162,10 @@ const Index = () => {
       <section className="py-16 md:py-20 relative">
         <div className="container mx-auto px-5 sm:px-6">
           <ScrollReveal className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 md:mb-6 text-primary">
+            <h2 className="text-[1.85rem] sm:text-4xl md:text-5xl font-bold mb-5 md:mb-6 text-primary leading-tight">
               Nuestra Colección
             </h2>
-            <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto">
+            <p className="text-[1.1rem] md:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed">
               Diseños únicos fabricados en Colombia con materiales ecológicos e Inteligencia Artificial integrada
             </p>
           </ScrollReveal>
