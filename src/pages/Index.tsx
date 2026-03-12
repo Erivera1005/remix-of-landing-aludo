@@ -143,12 +143,12 @@ const Index = () => {
                 key={index}
                 delay={feature.delay}
               >
-                <div className="glass-effect p-7 md:p-8 rounded-2xl border border-primary/10 hover-lift group h-full">
-                  <feature.icon className="w-12 h-12 md:w-12 md:h-12 text-primary mb-5 md:mb-6 group-hover:scale-110 transition-transform duration-500" />
-                  <h3 className="text-xl md:text-xl font-bold mb-3 md:mb-3 text-primary group-hover:text-primary/80 transition-colors duration-500">
+                <div className="glass-effect p-8 md:p-8 rounded-2xl border border-primary/10 hover-lift group h-full">
+                  <feature.icon className="w-14 h-14 md:w-12 md:h-12 text-primary mb-5 md:mb-6 group-hover:scale-110 transition-transform duration-500" />
+                  <h3 className="text-[1.3rem] md:text-xl font-bold mb-3 text-primary group-hover:text-primary/80 transition-colors duration-500">
                     {feature.title}
                   </h3>
-                  <p className="text-base md:text-base text-foreground/70">
+                  <p className="text-[1.05rem] md:text-base text-foreground/70 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
