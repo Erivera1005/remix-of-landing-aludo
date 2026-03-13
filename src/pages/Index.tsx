@@ -57,7 +57,7 @@ const Index = () => {
                     <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-500" />
                   </Button>
                 </Link>
-                <a href="https://www.instagram.com/reel/DMLae2GRQmc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <a href="https://www.instagram.com/reel/DRs6DyCjMpW/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                   <Button 
                     variant="outline"
                     size="lg"
