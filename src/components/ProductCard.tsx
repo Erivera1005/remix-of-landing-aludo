@@ -73,7 +73,7 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
               }`}
             />
           )}
-          <div className="absolute inset-0 from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t" />
+          <div className="absolute inset-0 from-background/80 to-transparent opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t" />
         </div>
       </Link>
       
