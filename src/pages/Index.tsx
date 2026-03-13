@@ -53,7 +53,7 @@ const Index = () => {
                     size="lg"
                     className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white text-lg md:text-lg px-8 md:px-8 py-6 md:py-6 hover:scale-105 transition-all duration-500 tech-glow group"
                   >
-                    Explorar Colección
+                    Ver Productos
                     <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-500" />
                   </Button>
                 </Link>
