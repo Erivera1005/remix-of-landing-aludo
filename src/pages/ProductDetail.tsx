@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { trackViewContent, trackAddToCart } from "@/lib/metaPixel";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead, { createProductSchema, createBreadcrumbSchema } from "@/components/SEOHead";
