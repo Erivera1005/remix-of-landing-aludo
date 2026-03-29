@@ -5,11 +5,16 @@ import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { Trash2, Plus, Minus, ShoppingBag, MessageCircle } from "lucide-react";
+import { trackInitiateCheckout } from "@/lib/metaPixel";
 
 const Cart = () => {
   const { cart, removeFromCart, updateQuantity, getTotalPrice, getWhatsAppMessage } = useCart();
 
   const handleFinalizarPedido = () => {
+    trackInitiateCheckout(
+      getTotalPrice(),
+      cart.map(item => ({ id: item.id, quantity: item.quantity }))
+    );
     const message = encodeURIComponent(getWhatsAppMessage());
     window.open(`https://wa.me/573128642686?text=${message}`, "_blank");
   };

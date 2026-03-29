@@ -145,6 +145,17 @@ const ProductDetail = () => {
   const [selectedImage, setSelectedImage] = useState<number>(0);
   const currentProduct = products.find(p => p.id === Number(id)) || products[0];
   
+  useEffect(() => {
+    if (currentProduct) {
+      trackViewContent({
+        id: currentProduct.id,
+        name: currentProduct.name,
+        price: currentProduct.price,
+        color: currentProduct.colorName,
+      });
+    }
+  }, [currentProduct?.id]);
+
   const handleAddToCart = () => {
     if (currentProduct) {
       addToCart({
@@ -154,6 +165,13 @@ const ProductDetail = () => {
         image: currentProduct.image,
         color: currentProduct.colorName,
       }, quantity);
+      trackAddToCart({
+        id: currentProduct.id,
+        name: currentProduct.name,
+        price: currentProduct.price,
+        color: currentProduct.colorName,
+        quantity,
+      });
       setQuantity(1);
     }
   };
