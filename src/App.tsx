@@ -10,6 +10,7 @@ import Shop from "./pages/Shop";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
+import ShippingData from "./pages/ShippingData";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
