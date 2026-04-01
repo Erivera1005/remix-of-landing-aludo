@@ -1,22 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { Trash2, Plus, Minus, ShoppingBag, MessageCircle } from "lucide-react";
-import { trackInitiateCheckout } from "@/lib/metaPixel";
 
 const Cart = () => {
-  const { cart, removeFromCart, updateQuantity, getTotalPrice, getWhatsAppMessage } = useCart();
+  const { cart, removeFromCart, updateQuantity, getTotalPrice } = useCart();
+  const navigate = useNavigate();
 
   const handleFinalizarPedido = () => {
-    trackInitiateCheckout(
-      getTotalPrice(),
-      cart.map(item => ({ id: item.id, quantity: item.quantity }))
-    );
-    const message = encodeURIComponent(getWhatsAppMessage());
-    window.open(`https://wa.me/573128642686?text=${message}`, "_blank");
+    navigate("/datos-envio");
   };
 
   if (cart.length === 0) {
