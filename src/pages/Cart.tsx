@@ -11,12 +11,7 @@ const Cart = () => {
   const { cart, removeFromCart, updateQuantity, getTotalPrice, getWhatsAppMessage } = useCart();
 
   const handleFinalizarPedido = () => {
-    trackInitiateCheckout(
-      getTotalPrice(),
-      cart.map(item => ({ id: item.id, quantity: item.quantity }))
-    );
-    const message = encodeURIComponent(getWhatsAppMessage());
-    window.open(`https://wa.me/573128642686?text=${message}`, "_blank");
+    navigate("/datos-envio");
   };
 
   if (cart.length === 0) {
