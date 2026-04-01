@@ -7,7 +7,8 @@ import { useCart } from "@/context/CartContext";
 import { Trash2, Plus, Minus, ShoppingBag, MessageCircle } from "lucide-react";
 
 const Cart = () => {
-  const { cart, removeFromCart, updateQuantity, getTotalPrice, getWhatsAppMessage } = useCart();
+  const { cart, removeFromCart, updateQuantity, getTotalPrice } = useCart();
+  const navigate = useNavigate();
 
   const handleFinalizarPedido = () => {
     navigate("/datos-envio");
