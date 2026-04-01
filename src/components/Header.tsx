@@ -26,7 +26,12 @@ const Header = () => {
 
   const openMenu = () => {
     setIsMenuOpen(true);
-    setIsAnimating(true);
+    // Delay to allow the browser to render the initial closed state before animating in
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setIsAnimating(true);
+      });
+    });
   };
 
   const closeMenu = () => {
