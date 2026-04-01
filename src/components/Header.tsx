@@ -62,9 +62,26 @@ const Header = () => {
 
             <button
               onClick={() => (isMenuOpen ? closeMenu() : openMenu())}
-              className="md:hidden text-foreground hover:text-primary transition-colors duration-200 relative z-[60]"
+              className="md:hidden text-foreground hover:text-primary transition-colors duration-200 relative z-[60] w-6 h-6"
+              aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <span className="absolute inset-0 flex flex-col items-center justify-center">
+                <span
+                  className={`block h-[2px] w-5 bg-current rounded-full transition-all duration-300 ease-[cubic-bezier(.2,.9,.2,1)] ${
+                    isMenuOpen ? "translate-y-0 rotate-45" : "-translate-y-[6px] rotate-0"
+                  }`}
+                />
+                <span
+                  className={`block h-[2px] w-5 bg-current rounded-full transition-all duration-300 ease-[cubic-bezier(.2,.9,.2,1)] ${
+                    isMenuOpen ? "opacity-0 scale-x-0" : "opacity-100 scale-x-100"
+                  }`}
+                />
+                <span
+                  className={`block h-[2px] w-5 bg-current rounded-full transition-all duration-300 ease-[cubic-bezier(.2,.9,.2,1)] ${
+                    isMenuOpen ? "translate-y-0 -rotate-45" : "translate-y-[6px] rotate-0"
+                  }`}
+                />
+              </span>
             </button>
           </div>
         </div>
