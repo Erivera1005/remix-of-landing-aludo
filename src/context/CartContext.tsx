@@ -89,7 +89,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       (item) =>
         `• Producto: ${item.name}\n• Color: ${item.color}\n• Cantidad: ${item.quantity}\n• Precio unitario: $${item.price.toLocaleString("es-CO")} COP`
     );
-    return `🛒 *Pedido:*\n${lines.join("\n\n")}\n\n¡Gracias por tu compra! Enseguida te confirmamos tu pedido y el costo de envío 🙌`;
+    const total = getTotalPrice();
+    return `🛒 *Pedido:*\n${lines.join("\n\n")}\n\n💰 *Total: $${total.toLocaleString("es-CO")} COP*\n\n¡Gracias por tu compra! Enseguida te confirmamos tu pedido y el costo de envío 🙌`;
   };
 
   return (
