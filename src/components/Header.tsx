@@ -8,7 +8,7 @@ import { useReducedMotionToggle } from "@/hooks/useReducedMotionToggle";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-  const { cart } = useCart();
+  const { cart, openCart } = useCart();
   const cartItemsCount = cart.reduce((acc, item) => acc + item.quantity, 0);
   const { reduced, toggle } = useReducedMotionToggle();
   const location = useLocation();
@@ -55,14 +55,14 @@ const Header = () => {
               <Link to="/shop" className="text-foreground/70 hover:text-primary transition-colors duration-200 font-medium">
                 Tienda
               </Link>
-              <Link to="/cart" className="relative text-foreground/70 hover:text-primary transition-colors duration-200">
+              <button onClick={openCart} className="relative text-foreground/70 hover:text-primary transition-colors duration-200">
                 <ShoppingCart className="w-5 h-5" />
                 {cartItemsCount > 0 && (
                   <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">
                     {cartItemsCount}
                   </span>
                 )}
-              </Link>
+              </button>
             </nav>
 
             <button
@@ -138,10 +138,9 @@ const Header = () => {
 
               <div className="mx-6 h-px bg-border" />
 
-              <Link
-                to="/cart"
-                onClick={closeMenu}
-                className="flex items-center gap-4 px-6 py-4 text-foreground/70 hover:text-primary hover:bg-primary/5 transition-all duration-200 font-medium text-lg tracking-wide"
+              <button
+                onClick={() => { closeMenu(); openCart(); }}
+                className="flex items-center gap-4 px-6 py-4 text-foreground/70 hover:text-primary hover:bg-primary/5 transition-all duration-200 font-medium text-lg tracking-wide w-full"
               >
                 <ShoppingCart className="w-5 h-5" />
                 <span>Carrito</span>
@@ -150,7 +149,7 @@ const Header = () => {
                     {cartItemsCount}
                   </span>
                 )}
-              </Link>
+              </button>
             </div>
 
             {/* Footer */}
