@@ -18,6 +18,9 @@ interface CartContextType {
   clearCart: () => void;
   getTotalPrice: () => number;
   getWhatsAppMessage: () => string;
+  isCartOpen: boolean;
+  openCart: () => void;
+  closeCart: () => void;
 }
 
 const CART_STORAGE_KEY = "aludo_cart";
@@ -35,10 +38,14 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<CartItem[]>(loadCartFromStorage);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
     localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
   }, [cart]);
+
+  const openCart = () => setIsCartOpen(true);
+  const closeCart = () => setIsCartOpen(false);
 
   const addToCart = (item: Omit<CartItem, "quantity">, quantity: number = 1) => {
     setCart((prevCart) => {
@@ -60,6 +67,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       });
       return [...prevCart, { ...item, quantity }];
     });
+    // Auto-open cart drawer
+    openCart();
   };
 
   const removeFromCart = (id: number) => {
@@ -103,6 +112,9 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         clearCart,
         getTotalPrice,
         getWhatsAppMessage,
+        isCartOpen,
+        openCart,
+        closeCart,
       }}
     >
       {children}
