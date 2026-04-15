@@ -162,7 +162,7 @@ const ShippingData = () => {
               className="w-full text-base md:text-lg py-5 md:py-6 hover:scale-105 transition-all duration-300 tech-glow"
             >
               <MessageCircle className="w-5 h-5 mr-2" />
-              Continuar al pedido
+              Finalizar pedido
             </Button>
           </form>
         </div>
