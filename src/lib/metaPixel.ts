@@ -54,3 +54,12 @@ export const trackInitiateCheckout = (totalValue: number, items: { id: number; q
     });
   }
 };
+
+export const trackLead = (value: number) => {
+  if (typeof window.fbq === 'function') {
+    window.fbq('track', 'Lead', {
+      value,
+      currency: 'COP',
+    });
+  }
+};
