@@ -1,5 +1,4 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
-import { toast } from "sonner";
 
 export interface CartItem {
   id: number;
