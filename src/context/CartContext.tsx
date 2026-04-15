@@ -51,9 +51,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
       const existingItem = prevCart.find((cartItem) => cartItem.id === item.id && cartItem.color === item.color);
       
       if (existingItem) {
-        toast.success("Cantidad actualizada en el carrito", {
-          description: `${item.name} x${existingItem.quantity + quantity}`,
-        });
         return prevCart.map((cartItem) =>
           cartItem.id === item.id && cartItem.color === item.color
             ? { ...cartItem, quantity: cartItem.quantity + quantity }
@@ -61,9 +58,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         );
       }
       
-      toast.success("Añadido al carrito", {
-        description: `${item.name} x${quantity}`,
-      });
       return [...prevCart, { ...item, quantity }];
     });
     // Auto-open cart drawer
@@ -72,7 +66,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   const removeFromCart = (id: number) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
-    toast.info("Producto eliminado del carrito");
   };
 
   const updateQuantity = (id: number, quantity: number) => {
