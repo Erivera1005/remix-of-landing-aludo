@@ -7,6 +7,7 @@ interface ShippingInfo {
   name: string;
   phone: string;
   document: string;
+  city: string;
   address: string;
   additionalInfo?: string;
 }
@@ -50,6 +51,7 @@ const Checkout = () => {
       `👤 Nombre: ${shipping.name}`,
       `📄 Cédula: ${shipping.document}`,
       `📞 Teléfono: ${shipping.phone}`,
+      `🏙️ Ciudad: ${shipping.city}`,
       `📍 Dirección: ${shipping.address}`,
     ];
 
