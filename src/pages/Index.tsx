@@ -211,7 +211,7 @@ const Index = () => {
                     Talla Única Ajustable
                   </h3>
                   <p className="text-[1.05rem] md:text-base text-primary/70 mb-4">
-                    De 30cm a 60cm. Se adapta desde perros pequeños hasta grandes
+                    De 28cm a 57cm. Se adapta desde perros pequeños hasta grandes
                   </p>
                   <Link to="/shop">
                     <Button 
