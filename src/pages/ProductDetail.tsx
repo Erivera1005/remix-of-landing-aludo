@@ -15,6 +15,7 @@ import collarRosewood from "@/assets/collar-rosewood.jpeg";
 import collarRosewood2 from "@/assets/collar-rosewood-2.jpeg";
 import collarRosewood3 from "@/assets/collar-rosewood-3.jpeg";
 import collarRosewoodLifestyle from "@/assets/collar-rosewood-lifestyle.png";
+import guiaTallas from "@/assets/guia-tallas.png";
 
 const products = [
   {
@@ -24,7 +25,7 @@ const products = [
     originalPrice: 119900,
     discount: 25,
     image: collarDarkGrey,
-    images: [collarDarkGrey, collarDarkGrey2, collarDarkGrey3, collarDarkGreyLifestyle],
+    images: [collarDarkGrey, collarDarkGrey2, collarDarkGrey3, collarDarkGreyLifestyle, guiaTallas],
     color: "Dark Grey",
     colorName: "Dark Grey",
     description: "El Collar Inteligente ALUDO combina Inteligencia Artificial de última generación con materiales sostenibles de primera calidad. Diseñado y fabricado en Colombia para ofrecer comunicación interactiva, protección y estilo a tu mascota.",
@@ -83,7 +84,7 @@ const products = [
     originalPrice: 119900,
     discount: 25,
     image: collarRosewood,
-    images: [collarRosewood, collarRosewood2, collarRosewood3, collarRosewoodLifestyle],
+    images: [collarRosewood, collarRosewood2, collarRosewood3, collarRosewoodLifestyle, guiaTallas],
     color: "Rosewood",
     colorName: "Rosewood",
     description: "El Collar Inteligente ALUDO combina Inteligencia Artificial de última generación con materiales sostenibles de primera calidad. Diseñado y fabricado en Colombia para ofrecer comunicación interactiva, protección y estilo a tu mascota.",
