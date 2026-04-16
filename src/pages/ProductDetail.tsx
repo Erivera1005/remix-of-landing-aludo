@@ -223,13 +223,13 @@ const ProductDetail = () => {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
           {/* Product Image */}
           <div className="space-y-3 md:space-y-4 animate-fade-in">
-            <div className="relative aspect-square overflow-hidden rounded-2xl bg-card/50">
+            <div className="relative aspect-square overflow-hidden rounded-2xl bg-white">
               <img
                 src={currentProduct.images[selectedImage]}
                 alt={`Collar inteligente ALUDO ${currentProduct.colorName} para perros - Vista ${selectedImage + 1}`}
                 loading="eager"
                 fetchPriority="high"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain p-2"
               />
             </div>
             {currentProduct.images.length > 1 && (
@@ -244,7 +244,7 @@ const ProductDetail = () => {
                         : "border-border hover:border-primary/50"
                     }`}
                   >
-                    <img src={img} alt={`Vista ${index + 1}`} className="w-full h-full object-cover" />
+                    <img src={img} alt={`Vista ${index + 1}`} className="w-full h-full object-contain bg-white p-1" />
                   </button>
                 ))}
               </div>

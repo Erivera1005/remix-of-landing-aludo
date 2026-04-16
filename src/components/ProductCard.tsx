@@ -46,7 +46,7 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
         onClick={isMobile && product.hoverImage ? (e) => e.preventDefault() : undefined}
       >
         <div
-          className="relative aspect-square overflow-hidden"
+          className="relative aspect-square overflow-hidden bg-white"
           onClick={handleImageClick}
         >
           <img
@@ -54,7 +54,7 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
             alt={`Collar inteligente ALUDO ${product.color} para perros Colombia`}
             loading="lazy"
             decoding="async"
-            className={`w-full h-full object-cover transition-opacity duration-500 ${
+            className={`w-full h-full object-contain p-3 transition-opacity duration-500 ${
               isMobile
                 ? showAlt ? 'opacity-0' : 'opacity-100'
                 : product.hoverImage ? 'group-hover:opacity-0' : 'group-hover:scale-105 transition-transform duration-300'
