@@ -61,7 +61,7 @@ const products = [
     },
     sizing: {
       title: "Talla Única Ajustable",
-      range: "30 cm - 60 cm",
+      range: "28 cm - 57 cm",
       description: "Equivalente desde S hasta XL. Sirve para perros pequeños, medianos y grandes."
     },
     waterResistance: {
@@ -120,7 +120,7 @@ const products = [
     },
     sizing: {
       title: "Talla Única Ajustable",
-      range: "30 cm - 60 cm",
+      range: "28 cm - 57 cm",
       description: "Equivalente desde S hasta XL. Sirve para perros pequeños, medianos y grandes."
     },
     waterResistance: {
@@ -189,7 +189,7 @@ const ProductDetail = () => {
     <div className="min-h-screen">
       <SEOHead
         title={`Collar Inteligente ALUDO ${currentProduct.colorName} | Collar con IA para Perros Colombia`}
-        description={`Compra el Collar Inteligente ALUDO ${currentProduct.colorName}. IA integrada, cuero vegano premium, talla ajustable 30-60cm. $${currentProduct.price.toLocaleString('es-CO')} COP. Envío a toda Colombia.`}
+        description={`Compra el Collar Inteligente ALUDO ${currentProduct.colorName}. IA integrada, cuero vegano premium, talla ajustable 28-57cm. $${currentProduct.price.toLocaleString('es-CO')} COP. Envío a toda Colombia.`}
         path={`/product/${currentProduct.id}`}
         type="product"
         jsonLd={[

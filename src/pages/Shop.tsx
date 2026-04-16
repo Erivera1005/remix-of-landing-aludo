@@ -22,7 +22,7 @@ const products: Product[] = [
     image: collarDarkGrey,
     hoverImage: collarDarkGreyLifestyle,
     color: "Dark Grey",
-    description: "Collar inteligente con IA integrada. Cuero vegano premium, herrajes reciclables. Talla ajustable 30-60cm. Fabricado en Colombia.",
+    description: "Collar inteligente con IA integrada. Cuero vegano premium, herrajes reciclables. Talla ajustable 28-57cm. Fabricado en Colombia.",
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const products: Product[] = [
     image: collarRosewood,
     hoverImage: collarRosewoodLifestyle,
     color: "Rosewood",
-    description: "Collar inteligente con IA integrada. Cuero vegano premium, herrajes reciclables. Talla ajustable 30-60cm. Fabricado en Colombia.",
+    description: "Collar inteligente con IA integrada. Cuero vegano premium, herrajes reciclables. Talla ajustable 28-57cm. Fabricado en Colombia.",
   },
 ];
 
@@ -49,7 +49,7 @@ const Shop = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Comprar Collar Inteligente para Perros con IA | Tienda ALUDO Colombia"
-        description="Compra collares inteligentes con IA para perros. Cuero vegano premium, chip NFC integrado, talla ajustable 30-60cm. Envío a toda Colombia. Desde $89.900 COP."
+        description="Compra collares inteligentes con IA para perros. Cuero vegano premium, chip NFC integrado, talla ajustable 28-57cm. Envío a toda Colombia. Desde $89.900 COP."
         path="/shop"
         type="website"
         jsonLd={[
