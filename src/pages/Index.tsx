@@ -19,13 +19,16 @@ const Index = () => {
         jsonLd={[ORGANIZATION_SCHEMA, WEBSITE_SCHEMA]}
       />
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated background effects */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-1/4 right-1/4 w-64 md:w-96 h-64 md:h-96 bg-primary/8 rounded-full blur-3xl animate-float" style={{ animationDelay: '5s' }} />
+          <div
+            className="absolute bottom-1/4 right-1/4 w-64 md:w-96 h-64 md:h-96 bg-primary/8 rounded-full blur-3xl animate-float"
+            style={{ animationDelay: "5s" }}
+          />
         </div>
 
         <div className="container mx-auto px-5 sm:px-6 pt-28 pb-16 md:pt-32 md:pb-20 relative z-10">
@@ -34,9 +37,7 @@ const Index = () => {
             <div className="space-y-6 md:space-y-8 animate-fade-in-up">
               <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full glass-effect border border-primary/20 animate-glow-pulse">
                 <Sparkles className="w-4 h-4 md:w-4 md:h-4 text-primary" />
-                <span className="text-sm md:text-sm text-primary/80">
-                  Tecnología de IA - Hecho en Colombia
-                </span>
+                <span className="text-sm md:text-sm text-primary/80">Tecnología de IA - Hecho en Colombia</span>
               </div>
 
               <h1 className="text-[2.75rem] sm:text-5xl md:text-7xl font-bold leading-[1.1]">
@@ -44,12 +45,13 @@ const Index = () => {
               </h1>
 
               <p className="text-[1.15rem] md:text-xl text-foreground/70 leading-relaxed">
-                Collares inteligentes con Inteligencia Artificial que permiten identificar y proteger a tu mascota al instante. Ecológicos, elegantes y sin batería.
+                Collares inteligentes con Inteligencia Artificial que permiten identificar y proteger a tu mascota al
+                instante. Ecológicos, elegantes y sin batería.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                 <Link to="/shop" className="w-full sm:w-auto">
-                  <Button 
+                  <Button
                     size="lg"
                     className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white text-lg md:text-lg px-8 md:px-8 py-6 md:py-6 hover:scale-105 transition-all duration-500 tech-glow group"
                   >
@@ -57,8 +59,13 @@ const Index = () => {
                     <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-500" />
                   </Button>
                 </Link>
-                <a href="https://www.instagram.com/reel/DRs6DyCjMpW/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                  <Button 
+                <a
+                  href="https://www.instagram.com/reel/DXIRR2jCAaY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto"
+                >
+                  <Button
                     variant="outline"
                     size="lg"
                     className="w-full sm:w-auto border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 text-lg md:text-lg px-8 md:px-8 py-6 md:py-6 transition-all duration-500"
@@ -86,7 +93,7 @@ const Index = () => {
             </div>
 
             {/* Right Image */}
-            <div className="relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
               <div className="relative">
                 <div className="absolute inset-0 bg-primary/10 rounded-3xl blur-2xl animate-glow-pulse" />
                 <img
@@ -108,7 +115,8 @@ const Index = () => {
               <span className="text-primary">Inteligencia Artificial</span> para el Bienestar Animal
             </h2>
             <p className="text-[1.1rem] md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
-              Cada collar ALUDO integra tecnología de IA que almacena el perfil inteligente de tu mascota. Comunicación interactiva sin necesidad de baterías ni aplicaciones.
+              Cada collar ALUDO integra tecnología de IA que almacena el perfil inteligente de tu mascota. Comunicación
+              interactiva sin necesidad de baterías ni aplicaciones.
             </p>
           </ScrollReveal>
 
@@ -118,31 +126,29 @@ const Index = () => {
                 icon: Nfc,
                 title: "Chip NFC Integrado",
                 description: "Lectura instantánea con cualquier celular. Toda la información en un toque.",
-                delay: '0s',
+                delay: "0s",
               },
               {
                 icon: HeartHandshake,
                 title: "Bienestar Animal",
-                description: "Perfil digital protegido con inicio de sesión. Comunicación interactiva con datos médicos, contacto e información importante.",
-                delay: '0.1s',
+                description:
+                  "Perfil digital protegido con inicio de sesión. Comunicación interactiva con datos médicos, contacto e información importante.",
+                delay: "0.1s",
               },
               {
                 icon: Leaf,
                 title: "Materiales Ecológicos",
                 description: "Cuero vegano premium y herrajes reciclables. Sin batería, 100% sostenible.",
-                delay: '0.2s',
+                delay: "0.2s",
               },
               {
                 icon: Heart,
                 title: "Compromiso Social",
                 description: "$2.000 COP por collar donados a fundaciones que rescatan perros vulnerables.",
-                delay: '0.3s',
+                delay: "0.3s",
               },
             ].map((feature, index) => (
-              <ScrollReveal
-                key={index}
-                delay={feature.delay}
-              >
+              <ScrollReveal key={index} delay={feature.delay}>
                 <div className="glass-effect p-8 md:p-8 rounded-2xl border border-primary/10 hover-lift group h-full">
                   <feature.icon className="w-14 h-14 md:w-12 md:h-12 text-primary mb-5 md:mb-6 group-hover:scale-110 transition-transform duration-500" />
                   <h3 className="text-[1.3rem] md:text-xl font-bold mb-3 text-primary group-hover:text-primary/80 transition-colors duration-500">
@@ -180,16 +186,12 @@ const Index = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-7 md:p-8">
-                  <h3 className="text-[1.6rem] md:text-3xl font-bold mb-2 md:mb-3 text-primary">
-                    Colección Premium
-                  </h3>
+                  <h3 className="text-[1.6rem] md:text-3xl font-bold mb-2 md:mb-3 text-primary">Colección Premium</h3>
                   <p className="text-[1.05rem] md:text-base text-primary/70 mb-4">
                     Cuero vegano premium con IA integrada y herrajes reciclables
                   </p>
                   <Link to="/shop">
-                    <Button 
-                      className="bg-primary hover:bg-primary/90 text-white group transition-all duration-500 text-base px-6 py-5"
-                    >
+                    <Button className="bg-primary hover:bg-primary/90 text-white group transition-all duration-500 text-base px-6 py-5">
                       Ver Más
                       <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-500" />
                     </Button>
@@ -214,9 +216,7 @@ const Index = () => {
                     De 28cm a 57cm. Se adapta desde perros pequeños hasta grandes
                   </p>
                   <Link to="/shop">
-                    <Button 
-                      className="bg-primary hover:bg-primary/90 text-white group transition-all duration-500 text-base px-6 py-5"
-                    >
+                    <Button className="bg-primary hover:bg-primary/90 text-white group transition-all duration-500 text-base px-6 py-5">
                       Explorar
                       <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-500" />
                     </Button>
@@ -228,7 +228,7 @@ const Index = () => {
 
           <div className="text-center">
             <Link to="/shop">
-              <Button 
+              <Button
                 size="lg"
                 variant="outline"
                 className="w-full sm:w-auto border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 text-lg md:text-lg px-8 md:px-12 py-6 md:py-6 hover:scale-105 transition-all duration-500"
@@ -245,7 +245,7 @@ const Index = () => {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10" />
         </div>
-        
+
         <div className="container mx-auto px-5 sm:px-6 relative z-10">
           <ScrollReveal>
             <div className="max-w-4xl mx-auto text-center space-y-6 md:space-y-8 glass-effect p-8 sm:p-10 md:p-12 rounded-2xl md:rounded-3xl border border-primary/20">
@@ -253,19 +253,25 @@ const Index = () => {
                 Protege a tu Mascota Hoy
               </h2>
               <p className="text-[1.1rem] md:text-xl text-foreground/70 leading-relaxed">
-                Únete a los cientos de familias que ya confían en ALUDO para mantener a sus mascotas seguras e identificadas.
+                Únete a los cientos de familias que ya confían en ALUDO para mantener a sus mascotas seguras e
+                identificadas.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                 <Link to="/shop" className="w-full sm:w-auto">
-                  <Button 
+                  <Button
                     size="lg"
                     className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white text-lg md:text-lg px-8 md:px-12 py-6 md:py-6 hover:scale-105 transition-all duration-500 tech-glow"
                   >
                     Comprar Ahora
                   </Button>
                 </Link>
-                <a href="https://wa.me/573128642686" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                  <Button 
+                <a
+                  href="https://wa.me/573128642686"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto"
+                >
+                  <Button
                     variant="outline"
                     size="lg"
                     className="w-full sm:w-auto border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 text-lg md:text-lg px-8 md:px-12 py-6 md:py-6 transition-all duration-500"
