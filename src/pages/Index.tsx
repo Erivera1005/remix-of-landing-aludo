@@ -132,7 +132,7 @@ const Index = () => {
                 icon: HeartHandshake,
                 title: "Bienestar Animal",
                 description:
-                  "Perfil digital protegido con inicio de sesión. Comunicación interactiva con datos médicos, contacto e información importante.",
+                  "Cualquier persona puede escanear el collar y ver el nombre, datos de la mascota e información de contacto del dueño en caso de pérdida.",
                 delay: "0.1s",
               },
               {
