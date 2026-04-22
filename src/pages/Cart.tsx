@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
+import { trackInitiateCheckout } from "@/lib/metaPixel";
 import { Trash2, Plus, Minus, ShoppingBag, MessageCircle } from "lucide-react";
 
 const Cart = () => {
@@ -11,6 +12,10 @@ const Cart = () => {
   const navigate = useNavigate();
 
   const handleFinalizarPedido = () => {
+    trackInitiateCheckout(
+      getTotalPrice(),
+      cart.map(item => ({ id: item.id, quantity: item.quantity }))
+    );
     navigate("/datos-envio");
   };
 
