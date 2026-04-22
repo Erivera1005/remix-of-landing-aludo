@@ -3,7 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { CartProvider } from "@/context/CartContext";
 import { trackPageView } from "@/lib/metaPixel";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -20,8 +20,14 @@ const queryClient = new QueryClient();
 
 const PixelPageViewTracker = () => {
   const location = useLocation();
+  const hasTrackedInitialPageView = useRef(false);
 
   useEffect(() => {
+    if (!hasTrackedInitialPageView.current) {
+      hasTrackedInitialPageView.current = true;
+      return;
+    }
+
     trackPageView();
   }, [location.pathname]);
 
