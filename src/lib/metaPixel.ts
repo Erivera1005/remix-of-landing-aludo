@@ -6,13 +6,21 @@ declare global {
   }
 }
 
+const canTrack = () => typeof window !== 'undefined' && typeof window.fbq === 'function';
+
+export const trackPageView = () => {
+  if (canTrack()) {
+    window.fbq('track', 'PageView');
+  }
+};
+
 export const trackViewContent = (product: {
   id: number;
   name: string;
   price: number;
   color: string;
 }) => {
-  if (typeof window.fbq === 'function') {
+  if (canTrack()) {
     window.fbq('track', 'ViewContent', {
       content_name: product.name,
       content_ids: [String(product.id)],
@@ -31,7 +39,7 @@ export const trackAddToCart = (product: {
   color: string;
   quantity: number;
 }) => {
-  if (typeof window.fbq === 'function') {
+  if (canTrack()) {
     window.fbq('track', 'AddToCart', {
       content_name: product.name,
       content_ids: [String(product.id)],
@@ -44,7 +52,7 @@ export const trackAddToCart = (product: {
 };
 
 export const trackInitiateCheckout = (totalValue: number, items: { id: number; quantity: number }[]) => {
-  if (typeof window.fbq === 'function') {
+  if (canTrack()) {
     window.fbq('track', 'InitiateCheckout', {
       value: totalValue,
       currency: 'COP',
@@ -55,8 +63,20 @@ export const trackInitiateCheckout = (totalValue: number, items: { id: number; q
   }
 };
 
+export const trackWhatsAppInitiateCheckout = () => {
+  if (canTrack()) {
+    window.fbq('track', 'InitiateCheckout');
+  }
+};
+
+export const trackPurchase = (value: number = 119900) => {
+  if (canTrack()) {
+    window.fbq('track', 'Purchase', { value, currency: 'COP' });
+  }
+};
+
 export const trackLead = (value: number) => {
-  if (typeof window.fbq === 'function') {
+  if (canTrack()) {
     window.fbq('track', 'Lead', {
       value,
       currency: 'COP',
