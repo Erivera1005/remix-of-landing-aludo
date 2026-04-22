@@ -69,11 +69,13 @@ const products = [
       description: "Resistente a lluvia, salpicaduras y humedad. No sumergible (no debe usarse para nadar en piscina, río o playa)."
     },
     scanInfo: {
-      title: "¿Qué puede ver el usuario al escanear?",
+      title: "¿Qué puede ver cualquier persona al escanear?",
       items: [
-        "Información pública de la mascota",
-        "Datos de contacto del dueño",
-        "Detalles médicos importantes (alergias, vacunación, observaciones)"
+        "Nombre de la mascota",
+        "Datos públicos de la mascota (raza, edad, características)",
+        "Información de contacto del dueño en caso de pérdida",
+        "Detalles médicos importantes (alergias, vacunación, observaciones)",
+        "Escaneo instantáneo desde cualquier celular, sin apps ni registro"
       ]
     }
   },
@@ -128,11 +130,13 @@ const products = [
       description: "Resistente a lluvia, salpicaduras y humedad. No sumergible (no debe usarse para nadar en piscina, río o playa)."
     },
     scanInfo: {
-      title: "¿Qué puede ver el usuario al escanear?",
+      title: "¿Qué puede ver cualquier persona al escanear?",
       items: [
-        "Información pública de la mascota",
-        "Datos de contacto del dueño",
-        "Detalles médicos importantes (alergias, vacunación, observaciones)"
+        "Nombre de la mascota",
+        "Datos públicos de la mascota (raza, edad, características)",
+        "Información de contacto del dueño en caso de pérdida",
+        "Detalles médicos importantes (alergias, vacunación, observaciones)",
+        "Escaneo instantáneo desde cualquier celular, sin apps ni registro"
       ]
     }
   }
