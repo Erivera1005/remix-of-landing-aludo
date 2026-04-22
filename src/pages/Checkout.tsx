@@ -13,7 +13,7 @@ interface ShippingInfo {
 }
 
 const Checkout = () => {
-  const { cart, getWhatsAppMessage, getTotalPrice } = useCart();
+  const { cart, getWhatsAppMessage } = useCart();
   const navigate = useNavigate();
 
   useEffect(() => {
