@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "@/context/CartContext";
-import { trackInitiateCheckout, trackLead } from "@/lib/metaPixel";
+import { trackInitiateCheckout, trackLead, trackPurchase } from "@/lib/metaPixel";
 
 interface ShippingInfo {
   name: string;
@@ -45,6 +45,7 @@ const Checkout = () => {
     // Track Lead conversion event with total value
     const totalValue = getTotalPrice();
     trackLead(totalValue);
+    trackPurchase(119900);
 
     // Build WhatsApp message with shipping data
     const shippingLines = [
