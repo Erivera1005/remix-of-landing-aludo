@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "@/context/CartContext";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import { trackInitiateCheckout } from "@/lib/metaPixel";
 import { Trash2, Plus, Minus, ShoppingBag, MessageCircle } from "lucide-react";
 
 const CartDrawer = () => {
@@ -9,6 +10,10 @@ const CartDrawer = () => {
   const navigate = useNavigate();
 
   const handleContinue = () => {
+    trackInitiateCheckout(
+      getTotalPrice(),
+      cart.map(item => ({ id: item.id, quantity: item.quantity }))
+    );
     closeCart();
     navigate("/datos-envio");
   };
