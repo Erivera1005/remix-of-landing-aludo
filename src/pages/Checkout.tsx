@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "@/context/CartContext";
-import { trackInitiateCheckout, trackLead, trackPurchase } from "@/lib/metaPixel";
+import { trackInitiateCheckout, trackLead, trackPurchase, trackWhatsAppInitiateCheckout } from "@/lib/metaPixel";
 
 interface ShippingInfo {
   name: string;
@@ -63,6 +63,7 @@ const Checkout = () => {
     const fullMessage = `🐾 *Nuevo pedido ALUDO* 🐾\n\n*Datos del cliente:*\n${shippingLines.join("\n")}\n\n${getWhatsAppMessage()}`;
 
     const message = encodeURIComponent(fullMessage);
+    trackWhatsAppInitiateCheckout();
     window.open(`https://wa.me/573128642686?text=${message}`, "_blank");
 
     // Clean up shipping data

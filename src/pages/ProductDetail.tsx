@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { trackViewContent, trackAddToCart } from "@/lib/metaPixel";
+import { trackViewContent } from "@/lib/metaPixel";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead, { createProductSchema, createBreadcrumbSchema } from "@/components/SEOHead";
@@ -170,13 +170,6 @@ const ProductDetail = () => {
         image: currentProduct.image,
         color: currentProduct.colorName,
       }, quantity);
-      trackAddToCart({
-        id: currentProduct.id,
-        name: currentProduct.name,
-        price: currentProduct.price,
-        color: currentProduct.colorName,
-        quantity,
-      });
       setQuantity(1);
     }
   };
