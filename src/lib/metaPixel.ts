@@ -21,14 +21,7 @@ export const trackViewContent = (product: {
   color: string;
 }) => {
   if (canTrack()) {
-    window.fbq('track', 'ViewContent', {
-      content_name: product.name,
-      content_ids: [String(product.id)],
-      content_type: 'product',
-      value: product.price,
-      currency: 'COP',
-      contents: [{ id: String(product.id), quantity: 1 }],
-    });
+    window.fbq('track', 'ViewContent');
   }
 };
 
@@ -40,26 +33,13 @@ export const trackAddToCart = (product: {
   quantity: number;
 }) => {
   if (canTrack()) {
-    window.fbq('track', 'AddToCart', {
-      content_name: product.name,
-      content_ids: [String(product.id)],
-      content_type: 'product',
-      value: product.price * product.quantity,
-      currency: 'COP',
-      contents: [{ id: String(product.id), quantity: product.quantity }],
-    });
+    window.fbq('track', 'AddToCart');
   }
 };
 
 export const trackInitiateCheckout = (totalValue: number, items: { id: number; quantity: number }[]) => {
   if (canTrack()) {
-    window.fbq('track', 'InitiateCheckout', {
-      value: totalValue,
-      currency: 'COP',
-      content_type: 'product',
-      contents: items.map(i => ({ id: String(i.id), quantity: i.quantity })),
-      num_items: items.reduce((sum, i) => sum + i.quantity, 0),
-    });
+    window.fbq('track', 'InitiateCheckout');
   }
 };
 

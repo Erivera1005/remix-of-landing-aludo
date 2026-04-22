@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "@/context/CartContext";
-import { trackInitiateCheckout, trackLead, trackPurchase, trackWhatsAppInitiateCheckout } from "@/lib/metaPixel";
+import { trackWhatsAppInitiateCheckout } from "@/lib/metaPixel";
 
 interface ShippingInfo {
   name: string;
@@ -13,7 +13,7 @@ interface ShippingInfo {
 }
 
 const Checkout = () => {
-  const { cart, getWhatsAppMessage, getTotalPrice } = useCart();
+  const { cart, getWhatsAppMessage } = useCart();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,17 +35,6 @@ const Checkout = () => {
       navigate("/datos-envio");
       return;
     }
-
-    // Track checkout event
-    trackInitiateCheckout(
-      getTotalPrice(),
-      cart.map(item => ({ id: item.id, quantity: item.quantity }))
-    );
-
-    // Track Lead conversion event with total value
-    const totalValue = getTotalPrice();
-    trackLead(totalValue);
-    trackPurchase(119900);
 
     // Build WhatsApp message with shipping data
     const shippingLines = [
