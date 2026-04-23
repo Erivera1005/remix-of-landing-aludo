@@ -61,7 +61,7 @@ const Index = () => {
                   </Button>
                 </Link>
                 <a
-                  href="https://www.instagram.com/reel/DXIRR2jCAaY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                  href="https://www.instagram.com/reel/DXePXbMEWv4/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto"
