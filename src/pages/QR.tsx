@@ -10,6 +10,7 @@ const QR = () => {
       <SEOHead
         title="QR Estructurado | ALUDO"
         description="Aprende cómo funciona el QR estructurado de ALUDO y contáctanos por WhatsApp."
+        path="/qr"
       />
       <Header />
 
