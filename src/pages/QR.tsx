@@ -24,6 +24,9 @@ const QR = () => {
             <video
               src="/videos/tuto_aludo.mov"
               controls
+              autoPlay
+              muted
+              loop
               playsInline
               className="w-full h-auto"
             >
