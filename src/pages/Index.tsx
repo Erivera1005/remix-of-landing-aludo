@@ -281,6 +281,15 @@ const Index = () => {
                     Conocer Más
                   </Button>
                 </a>
+                <Link to="/qr" className="w-full sm:w-auto">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="w-full sm:w-auto border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 text-lg md:text-lg px-8 md:px-12 py-6 md:py-6 transition-all duration-500"
+                  >
+                    QR Estructurado
+                  </Button>
+                </Link>
               </div>
             </div>
           </ScrollReveal>
