@@ -1,7 +1,11 @@
+import { useLocation } from "react-router-dom";
 import whatsappIcon from "@/assets/whatsapp-icon.png";
 import { trackWhatsAppInitiateCheckout } from "@/lib/metaPixel";
 
 const WhatsAppButton = () => {
+  const location = useLocation();
+  if (location.pathname === "/qr") return null;
+
   return (
     <a
       href="https://wa.me/573128642686"

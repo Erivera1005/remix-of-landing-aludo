@@ -70,23 +70,6 @@ const QR = () => {
               </button>
             )}
           </div>
-
-          <div className="flex justify-center">
-            <a
-              href="https://wa.me/573128642686"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={trackWhatsAppInitiateCheckout}
-              className="w-full sm:w-auto"
-            >
-              <Button
-                size="lg"
-                className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white text-lg px-8 md:px-12 py-6 hover:scale-105 transition-all duration-500 tech-glow"
-              >
-                Contactar por WhatsApp
-              </Button>
-            </a>
-          </div>
         </div>
       </main>
 
