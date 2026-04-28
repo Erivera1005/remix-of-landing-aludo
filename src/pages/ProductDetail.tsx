@@ -1,6 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { trackViewContent } from "@/lib/metaPixel";
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead, { createProductSchema, createBreadcrumbSchema } from "@/components/SEOHead";
@@ -149,17 +148,6 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState<number>(1);
   const [selectedImage, setSelectedImage] = useState<number>(0);
   const currentProduct = products.find(p => p.id === Number(id)) || products[0];
-  
-  useEffect(() => {
-    if (currentProduct) {
-      trackViewContent({
-        id: currentProduct.id,
-        name: currentProduct.name,
-        price: currentProduct.price,
-        color: currentProduct.colorName,
-      });
-    }
-  }, [currentProduct?.id]);
 
   const handleAddToCart = () => {
     if (currentProduct) {
