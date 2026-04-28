@@ -22,7 +22,7 @@ const formatCOP = (value: number) => `$${value.toLocaleString("es-CO")}`;
 const CITY_OPTIONS = ["Bogotá", "Medellín", "Cali", "Barranquilla", "Cartagena", "Otra"];
 
 const ShippingData = () => {
-  const { cart } = useCart();
+  const { cart, getTotalPrice } = useCart();
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
