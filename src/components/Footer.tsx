@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import { trackWhatsAppInitiateCheckout } from "@/lib/metaPixel";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
@@ -68,7 +67,7 @@ const Footer = () => {
                   <span>aludooficial@gmail.com</span>
                 </li>
                 <li>
-                  <a href="https://wa.me/573128642686" target="_blank" rel="noopener noreferrer" onClick={trackWhatsAppInitiateCheckout} className="flex items-center space-x-2.5 hover:text-primary transition-colors duration-200">
+                  <a href="https://wa.me/573128642686" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2.5 hover:text-primary transition-colors duration-200">
                     <Phone className="w-4 h-4 flex-shrink-0" />
                     <span>+57 312 864 2686</span>
                   </a>

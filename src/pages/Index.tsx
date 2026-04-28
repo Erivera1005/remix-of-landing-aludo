@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import SEOHead, { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
-import { trackWhatsAppInitiateCheckout } from "@/lib/metaPixel";
+
 import { Smartphone, Leaf, HeartHandshake, Heart, ChevronRight, Nfc, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-dog.png";
 import dogsGroup from "@/assets/dogs-group.png";
@@ -270,7 +270,6 @@ const Index = () => {
                   href="https://wa.me/573128642686"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={trackWhatsAppInitiateCheckout}
                   className="w-full sm:w-auto"
                 >
                   <Button
