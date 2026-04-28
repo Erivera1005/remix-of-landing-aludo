@@ -99,7 +99,47 @@ const ShippingData = () => {
           Datos de Envío
         </h1>
 
-        <div className="max-w-lg mx-auto">
+        <div className="max-w-lg mx-auto space-y-6">
+          {/* Resumen del carrito */}
+          <div className="glass-effect p-5 md:p-6 rounded-xl border border-border/50 animate-fade-in-up">
+            <h2 className="text-lg font-bold text-primary mb-4">Resumen de tu pedido</h2>
+
+            <div className="space-y-3 mb-4">
+              {cart.map((item) => (
+                <div
+                  key={`${item.id}-${item.color}`}
+                  className="flex gap-3 items-center"
+                >
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-14 h-14 object-cover rounded-lg flex-shrink-0 border border-border/50"
+                  />
+                  <div className="flex-1 min-w-0">
+                    <h4 className="text-sm font-semibold text-primary truncate">
+                      {item.name}
+                    </h4>
+                    <p className="text-foreground/60 text-xs">
+                      Color: {item.color} · Cant: {item.quantity}
+                    </p>
+                  </div>
+                  <p className="text-sm font-bold text-primary whitespace-nowrap">
+                    {formatCOP(item.price * item.quantity)}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-xs text-foreground/60 pt-3 border-t border-border/50">
+              <span className="font-medium text-foreground/70">Envío:</span> Por transportadora. El costo se calcula según destino.
+            </div>
+
+            <div className="flex justify-between items-baseline text-lg font-bold pt-3 mt-3 border-t border-border/50">
+              <span>Total</span>
+              <span className="gradient-text">{formatCOP(getTotalPrice())} COP</span>
+            </div>
+          </div>
+
           <form
             onSubmit={handleSubmit}
             className="glass-effect p-6 md:p-8 rounded-xl border border-border/50 space-y-5 animate-fade-in-up"
