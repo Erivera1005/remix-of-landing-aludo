@@ -17,6 +17,8 @@ import {
 import { useCart } from "@/context/CartContext";
 import { MessageCircle } from "lucide-react";
 
+const formatCOP = (value: number) => `$${value.toLocaleString("es-CO")}`;
+
 const CITY_OPTIONS = ["Bogotá", "Medellín", "Cali", "Barranquilla", "Cartagena", "Otra"];
 
 const ShippingData = () => {
