@@ -131,7 +131,7 @@ const ShippingData = () => {
             </div>
 
             <div className="text-xs text-foreground/60 pt-3 border-t border-border/50">
-              <span className="font-medium text-foreground/70">Envío:</span> Por transportadora. El costo se calcula según destino.
+              <span className="font-medium text-foreground/70">Envío:</span> ¡Gratis a todo Colombia! 🚚
             </div>
 
             <div className="flex justify-between items-baseline text-lg font-bold pt-3 mt-3 border-t border-border/50">

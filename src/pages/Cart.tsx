@@ -148,7 +148,7 @@ const Cart = () => {
                   </div>
                 ))}
                 <div className="pt-2 text-xs md:text-sm text-foreground/60">
-                  <span className="font-medium text-foreground/70">Envío:</span> Por transportadora (Interrapidísimo, TCC, Servientrega, Coordinadora). El costo se calcula según destino.
+                  <span className="font-medium text-foreground/70">Envío:</span> ¡Gratis a todo Colombia! 🚚
                 </div>
               </div>
 
