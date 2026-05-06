@@ -6,7 +6,7 @@ import SEOHead, { ORGANIZATION_SCHEMA, WEBSITE_SCHEMA } from "@/components/SEOHe
 import { Button } from "@/components/ui/button";
 
 import { Smartphone, Leaf, HeartHandshake, Heart, ChevronRight, Nfc, Sparkles } from "lucide-react";
-import heroImage from "@/assets/hero-dog.png";
+import heroVideo from "@/assets/hero-dog.mp4";
 import dogsGroup from "@/assets/dogs-group.png";
 import collarsImage from "@/assets/collars-product.jpeg";
 
@@ -97,10 +97,15 @@ const Index = () => {
             <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
               <div className="relative">
                 <div className="absolute inset-0 bg-primary/10 rounded-3xl blur-2xl animate-glow-pulse" />
-                <img
-                  src={heroImage}
-                  alt="Collar inteligente ALUDO con IA para perros - Identificación digital instantánea Colombia"
-                  className="relative rounded-3xl shadow-2xl w-full md:animate-float"
+                <video
+                  src={heroVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  aria-label="Collar inteligente ALUDO con IA para perros - Identificación digital instantánea Colombia"
+                  className="relative rounded-3xl shadow-2xl w-full md:animate-float object-cover"
                 />
               </div>
             </div>
