@@ -16,8 +16,8 @@ const products: Product[] = [
   {
     id: 1,
     name: "Collar Inteligente ALUDO - Dark Grey",
-    price: 119900,
-    originalPrice: 159900,
+    price: 139900,
+    originalPrice: 189900,
     discount: 25,
     image: collarDarkGrey,
     hoverImage: collarDarkGreyLifestyle,
@@ -27,8 +27,8 @@ const products: Product[] = [
   {
     id: 2,
     name: "Collar Inteligente ALUDO - Rosewood",
-    price: 119900,
-    originalPrice: 159900,
+    price: 139900,
+    originalPrice: 189900,
     discount: 25,
     image: collarRosewood,
     hoverImage: collarRosewoodLifestyle,
@@ -49,7 +49,7 @@ const Shop = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Comprar Collar Inteligente para Perros con IA | Tienda ALUDO Colombia"
-        description="Compra collares inteligentes con IA para perros. Cuero vegano premium, chip NFC integrado, talla ajustable 28-57cm. Envío a toda Colombia. Desde $119.900 COP."
+        description="Compra collares inteligentes con IA para perros. Cuero vegano premium, chip NFC integrado, talla ajustable 28-57cm. Envío a toda Colombia. Desde $139.900 COP."
         path="/shop"
         type="website"
         jsonLd={[
