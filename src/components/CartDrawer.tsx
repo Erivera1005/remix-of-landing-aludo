@@ -105,7 +105,7 @@ const CartDrawer = () => {
                   </div>
                 ))}
                 <div className="text-xs text-foreground/60 pt-1">
-                  <span className="font-medium text-foreground/70">Envío:</span> Por transportadora. El costo se calcula según destino.
+                  <span className="font-medium text-foreground/70">Envío:</span> ¡Gratis a todo Colombia! 🚚
                 </div>
               </div>
 
