@@ -249,7 +249,7 @@ const ProductDetail = () => {
                   </span>
                 )}
                 {currentProduct.originalPrice && (
-                  <span className="text-base md:text-lg text-muted-foreground line-through">
+                  <span className="text-lg md:text-xl text-muted-foreground line-through">
                     ${currentProduct.originalPrice.toLocaleString('es-CO')} COP
                   </span>
                 )}
