@@ -88,7 +88,7 @@ const Index = () => {
                 </div>
                 <div className="text-center space-y-1">
                   <p className="text-3xl md:text-3xl font-bold text-primary">%</p>
-                  <p className="text-sm md:text-sm text-foreground/60">Apoyo a fundaciones</p>
+                  <p className="text-sm md:text-sm text-foreground/60">Donado a fundaciones</p>
                 </div>
               </div>
             </div>
