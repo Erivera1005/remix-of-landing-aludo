@@ -87,8 +87,8 @@ const Index = () => {
                   <p className="text-sm md:text-sm text-foreground/60">Ecológico</p>
                 </div>
                 <div className="text-center space-y-1">
-                  <p className="text-3xl md:text-3xl font-bold text-primary">$2K</p>
-                  <p className="text-sm md:text-sm text-foreground/60">Donación COP</p>
+                  <p className="text-3xl md:text-3xl font-bold text-primary">%</p>
+                  <p className="text-sm md:text-sm text-foreground/60">Donado a fundaciones</p>
                 </div>
               </div>
             </div>
@@ -150,7 +150,7 @@ const Index = () => {
               {
                 icon: Heart,
                 title: "Compromiso Social",
-                description: "$2.000 COP por collar donados a fundaciones que rescatan perros vulnerables.",
+                description: "Un porcentaje de cada collar vendido es donado a fundaciones que rescatan perros vulnerables.",
                 delay: "0.3s",
               },
             ].map((feature, index) => (
