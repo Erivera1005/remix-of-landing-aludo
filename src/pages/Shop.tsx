@@ -79,7 +79,7 @@ const Shop = () => {
           </h1>
           <p className="text-[1.1rem] md:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed">
             Collares con Inteligencia Artificial integrada. Fabricados en Colombia con materiales ecológicos. 
-            Cada compra dona $2.000 COP a fundaciones de rescate animal.
+            Un porcentaje de cada compra es donado a fundaciones de rescate animal.
           </p>
         </div>
 

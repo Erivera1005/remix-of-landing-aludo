@@ -455,7 +455,7 @@ const ProductDetail = () => {
                 </h2>
               </div>
               <p className="text-sm md:text-base text-foreground/70">
-                Por cada collar vendido, ALUDO dona <span className="font-bold text-primary">$2.000 COP</span> a fundaciones que rescatan y cuidan perros en situación vulnerable.
+                Por cada collar vendido, ALUDO dona <span className="font-bold text-primary">un porcentaje</span> a fundaciones que rescatan y cuidan perros en situación vulnerable.
               </p>
             </div>
           </div>
