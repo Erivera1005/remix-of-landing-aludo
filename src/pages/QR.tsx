@@ -16,7 +16,7 @@ declare global {
 const QR = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<any>(null);
-  const [showUnmute, setShowUnmute] = useState(false);
+  const [showUnmute, setShowUnmute] = useState(true);
 
   useEffect(() => {
     const createPlayer = () => {
@@ -29,25 +29,23 @@ const QR = () => {
           rel: 0,
           modestbranding: 1,
           playsinline: 1,
+          // iOS/Safari requirement: autoplay only works when muted
+          mute: 1,
           loop: 1,
           playlist: VIDEO_ID,
         },
         events: {
           onReady: (e: any) => {
             try {
-              e.target.unMute();
-              e.target.setVolume(100);
               e.target.playVideo();
-              setTimeout(() => {
-                try {
-                  if (e.target.isMuted && e.target.isMuted()) {
-                    setShowUnmute(true);
-                  }
-                } catch {}
-              }, 800);
-            } catch {
-              setShowUnmute(true);
-            }
+            } catch {}
+          },
+          onStateChange: (e: any) => {
+            try {
+              if (e.target.isMuted && !e.target.isMuted()) {
+                setShowUnmute(false);
+              }
+            } catch {}
           },
         },
       });
@@ -77,6 +75,7 @@ const QR = () => {
       setShowUnmute(false);
     } catch {}
   };
+
 
   return (
     <div className="min-h-screen bg-background">
