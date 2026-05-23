@@ -93,7 +93,7 @@ const QR = () => {
             QR Estructurado
           </h1>
 
-          <div className="relative rounded-2xl overflow-hidden border border-primary/20 shadow-lg bg-black aspect-video">
+          <div className="relative rounded-2xl overflow-hidden border border-primary/20 shadow-lg bg-black mx-auto w-full max-w-[400px] aspect-[9/16]">
             <div ref={containerRef} className="w-full h-full" />
 
             {showUnmute && (
