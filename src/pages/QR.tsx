@@ -1,33 +1,81 @@
 import { useEffect, useRef, useState } from "react";
-import { Volume2, VolumeX } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { VolumeX } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 
+const VIDEO_ID = "5o64YYoDB68";
+
+declare global {
+  interface Window {
+    YT?: any;
+    onYouTubeIframeAPIReady?: () => void;
+  }
+}
+
 const QR = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMuted, setIsMuted] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const playerRef = useRef<any>(null);
+  const [showUnmute, setShowUnmute] = useState(false);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    const createPlayer = () => {
+      if (!containerRef.current || !window.YT?.Player) return;
+      playerRef.current = new window.YT.Player(containerRef.current, {
+        videoId: VIDEO_ID,
+        playerVars: {
+          autoplay: 1,
+          controls: 1,
+          rel: 0,
+          modestbranding: 1,
+          playsinline: 1,
+          loop: 1,
+          playlist: VIDEO_ID,
+        },
+        events: {
+          onReady: (e: any) => {
+            try {
+              e.target.unMute();
+              e.target.setVolume(100);
+              e.target.playVideo();
+              setTimeout(() => {
+                try {
+                  if (e.target.isMuted && e.target.isMuted()) {
+                    setShowUnmute(true);
+                  }
+                } catch {}
+              }, 800);
+            } catch {
+              setShowUnmute(true);
+            }
+          },
+        },
+      });
+    };
 
-    video.muted = false;
-    video.play().catch(() => {
-      // Browser blocked autoplay with sound, fallback to muted
-      video.muted = true;
-      setIsMuted(true);
-      video.play().catch(() => {});
-    });
+    if (!window.YT || !window.YT.Player) {
+      const tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      document.body.appendChild(tag);
+      window.onYouTubeIframeAPIReady = createPlayer;
+    } else {
+      createPlayer();
+    }
+
+    return () => {
+      try {
+        playerRef.current?.destroy?.();
+      } catch {}
+    };
   }, []);
 
   const handleUnmute = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.muted = false;
-    setIsMuted(false);
-    video.play().catch(() => {});
+    try {
+      playerRef.current?.unMute?.();
+      playerRef.current?.setVolume?.(100);
+      playerRef.current?.playVideo?.();
+      setShowUnmute(false);
+    } catch {}
   };
 
   return (
@@ -45,23 +93,13 @@ const QR = () => {
             QR Estructurado
           </h1>
 
-          <div className="relative rounded-2xl overflow-hidden border border-primary/20 shadow-lg bg-black">
-            <video
-              ref={videoRef}
-              src="/videos/tuto_aludo.mov"
-              controls
-              autoPlay
-              loop
-              playsInline
-              className="w-full h-auto"
-            >
-              Tu navegador no soporta el video.
-            </video>
+          <div className="relative rounded-2xl overflow-hidden border border-primary/20 shadow-lg bg-black aspect-video">
+            <div ref={containerRef} className="w-full h-full" />
 
-            {isMuted && (
+            {showUnmute && (
               <button
                 onClick={handleUnmute}
-                className="absolute top-4 right-4 bg-primary text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-primary/90 transition-all"
+                className="absolute top-4 right-4 bg-primary text-white px-4 py-2 rounded-full flex items-center gap-2 shadow-lg hover:bg-primary/90 transition-all z-10"
                 aria-label="Activar sonido"
               >
                 <VolumeX className="w-4 h-4" />
