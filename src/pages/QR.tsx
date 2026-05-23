@@ -16,7 +16,7 @@ declare global {
 const QR = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<any>(null);
-  const [showUnmute, setShowUnmute] = useState(true);
+  const [showUnmute, setShowUnmute] = useState(false);
 
   useEffect(() => {
     const createPlayer = () => {
@@ -29,27 +29,45 @@ const QR = () => {
           rel: 0,
           modestbranding: 1,
           playsinline: 1,
-          // iOS/Safari requirement: autoplay only works when muted
-          mute: 1,
           loop: 1,
           playlist: VIDEO_ID,
         },
         events: {
           onReady: (e: any) => {
             try {
+              e.target.unMute();
+              e.target.setVolume(100);
               e.target.playVideo();
             } catch {}
           },
           onStateChange: (e: any) => {
             try {
-              if (e.target.isMuted && !e.target.isMuted()) {
-                setShowUnmute(false);
+              const state = e.data;
+              // If still not playing shortly after ready, browser blocked it
+              if (state === window.YT.PlayerState.PLAYING) {
+                if (e.target.isMuted && e.target.isMuted()) {
+                  setShowUnmute(true);
+                } else {
+                  setShowUnmute(false);
+                }
+              } else if (state === window.YT.PlayerState.UNSTARTED || state === -1) {
+                // Try muted fallback so at least it plays
+                setTimeout(() => {
+                  try {
+                    if (playerRef.current?.getPlayerState?.() !== window.YT.PlayerState.PLAYING) {
+                      playerRef.current?.mute?.();
+                      playerRef.current?.playVideo?.();
+                      setShowUnmute(true);
+                    }
+                  } catch {}
+                }, 1200);
               }
             } catch {}
           },
         },
       });
     };
+
 
     if (!window.YT || !window.YT.Player) {
       const tag = document.createElement("script");
