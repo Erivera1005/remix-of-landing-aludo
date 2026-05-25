@@ -207,7 +207,7 @@ const ProductDetail = () => {
         {/* Product Grid */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
           {/* Product Image */}
-          <div className="space-y-3 md:space-y-4 animate-fade-in">
+          <div id="product-image" className="space-y-3 md:space-y-4 animate-fade-in scroll-mt-24">
             <div className="relative aspect-square overflow-hidden rounded-2xl bg-white">
               <img
                 src={currentProduct.images[selectedImage]}
@@ -308,10 +308,13 @@ const ProductDetail = () => {
                 </button>
               </div>
               <button
-                onClick={() => setSelectedImage(currentProduct.images.length - 1)}
+                onClick={() => {
+                  setSelectedImage(currentProduct.images.length - 1);
+                  document.getElementById("product-image")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
                 className="mt-3 text-sm text-primary underline underline-offset-2 hover:text-primary/80 transition-colors"
               >
-                Revisar tabla de tallas (última imagen)
+                Revisar tabla de tallas
               </button>
             </div>
 
