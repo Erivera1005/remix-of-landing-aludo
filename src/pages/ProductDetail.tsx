@@ -262,11 +262,36 @@ const ProductDetail = () => {
               </p>
             </div>
 
-            {/* Color Info */}
+            {/* Color Selector */}
             <div>
-              <h3 className="text-lg md:text-xl font-semibold mb-1.5 md:mb-2 text-primary">Color</h3>
-              <p className="text-foreground/70 text-base md:text-lg">{currentProduct.colorName}</p>
+              <h3 className="text-lg md:text-xl font-semibold mb-3 text-primary">
+                Color: <span className="font-normal text-foreground/70">{currentProduct.colorName}</span>
+              </h3>
+              <div className="flex gap-3">
+                {products.map((p) => {
+                  const isActive = p.id === currentProduct.id;
+                  const swatch = p.color === "Rosewood" ? "#b87862" : "#3a3a3a";
+                  return (
+                    <button
+                      key={p.id}
+                      onClick={() => {
+                        if (!isActive) {
+                          setSelectedImage(0);
+                          navigate(`/product/${p.id}`);
+                        }
+                      }}
+                      aria-label={`Seleccionar color ${p.colorName}`}
+                      title={p.colorName}
+                      className={`relative w-12 h-12 md:w-14 md:h-14 rounded-full border-2 transition-all duration-300 hover:scale-110 ${
+                        isActive ? "border-primary ring-2 ring-primary/30 ring-offset-2" : "border-border hover:border-primary/50"
+                      }`}
+                      style={{ backgroundColor: swatch }}
+                    />
+                  );
+                })}
+              </div>
             </div>
+
 
             {/* Quantity Selector */}
             <div>
