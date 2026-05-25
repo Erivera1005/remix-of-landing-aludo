@@ -308,10 +308,13 @@ const ProductDetail = () => {
                 </button>
               </div>
               <button
-                onClick={() => setSelectedImage(currentProduct.images.length - 1)}
+                onClick={() => {
+                  setSelectedImage(currentProduct.images.length - 1);
+                  document.getElementById("product-image")?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
                 className="mt-3 text-sm text-primary underline underline-offset-2 hover:text-primary/80 transition-colors"
               >
-                Revisar tabla de tallas (última imagen)
+                Revisar tabla de tallas
               </button>
             </div>
 
