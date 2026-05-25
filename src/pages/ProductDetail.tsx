@@ -292,6 +292,30 @@ const ProductDetail = () => {
               </div>
             </div>
 
+            {/* Size Selector */}
+            <div>
+              <h3 className="text-lg md:text-xl font-semibold mb-3 text-primary">Talla</h3>
+              <div className="flex flex-wrap gap-3">
+                <button
+                  className="px-5 py-2.5 rounded-lg border-2 border-primary bg-primary text-primary-foreground font-medium text-sm md:text-base transition-all duration-300 hover:scale-105"
+                >
+                  Estándar (S - XL)
+                </button>
+                <button
+                  className="px-5 py-2.5 rounded-lg border-2 border-border bg-background text-foreground font-medium text-sm md:text-base transition-all duration-300 hover:border-primary/50 hover:scale-105"
+                >
+                  XS (Gatos y perros muy pequeños)
+                </button>
+              </div>
+              <button
+                onClick={() => setSelectedImage(currentProduct.images.length - 1)}
+                className="mt-3 text-sm text-primary underline underline-offset-2 hover:text-primary/80 transition-colors"
+              >
+                Revisar tabla de tallas (última imagen)
+              </button>
+            </div>
+
+
 
             {/* Quantity Selector */}
             <div>
