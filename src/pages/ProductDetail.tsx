@@ -207,7 +207,7 @@ const ProductDetail = () => {
         {/* Product Grid */}
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
           {/* Product Image */}
-          <div className="space-y-3 md:space-y-4 animate-fade-in">
+          <div id="product-image" className="space-y-3 md:space-y-4 animate-fade-in scroll-mt-24">
             <div className="relative aspect-square overflow-hidden rounded-2xl bg-white">
               <img
                 src={currentProduct.images[selectedImage]}
