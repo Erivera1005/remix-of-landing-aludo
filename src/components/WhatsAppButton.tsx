@@ -7,7 +7,7 @@ const WhatsAppButton = () => {
 
   return (
     <a
-      href="https://wa.me/573128642686"
+      href={`https://wa.me/573128642686?text=${encodeURIComponent("Hola! Me gustaria saber mas sobre el Collar porfavor")}`}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-all duration-300 hover:scale-110 animate-fade-in group gpu-accel"
