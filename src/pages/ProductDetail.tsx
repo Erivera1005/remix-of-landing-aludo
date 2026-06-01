@@ -243,16 +243,16 @@ const ProductDetail = () => {
                 {currentProduct.name}
               </h1>
               <div className="flex flex-nowrap items-center gap-2 sm:gap-3 mb-4 md:mb-6 whitespace-nowrap">
-                <span className="text-xl sm:text-2xl md:text-2xl font-bold text-primary">
+                <span className="text-lg sm:text-xl md:text-xl font-bold text-primary">
                   ${currentProduct.price.toLocaleString('es-CO')}
                 </span>
                 {currentProduct.originalPrice && (
-                  <span className="text-sm sm:text-base md:text-lg text-muted-foreground line-through">
+                  <span className="text-xs sm:text-sm md:text-base text-muted-foreground line-through">
                     ${currentProduct.originalPrice.toLocaleString('es-CO')}
                   </span>
                 )}
                 {currentProduct.discount && (
-                  <span className="inline-flex items-center rounded-full bg-destructive px-2.5 py-1 text-xs sm:text-sm font-bold text-destructive-foreground">
+                  <span className="inline-flex items-center rounded-full bg-destructive px-3 py-1 text-sm sm:text-base font-bold text-destructive-foreground">
                     {currentProduct.discount}% OFF
                   </span>
                 )}
