@@ -299,12 +299,15 @@ const ProductDetail = () => {
                 <button
                   className="px-5 py-2.5 rounded-lg border-2 border-primary bg-primary text-primary-foreground font-medium text-sm md:text-base transition-all duration-300 hover:scale-105"
                 >
-                  Estándar (S - XL)
+                  Estándar (ideal para la mayoría)
                 </button>
                 <button
-                  className="px-5 py-2.5 rounded-lg border-2 border-border bg-background text-foreground font-medium text-sm md:text-base transition-all duration-300 hover:border-primary/50 hover:scale-105"
+                  disabled
+                  aria-disabled="true"
+                  title="Talla XS agotada"
+                  className="px-5 py-2.5 rounded-lg border-2 border-border bg-muted text-muted-foreground font-medium text-sm md:text-base opacity-60 cursor-not-allowed line-through"
                 >
-                  XS (Gatos y perros muy pequeños)
+                  XS — Agotada
                 </button>
               </div>
               <button
