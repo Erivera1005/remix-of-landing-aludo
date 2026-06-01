@@ -242,21 +242,21 @@ const ProductDetail = () => {
               <h1 className="text-[1.75rem] sm:text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-primary leading-tight">
                 {currentProduct.name}
               </h1>
-              <div className="flex flex-wrap items-center gap-3 mb-4 md:mb-6">
+              <div className="flex flex-nowrap items-center gap-2 sm:gap-3 mb-4 md:mb-6 whitespace-nowrap">
+                <span className="text-xl sm:text-2xl md:text-2xl font-bold text-primary">
+                  ${currentProduct.price.toLocaleString('es-CO')}
+                </span>
+                {currentProduct.originalPrice && (
+                  <span className="text-sm sm:text-base md:text-lg text-muted-foreground line-through">
+                    ${currentProduct.originalPrice.toLocaleString('es-CO')}
+                  </span>
+                )}
                 {currentProduct.discount && (
-                  <span className="inline-flex items-center rounded-full bg-destructive px-2.5 py-1 text-xs md:text-sm font-bold text-destructive-foreground">
+                  <span className="inline-flex items-center rounded-full bg-destructive px-2.5 py-1 text-xs sm:text-sm font-bold text-destructive-foreground">
                     {currentProduct.discount}% OFF
                   </span>
                 )}
-                {currentProduct.originalPrice && (
-                  <span className="text-lg md:text-xl text-muted-foreground line-through">
-                    ${currentProduct.originalPrice.toLocaleString('es-CO')} COP
-                  </span>
-                )}
               </div>
-              <p className="text-2xl md:text-3xl font-bold text-primary mb-4 md:mb-6">
-                ${currentProduct.price.toLocaleString('es-CO')} COP
-              </p>
               <p className="text-foreground/70 text-[1.05rem] md:text-lg leading-relaxed">
                 {currentProduct.description}
               </p>
