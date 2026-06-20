@@ -13,9 +13,11 @@ import collarDarkGreyNew3Asset from "@/assets/collar-darkgrey-new-3.jpeg.asset.j
 import collarDarkGreyNew4Asset from "@/assets/collar-darkgrey-new-4.jpeg.asset.json";
 import collarDarkGreyVideoAsset from "@/assets/collar-darkgrey-video.mov.asset.json";
 import collarRosewood from "@/assets/collar-rosewood.jpeg";
-import collarRosewood2 from "@/assets/collar-rosewood-2.jpeg";
-import collarRosewood3 from "@/assets/collar-rosewood-3.jpeg";
-import collarRosewoodLifestyle from "@/assets/collar-rosewood-lifestyle.png";
+import collarRosewoodNew1Asset from "@/assets/collar-rosewood-new-1.jpeg.asset.json";
+import collarRosewoodNew2Asset from "@/assets/collar-rosewood-new-2.jpeg.asset.json";
+import collarRosewoodNew3Asset from "@/assets/collar-rosewood-new-3.jpeg.asset.json";
+import collarRosewoodNew4Asset from "@/assets/collar-rosewood-new-4.jpeg.asset.json";
+import collarRosewoodVideoAsset from "@/assets/collar-rosewood-video.mov.asset.json";
 import guiaTallas from "@/assets/guia-tallas.png";
 
 const collarDarkGreyVideo = collarDarkGreyVideoAsset.url;
@@ -23,6 +25,11 @@ const collarDarkGreyNew1 = collarDarkGreyNew1Asset.url;
 const collarDarkGreyNew2 = collarDarkGreyNew2Asset.url;
 const collarDarkGreyNew3 = collarDarkGreyNew3Asset.url;
 const collarDarkGreyNew4 = collarDarkGreyNew4Asset.url;
+const collarRosewoodVideo = collarRosewoodVideoAsset.url;
+const collarRosewoodNew1 = collarRosewoodNew1Asset.url;
+const collarRosewoodNew2 = collarRosewoodNew2Asset.url;
+const collarRosewoodNew3 = collarRosewoodNew3Asset.url;
+const collarRosewoodNew4 = collarRosewoodNew4Asset.url;
 
 type MediaItem = { type: "video" | "image"; src: string; poster?: string };
 
