@@ -7,14 +7,24 @@ import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { ShoppingCart, Nfc, Leaf, Heart, Droplet, Shield, Ruler, Package, Plus, Minus } from "lucide-react";
 import collarDarkGrey from "@/assets/collar-dark-grey.jpeg";
-import collarDarkGrey2 from "@/assets/collar-darkgrey-2.jpeg";
-import collarDarkGrey3 from "@/assets/collar-darkgrey-3.jpeg";
-import collarDarkGreyLifestyle from "@/assets/collar-darkgrey-lifestyle.png";
+import collarDarkGreyNew1Asset from "@/assets/collar-darkgrey-new-1.jpeg.asset.json";
+import collarDarkGreyNew2Asset from "@/assets/collar-darkgrey-new-2.jpeg.asset.json";
+import collarDarkGreyNew3Asset from "@/assets/collar-darkgrey-new-3.jpeg.asset.json";
+import collarDarkGreyNew4Asset from "@/assets/collar-darkgrey-new-4.jpeg.asset.json";
+import collarDarkGreyVideoAsset from "@/assets/collar-darkgrey-video.mov.asset.json";
 import collarRosewood from "@/assets/collar-rosewood.jpeg";
 import collarRosewood2 from "@/assets/collar-rosewood-2.jpeg";
 import collarRosewood3 from "@/assets/collar-rosewood-3.jpeg";
 import collarRosewoodLifestyle from "@/assets/collar-rosewood-lifestyle.png";
 import guiaTallas from "@/assets/guia-tallas.png";
+
+const collarDarkGreyVideo = collarDarkGreyVideoAsset.url;
+const collarDarkGreyNew1 = collarDarkGreyNew1Asset.url;
+const collarDarkGreyNew2 = collarDarkGreyNew2Asset.url;
+const collarDarkGreyNew3 = collarDarkGreyNew3Asset.url;
+const collarDarkGreyNew4 = collarDarkGreyNew4Asset.url;
+
+type MediaItem = { type: "video" | "image"; src: string; poster?: string };
 
 const products = [
   {
