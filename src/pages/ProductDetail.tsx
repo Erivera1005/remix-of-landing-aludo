@@ -229,27 +229,48 @@ const ProductDetail = () => {
           {/* Product Image */}
           <div id="product-image" className="space-y-3 md:space-y-4 animate-fade-in scroll-mt-24">
             <div className="relative aspect-square overflow-hidden rounded-2xl bg-white">
-              <img
-                src={currentProduct.images[selectedImage]}
-                alt={`Collar inteligente ALUDO ${currentProduct.colorName} para perros - Vista ${selectedImage + 1}`}
-                loading="eager"
-                fetchPriority="high"
-                className="w-full h-full object-contain p-2"
-              />
+              {media[selectedImage].type === "video" ? (
+                <video
+                  key={media[selectedImage].src}
+                  src={media[selectedImage].src}
+                  poster={media[selectedImage].poster}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-full object-contain bg-white"
+                />
+              ) : (
+                <img
+                  src={media[selectedImage].src}
+                  alt={`Collar inteligente ALUDO ${currentProduct.colorName} para perros - Vista ${selectedImage + 1}`}
+                  loading="eager"
+                  fetchPriority="high"
+                  className="w-full h-full object-contain p-2"
+                />
+              )}
             </div>
-            {currentProduct.images.length > 1 && (
-              <div className="flex gap-2 md:gap-3">
-                {currentProduct.images.map((img, index) => (
+            {media.length > 1 && (
+              <div className="flex gap-2 md:gap-3 flex-wrap">
+                {media.map((item, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImage(index)}
-                    className={`w-16 h-16 md:w-20 md:h-20 rounded-lg md:rounded-xl overflow-hidden border-2 transition-all duration-300 ${
+                    className={`relative w-16 h-16 md:w-20 md:h-20 rounded-lg md:rounded-xl overflow-hidden border-2 transition-all duration-300 ${
                       selectedImage === index
                         ? "border-primary scale-105"
                         : "border-border hover:border-primary/50"
                     }`}
                   >
-                    <img src={img} alt={`Vista ${index + 1}`} className="w-full h-full object-contain bg-white p-1" />
+                    <img
+                      src={item.type === "video" ? (item.poster ?? currentProduct.image) : item.src}
+                      alt={`Vista ${index + 1}`}
+                      className="w-full h-full object-contain bg-white p-1"
+                    />
+                    {item.type === "video" && (
+                      <span className="absolute inset-0 flex items-center justify-center bg-black/30">
+                        <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6 drop-shadow"><path d="M8 5v14l11-7z"/></svg>
+                      </span>
+                    )}
                   </button>
                 ))}
               </div>
