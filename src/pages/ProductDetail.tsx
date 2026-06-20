@@ -7,14 +7,24 @@ import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { ShoppingCart, Nfc, Leaf, Heart, Droplet, Shield, Ruler, Package, Plus, Minus } from "lucide-react";
 import collarDarkGrey from "@/assets/collar-dark-grey.jpeg";
-import collarDarkGrey2 from "@/assets/collar-darkgrey-2.jpeg";
-import collarDarkGrey3 from "@/assets/collar-darkgrey-3.jpeg";
-import collarDarkGreyLifestyle from "@/assets/collar-darkgrey-lifestyle.png";
+import collarDarkGreyNew1Asset from "@/assets/collar-darkgrey-new-1.jpeg.asset.json";
+import collarDarkGreyNew2Asset from "@/assets/collar-darkgrey-new-2.jpeg.asset.json";
+import collarDarkGreyNew3Asset from "@/assets/collar-darkgrey-new-3.jpeg.asset.json";
+import collarDarkGreyNew4Asset from "@/assets/collar-darkgrey-new-4.jpeg.asset.json";
+import collarDarkGreyVideoAsset from "@/assets/collar-darkgrey-video.mov.asset.json";
 import collarRosewood from "@/assets/collar-rosewood.jpeg";
 import collarRosewood2 from "@/assets/collar-rosewood-2.jpeg";
 import collarRosewood3 from "@/assets/collar-rosewood-3.jpeg";
 import collarRosewoodLifestyle from "@/assets/collar-rosewood-lifestyle.png";
 import guiaTallas from "@/assets/guia-tallas.png";
+
+const collarDarkGreyVideo = collarDarkGreyVideoAsset.url;
+const collarDarkGreyNew1 = collarDarkGreyNew1Asset.url;
+const collarDarkGreyNew2 = collarDarkGreyNew2Asset.url;
+const collarDarkGreyNew3 = collarDarkGreyNew3Asset.url;
+const collarDarkGreyNew4 = collarDarkGreyNew4Asset.url;
+
+type MediaItem = { type: "video" | "image"; src: string; poster?: string };
 
 const products = [
   {
@@ -24,7 +34,15 @@ const products = [
     originalPrice: 199900,
     discount: 25,
     image: collarDarkGrey,
-    images: [collarDarkGrey, collarDarkGrey2, collarDarkGrey3, collarDarkGreyLifestyle, guiaTallas],
+    images: [collarDarkGrey, collarDarkGreyNew1, collarDarkGreyNew2, collarDarkGreyNew3, collarDarkGreyNew4, guiaTallas],
+    media: [
+      { type: "video", src: collarDarkGreyVideo, poster: collarDarkGrey },
+      { type: "image", src: collarDarkGreyNew1 },
+      { type: "image", src: collarDarkGreyNew2 },
+      { type: "image", src: collarDarkGreyNew3 },
+      { type: "image", src: collarDarkGreyNew4 },
+      { type: "image", src: guiaTallas },
+    ] as MediaItem[],
     color: "Dark Grey",
     colorName: "Dark Grey",
     description: "El Collar Inteligente ALUDO combina Inteligencia Artificial de última generación con materiales sostenibles de primera calidad. Diseñado y fabricado en Colombia para ofrecer comunicación interactiva, protección y estilo a tu mascota.",
@@ -148,6 +166,8 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState<number>(1);
   const [selectedImage, setSelectedImage] = useState<number>(0);
   const currentProduct = products.find(p => p.id === Number(id)) || products[0];
+  const media: MediaItem[] = (currentProduct as { media?: MediaItem[] }).media
+    ?? currentProduct.images.map((src) => ({ type: "image" as const, src }));
 
   const handleAddToCart = () => {
     if (currentProduct) {
@@ -209,27 +229,48 @@ const ProductDetail = () => {
           {/* Product Image */}
           <div id="product-image" className="space-y-3 md:space-y-4 animate-fade-in scroll-mt-24">
             <div className="relative aspect-square overflow-hidden rounded-2xl bg-white">
-              <img
-                src={currentProduct.images[selectedImage]}
-                alt={`Collar inteligente ALUDO ${currentProduct.colorName} para perros - Vista ${selectedImage + 1}`}
-                loading="eager"
-                fetchPriority="high"
-                className="w-full h-full object-contain p-2"
-              />
+              {media[selectedImage].type === "video" ? (
+                <video
+                  key={media[selectedImage].src}
+                  src={media[selectedImage].src}
+                  poster={media[selectedImage].poster}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-full object-contain bg-white"
+                />
+              ) : (
+                <img
+                  src={media[selectedImage].src}
+                  alt={`Collar inteligente ALUDO ${currentProduct.colorName} para perros - Vista ${selectedImage + 1}`}
+                  loading="eager"
+                  fetchPriority="high"
+                  className="w-full h-full object-contain p-2"
+                />
+              )}
             </div>
-            {currentProduct.images.length > 1 && (
-              <div className="flex gap-2 md:gap-3">
-                {currentProduct.images.map((img, index) => (
+            {media.length > 1 && (
+              <div className="flex gap-2 md:gap-3 flex-wrap">
+                {media.map((item, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImage(index)}
-                    className={`w-16 h-16 md:w-20 md:h-20 rounded-lg md:rounded-xl overflow-hidden border-2 transition-all duration-300 ${
+                    className={`relative w-16 h-16 md:w-20 md:h-20 rounded-lg md:rounded-xl overflow-hidden border-2 transition-all duration-300 ${
                       selectedImage === index
                         ? "border-primary scale-105"
                         : "border-border hover:border-primary/50"
                     }`}
                   >
-                    <img src={img} alt={`Vista ${index + 1}`} className="w-full h-full object-contain bg-white p-1" />
+                    <img
+                      src={item.type === "video" ? (item.poster ?? currentProduct.image) : item.src}
+                      alt={`Vista ${index + 1}`}
+                      className="w-full h-full object-contain bg-white p-1"
+                    />
+                    {item.type === "video" && (
+                      <span className="absolute inset-0 flex items-center justify-center bg-black/30">
+                        <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6 drop-shadow"><path d="M8 5v14l11-7z"/></svg>
+                      </span>
+                    )}
                   </button>
                 ))}
               </div>
