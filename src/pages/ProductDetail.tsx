@@ -247,11 +247,36 @@ const ProductDetail = () => {
               {media[selectedImage].type === "video" ? (
                 <video
                   key={media[selectedImage].src}
+                  ref={(el) => {
+                    if (!el) return;
+                    // Try playing with sound; if blocked, fall back to muted autoplay and unmute on first interaction
+                    el.muted = false;
+                    el.volume = 1;
+                    const tryUnmuted = el.play();
+                    if (tryUnmuted && typeof tryUnmuted.catch === "function") {
+                      tryUnmuted.catch(() => {
+                        el.muted = true;
+                        el.play().catch(() => {});
+                        const unmute = () => {
+                          el.muted = false;
+                          el.play().catch(() => {});
+                          window.removeEventListener("pointerdown", unmute);
+                          window.removeEventListener("touchstart", unmute);
+                          window.removeEventListener("keydown", unmute);
+                        };
+                        window.addEventListener("pointerdown", unmute, { once: true });
+                        window.addEventListener("touchstart", unmute, { once: true });
+                        window.addEventListener("keydown", unmute, { once: true });
+                      });
+                    }
+                  }}
                   src={media[selectedImage].src}
                   poster={media[selectedImage].poster}
+                  autoPlay
+                  loop
                   controls
                   playsInline
-                  preload="metadata"
+                  preload="auto"
                   className="w-full h-full object-contain bg-white"
                 />
               ) : (
@@ -276,11 +301,21 @@ const ProductDetail = () => {
                         : "border-border hover:border-primary/50"
                     }`}
                   >
-                    <img
-                      src={item.type === "video" ? (item.poster ?? currentProduct.image) : item.src}
-                      alt={`Vista ${index + 1}`}
-                      className="w-full h-full object-contain bg-white p-1"
-                    />
+                    {item.type === "video" ? (
+                      <video
+                        src={item.src}
+                        muted
+                        playsInline
+                        preload="metadata"
+                        className="w-full h-full object-cover bg-white pointer-events-none"
+                      />
+                    ) : (
+                      <img
+                        src={item.src}
+                        alt={`Vista ${index + 1}`}
+                        className="w-full h-full object-contain bg-white p-1"
+                      />
+                    )}
                     {item.type === "video" && (
                       <span className="absolute inset-0 flex items-center justify-center bg-black/30">
                         <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6 drop-shadow"><path d="M8 5v14l11-7z"/></svg>
