@@ -166,6 +166,8 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState<number>(1);
   const [selectedImage, setSelectedImage] = useState<number>(0);
   const currentProduct = products.find(p => p.id === Number(id)) || products[0];
+  const media: MediaItem[] = (currentProduct as { media?: MediaItem[] }).media
+    ?? currentProduct.images.map((src) => ({ type: "image" as const, src }));
 
   const handleAddToCart = () => {
     if (currentProduct) {
