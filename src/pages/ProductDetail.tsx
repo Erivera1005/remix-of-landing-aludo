@@ -322,21 +322,30 @@ const ProductDetail = () => {
               <h1 className="text-[1.75rem] sm:text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-primary leading-tight">
                 {currentProduct.name}
               </h1>
-              <div className="flex flex-nowrap items-center gap-2 sm:gap-3 mb-4 md:mb-6 whitespace-nowrap">
-                <span className="text-lg sm:text-xl md:text-xl font-bold text-primary">
+              <div className="flex flex-nowrap items-center gap-2 sm:gap-3 mb-3 whitespace-nowrap">
+                <span className="text-xl sm:text-2xl md:text-2xl font-bold text-primary tracking-tight">
                   ${currentProduct.price.toLocaleString('es-CO')}
                 </span>
                 {currentProduct.originalPrice && (
-                  <span className="text-xs sm:text-sm md:text-base text-muted-foreground line-through">
-                    ${currentProduct.originalPrice.toLocaleString('es-CO')}
+                  <span className="relative text-xs sm:text-sm md:text-base text-muted-foreground">
+                    <span className="animate-price-strike">${currentProduct.originalPrice.toLocaleString('es-CO')}</span>
                   </span>
                 )}
                 {currentProduct.discount && (
-                  <span className="inline-flex items-center rounded-full bg-destructive px-3 py-1 text-sm sm:text-base font-bold text-destructive-foreground">
+                  <span className="relative inline-flex items-center rounded-full bg-destructive px-3 py-1 text-sm sm:text-base font-bold text-destructive-foreground animate-promo-pulse badge-shine">
                     {currentProduct.discount}% OFF
                   </span>
                 )}
               </div>
+              {currentProduct.originalPrice && (
+                <div className="mb-4 md:mb-6 animate-savings-float">
+                  <span className="relative inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs sm:text-sm font-extrabold tracking-wide text-white badge-shine overflow-hidden"
+                    style={{ background: "linear-gradient(110deg, #0a0f3d 0%, #1e3a8a 50%, #00d4ff 100%)", boxShadow: "0 6px 18px -4px hsl(220 90% 30% / 0.45)" }}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+                    AHORRA ${(currentProduct.originalPrice - currentProduct.price).toLocaleString('es-CO')}
+                  </span>
+                </div>
+              )}
               <div className="flex items-center gap-2 mb-4 md:mb-6 text-sm sm:text-base font-semibold text-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 sm:w-5 sm:h-5"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
                 Envío GRATIS a todo Colombia
@@ -436,10 +445,10 @@ const ProductDetail = () => {
             <div className="flex gap-3 md:gap-4">
               <Button 
                 onClick={handleAddToCart}
-                className="flex-1 h-12 md:h-14 text-base md:text-lg transition-all duration-300 hover:scale-105"
+                className="cta-futuristic animate-cta-glow flex-1 h-12 md:h-14 text-base md:text-lg font-bold tracking-wide uppercase transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
               >
                 <ShoppingCart className="w-5 h-5 mr-2" />
-                Añadir al carrito
+                Comprar ahora
               </Button>
               <Button 
                 variant="outline" 
