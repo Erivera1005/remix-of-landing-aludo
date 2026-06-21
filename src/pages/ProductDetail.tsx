@@ -445,10 +445,10 @@ const ProductDetail = () => {
             <div className="flex gap-3 md:gap-4">
               <Button 
                 onClick={handleAddToCart}
-                className="flex-1 h-12 md:h-14 text-base md:text-lg transition-all duration-300 hover:scale-105"
+                className="cta-futuristic animate-cta-glow flex-1 h-12 md:h-14 text-base md:text-lg font-bold tracking-wide uppercase transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
               >
                 <ShoppingCart className="w-5 h-5 mr-2" />
-                Añadir al carrito
+                Comprar ahora
               </Button>
               <Button 
                 variant="outline" 
