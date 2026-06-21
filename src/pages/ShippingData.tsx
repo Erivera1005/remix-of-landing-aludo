@@ -260,10 +260,10 @@ const ShippingData = () => {
               type="submit"
               size="lg"
               disabled={!isFormValid}
-              className="w-full text-base md:text-lg py-5 md:py-6 hover:scale-105 transition-all duration-300 tech-glow"
+              className="w-full text-base md:text-lg py-5 md:py-6 cta-futuristic animate-cta-glow font-bold tracking-wide uppercase transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
             >
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Finalizar compra a través de WhatsApp
+              <MessageCircle className="w-5 h-5 mr-2 relative z-10" />
+              <span className="relative z-10">Pagar por WhatsApp</span>
             </Button>
           </form>
         </div>
