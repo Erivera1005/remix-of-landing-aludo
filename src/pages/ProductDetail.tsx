@@ -353,6 +353,24 @@ const ProductDetail = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 sm:w-5 sm:h-5"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
                 Envío GRATIS a todo Colombia
               </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-3 md:gap-4 mb-5 md:mb-6">
+                <Button 
+                  onClick={handleAddToCart}
+                  className="cta-futuristic animate-cta-glow flex-1 h-12 md:h-14 text-base md:text-lg font-bold tracking-wide uppercase transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                >
+                  <ShoppingCart className="w-5 h-5 mr-2" />
+                  Comprar ahora
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="h-12 md:h-14 px-4 md:px-6 border-primary/30 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
+                >
+                  <Heart className="w-5 h-5" />
+                </Button>
+              </div>
+
               <p className="text-foreground/70 text-[1.05rem] md:text-lg leading-relaxed">
                 {currentProduct.description}
               </p>
@@ -444,22 +462,6 @@ const ProductDetail = () => {
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex gap-3 md:gap-4">
-              <Button 
-                onClick={handleAddToCart}
-                className="cta-futuristic animate-cta-glow flex-1 h-12 md:h-14 text-base md:text-lg font-bold tracking-wide uppercase transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
-              >
-                <ShoppingCart className="w-5 h-5 mr-2" />
-                Comprar ahora
-              </Button>
-              <Button 
-                variant="outline" 
-                className="h-12 md:h-14 px-4 md:px-6 border-primary/30 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
-              >
-                <Heart className="w-5 h-5" />
-              </Button>
-            </div>
 
             {/* Key Features Cards */}
             <div className="grid grid-cols-2 gap-3 md:gap-4 pt-2 md:pt-4">
