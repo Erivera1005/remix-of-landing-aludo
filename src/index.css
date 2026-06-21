@@ -221,4 +221,27 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
     50% { box-shadow: 0 0 0 6px hsl(var(--primary) / 0), 0 14px 36px -8px hsl(var(--primary) / 0.6); }
   }
   .animate-cta-glow { animation: cta-border-glow 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+  .clean-product-video::-webkit-media-controls,
+  .clean-product-video::-webkit-media-controls-panel,
+  .clean-product-video::-webkit-media-controls-overlay-play-button,
+  .clean-product-video::-webkit-media-controls-start-playback-button,
+  .clean-product-video::-webkit-media-controls-enclosure,
+  .clean-product-video::-webkit-media-controls-timeline,
+  .clean-product-video::-webkit-media-controls-current-time-display,
+  .clean-product-video::-webkit-media-controls-time-remaining-display,
+  .clean-product-video::-webkit-media-controls-volume-slider,
+  .clean-product-video::-webkit-media-controls-mute-button,
+  .clean-product-video::-webkit-media-controls-play-button,
+  .clean-product-video::-webkit-media-controls-fullscreen-button {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .clean-product-video {
+    -webkit-appearance: none;
+    appearance: none;
+    pointer-events: none;
+  }
 }
