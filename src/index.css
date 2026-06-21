@@ -244,4 +244,12 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
     appearance: none;
     pointer-events: none;
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
