@@ -263,10 +263,13 @@ const ProductDetail = () => {
                   poster={media[selectedImage].poster}
                   autoPlay
                   loop
-                  controls
                   playsInline
+                  disablePictureInPicture
+                  controlsList="nodownload noplaybackrate noremoteplayback"
                   preload="auto"
-                  className="w-full h-full object-contain bg-white"
+                  aria-label={`Video del collar inteligente ALUDO ${currentProduct.colorName}`}
+                  onContextMenu={(event) => event.preventDefault()}
+                  className="clean-product-video w-full h-full object-contain bg-white"
                 />
               ) : (
                 <img
