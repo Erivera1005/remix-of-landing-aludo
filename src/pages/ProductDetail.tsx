@@ -282,12 +282,12 @@ const ProductDetail = () => {
               )}
             </div>
             {media.length > 1 && (
-              <div className="flex gap-2 md:gap-3 flex-wrap">
+              <div className="flex gap-2 md:gap-3 overflow-x-auto pb-2 scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0 md:flex-wrap md:overflow-visible">
                 {media.map((item, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImage(index)}
-                    className={`relative w-16 h-16 md:w-20 md:h-20 rounded-lg md:rounded-xl overflow-hidden border-2 transition-all duration-300 ${
+                    className={`relative flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg md:rounded-xl overflow-hidden border-2 transition-all duration-300 ${
                       selectedImage === index
                         ? "border-primary scale-105"
                         : "border-border hover:border-primary/50"
