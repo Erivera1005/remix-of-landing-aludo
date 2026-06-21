@@ -158,4 +158,67 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
   /* Performance helpers */
   .content-contain { contain: layout paint; }
   .gpu-accel { transform: translateZ(0); will-change: transform; }
+
+  /* --- Futuristic promo animations --- */
+  @keyframes price-strike {
+    0% { background-size: 0% 2px; }
+    100% { background-size: 100% 2px; }
+  }
+  .animate-price-strike {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 100% 2px;
+    text-decoration: none;
+    animation: price-strike 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes promo-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 hsl(var(--destructive) / 0.55); }
+    50% { transform: scale(1.06); box-shadow: 0 0 0 10px hsl(var(--destructive) / 0); }
+  }
+  .animate-promo-pulse { animation: promo-pulse 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+  @keyframes badge-shine {
+    0% { transform: translateX(-150%) skewX(-20deg); }
+    60%, 100% { transform: translateX(250%) skewX(-20deg); }
+  }
+  .badge-shine { position: relative; overflow: hidden; }
+  .badge-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 35%, hsl(0 0% 100% / 0.55) 50%, transparent 65%);
+    transform: translateX(-150%) skewX(-20deg);
+    animation: badge-shine 3.2s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes savings-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+  .animate-savings-float { animation: savings-float 2.4s ease-in-out infinite; }
+
+  @keyframes cta-sheen {
+    0% { transform: translateX(-120%) skewX(-20deg); }
+    100% { transform: translateX(220%) skewX(-20deg); }
+  }
+  .cta-futuristic { position: relative; overflow: hidden; isolation: isolate; }
+  .cta-futuristic::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(120deg, transparent 30%, hsl(0 0% 100% / 0.35) 50%, transparent 70%);
+    transform: translateX(-120%) skewX(-20deg);
+    animation: cta-sheen 2.8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .cta-futuristic > * { position: relative; z-index: 2; }
+
+  @keyframes cta-border-glow {
+    0%, 100% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0.5), 0 10px 30px -10px hsl(var(--primary) / 0.45); }
+    50% { box-shadow: 0 0 0 6px hsl(var(--primary) / 0), 0 14px 36px -8px hsl(var(--primary) / 0.6); }
+  }
+  .animate-cta-glow { animation: cta-border-glow 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
 }
