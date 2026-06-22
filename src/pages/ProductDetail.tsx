@@ -219,7 +219,7 @@ const ProductDetail = () => {
       />
       <Header />
       
-      <main className="container mx-auto px-5 sm:px-6 pt-24 md:pt-32 pb-16 md:pb-20">
+      <main className="container mx-auto px-5 sm:px-6 pt-24 md:pt-32 pb-16 md:pb-20 max-w-full overflow-x-hidden">
         <Button 
           variant="ghost" 
           onClick={() => navigate("/shop")}
