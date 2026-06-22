@@ -277,7 +277,7 @@ const ProductDetail = () => {
                   alt={`Collar inteligente ALUDO ${currentProduct.colorName} para perros - Vista ${selectedImage + 1}`}
                   loading="eager"
                   fetchPriority="high"
-                  className="w-full h-full object-contain p-2"
+                  className="w-full h-full object-contain"
                 />
               )}
             </div>
