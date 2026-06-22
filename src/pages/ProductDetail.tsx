@@ -232,7 +232,7 @@ const ProductDetail = () => {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
           {/* Product Image */}
           <div id="product-image" className="space-y-3 md:space-y-4 animate-fade-in scroll-mt-24">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white">
+            <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden rounded-2xl bg-white">
               {media[selectedImage].type === "video" ? (
                 <video
                   key={media[selectedImage].src}
@@ -277,17 +277,17 @@ const ProductDetail = () => {
                   alt={`Collar inteligente ALUDO ${currentProduct.colorName} para perros - Vista ${selectedImage + 1}`}
                   loading="eager"
                   fetchPriority="high"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain object-center scale-110"
                 />
               )}
             </div>
             {media.length > 1 && (
-              <div className="flex gap-2 md:gap-3 overflow-x-auto pb-2 scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0 md:flex-wrap md:overflow-visible">
+              <div className="flex gap-2 md:gap-3 overflow-x-auto pb-2 scrollbar-hide -mx-5 px-5 md:mx-0 md:px-0 md:flex-wrap md:overflow-visible md:justify-center">
                 {media.map((item, index) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImage(index)}
-                    className={`relative flex-shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-lg md:rounded-xl overflow-hidden border-2 transition-all duration-300 ${
+                    className={`relative flex-shrink-0 w-[4.5rem] h-[4.5rem] md:w-24 md:h-24 rounded-lg md:rounded-xl overflow-hidden border-2 transition-all duration-300 ${
                       selectedImage === index
                         ? "border-primary scale-105"
                         : "border-border hover:border-primary/50"
@@ -305,7 +305,7 @@ const ProductDetail = () => {
                       <img
                         src={item.src}
                         alt={`Vista ${index + 1}`}
-                        className="w-full h-full object-contain bg-white p-1"
+                        className="w-full h-full object-contain object-center bg-white scale-110"
                       />
                     )}
                     {item.type === "video" && (
