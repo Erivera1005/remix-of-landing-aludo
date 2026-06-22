@@ -45,7 +45,7 @@ const Header = () => {
         <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center group">
-              <img src={logo} alt="ALUDO Logo" loading="eager" decoding="async" fetchPriority="high" className="h-20 w-auto transition-transform duration-200 hover:scale-105" />
+              <img src={logo} alt="ALUDO Logo" loading="eager" decoding="async" fetchPriority="high" className="h-16 md:h-20 w-auto transition-transform duration-200 hover:scale-105" />
             </Link>
 
             <nav className="hidden md:flex items-center space-x-6">
