@@ -330,7 +330,7 @@ const ProductDetail = () => {
                   ${currentProduct.price.toLocaleString('es-CO')}
                 </span>
                 {currentProduct.originalPrice && (
-                  <span className="relative text-xl sm:text-2xl md:text-2xl text-muted-foreground">
+                  <span className="relative text-xs sm:text-sm md:text-base text-muted-foreground">
                     <span className="animate-price-strike">${currentProduct.originalPrice.toLocaleString('es-CO')}</span>
                   </span>
                 )}
