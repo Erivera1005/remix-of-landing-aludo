@@ -232,7 +232,7 @@ const ProductDetail = () => {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
           {/* Product Image */}
           <div id="product-image" className="space-y-3 md:space-y-4 animate-fade-in scroll-mt-24">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white">
+            <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden rounded-2xl bg-white">
               {media[selectedImage].type === "video" ? (
                 <video
                   key={media[selectedImage].src}
@@ -277,7 +277,7 @@ const ProductDetail = () => {
                   alt={`Collar inteligente ALUDO ${currentProduct.colorName} para perros - Vista ${selectedImage + 1}`}
                   loading="eager"
                   fetchPriority="high"
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain object-center scale-110"
                 />
               )}
             </div>
