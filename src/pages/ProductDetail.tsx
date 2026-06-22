@@ -219,7 +219,7 @@ const ProductDetail = () => {
       />
       <Header />
       
-      <main className="container mx-auto px-5 sm:px-6 pt-24 md:pt-32 pb-16 md:pb-20">
+      <main className="container mx-auto px-5 sm:px-6 pt-24 md:pt-32 pb-16 md:pb-20 max-w-full">
         <Button 
           variant="ghost" 
           onClick={() => navigate("/shop")}
@@ -325,7 +325,7 @@ const ProductDetail = () => {
               <h1 className="text-[1.75rem] sm:text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-primary leading-tight">
                 {currentProduct.name}
               </h1>
-              <div className="flex flex-nowrap items-center gap-2 sm:gap-3 mb-3 whitespace-nowrap">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3">
                 <span className="text-xl sm:text-2xl md:text-2xl font-bold text-primary tracking-tight">
                   ${currentProduct.price.toLocaleString('es-CO')}
                 </span>
@@ -355,17 +355,17 @@ const ProductDetail = () => {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex gap-3 md:gap-4 mb-5 md:mb-6">
+              <div className="flex gap-3 md:gap-4 mb-5 md:mb-6 min-w-0">
                 <Button 
                   onClick={handleAddToCart}
-                  className="cta-futuristic animate-cta-glow flex-1 h-12 md:h-14 text-base md:text-lg font-bold tracking-wide uppercase transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                  className="cta-futuristic animate-cta-glow flex-1 h-12 md:h-14 text-base md:text-lg font-bold tracking-wide uppercase transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98] min-w-0"
                 >
-                  <ShoppingCart className="w-5 h-5 mr-2" />
+                  <ShoppingCart className="w-5 h-5 mr-2 flex-shrink-0" />
                   Comprar ahora
                 </Button>
                 <Button 
                   variant="outline" 
-                  className="h-12 md:h-14 px-4 md:px-6 border-primary/30 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300"
+                  className="h-12 md:h-14 px-4 md:px-6 border-primary/30 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 flex-shrink-0"
                 >
                   <Heart className="w-5 h-5" />
                 </Button>
