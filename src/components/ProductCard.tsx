@@ -1,9 +1,7 @@
-import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link, useNavigate } from "react-router-dom";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 export interface Product {
   id: number;
@@ -23,57 +21,19 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
-  const isMobile = useIsMobile();
   const navigate = useNavigate();
-  const [showAlt, setShowAlt] = useState(false);
-
-  const handleImageClick = (e: React.MouseEvent) => {
-    if (isMobile && product.hoverImage) {
-      e.preventDefault();
-      if (showAlt) {
-        // Second tap navigates
-        navigate(`/product/${product.id}`);
-      } else {
-        setShowAlt(true);
-      }
-    }
-  };
 
   return (
     <Card className="group overflow-hidden border-primary/10 bg-card/80 hover-lift cursor-pointer content-contain flex flex-col">
-      <Link
-        to={`/product/${product.id}`}
-        onClick={isMobile && product.hoverImage ? (e) => e.preventDefault() : undefined}
-      >
-        <div
-          className="relative aspect-square overflow-hidden bg-white"
-          onClick={handleImageClick}
-        >
+      <Link to={`/product/${product.id}`}>
+        <div className="relative aspect-square overflow-hidden bg-white">
           <img
             src={product.image}
             alt={`Collar inteligente ALUDO ${product.color} para perros Colombia`}
             loading="lazy"
             decoding="async"
-            className={`w-full h-full object-contain p-0 md:p-3 scale-125 md:scale-100 transition-opacity duration-500 ${
-              isMobile
-                ? showAlt ? 'opacity-0' : 'opacity-100'
-                : product.hoverImage ? 'group-hover:opacity-0' : 'group-hover:scale-105 transition-transform duration-300'
-            }`}
+            className="w-full h-full object-contain p-0 md:p-3 scale-125 md:scale-100 group-hover:scale-105 transition-transform duration-300"
           />
-          {product.hoverImage && (
-            <img
-              src={product.hoverImage}
-              alt={`${product.name} lifestyle`}
-              loading="lazy"
-              decoding="async"
-              className={`absolute inset-0 w-full h-full object-contain p-0 md:p-3 scale-125 md:scale-100 transition-opacity duration-500 ${
-                isMobile
-                  ? showAlt ? 'opacity-100' : 'opacity-0'
-                  : 'opacity-0 group-hover:opacity-100'
-              }`}
-            />
-          )}
-          <div className="absolute inset-0 from-background/80 to-transparent opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t" />
         </div>
       </Link>
       
