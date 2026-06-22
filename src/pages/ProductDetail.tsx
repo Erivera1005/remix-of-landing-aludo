@@ -219,7 +219,7 @@ const ProductDetail = () => {
       />
       <Header />
       
-      <main className="container mx-auto px-5 sm:px-6 pt-28 md:pt-32 pb-16 md:pb-20">
+      <main className="container mx-auto px-5 sm:px-6 pt-24 md:pt-32 pb-16 md:pb-20">
         <Button 
           variant="ghost" 
           onClick={() => navigate("/shop")}
@@ -232,7 +232,7 @@ const ProductDetail = () => {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
           {/* Product Image */}
           <div id="product-image" className="space-y-3 md:space-y-4 animate-fade-in scroll-mt-24">
-            <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden rounded-2xl bg-white">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white">
               {media[selectedImage].type === "video" ? (
                 <video
                   key={media[selectedImage].src}
