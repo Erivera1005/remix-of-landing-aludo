@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ShoppingCart } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link, useNavigate } from "react-router-dom";
@@ -108,14 +108,12 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
             </span>
           </div>
           <Button
-            onClick={(e) => {
-              e.preventDefault();
-              onAddToCart(product);
-            }}
-            className="transition-transform duration-200 hover:scale-105 text-sm md:text-sm px-4 py-2.5"
+            variant="outline"
+            onClick={() => navigate(`/product/${product.id}`)}
+            className="transition-transform duration-200 hover:scale-105 hover:bg-primary hover:text-primary-foreground text-sm md:text-sm px-4 py-2.5 border-primary/30"
           >
-            <ShoppingCart className="w-4 h-4 md:w-4 md:h-4 mr-2" />
-            Añadir
+            Ver producto
+            <ArrowRight className="w-4 h-4 md:w-4 md:h-4 ml-2" />
           </Button>
         </div>
       </CardContent>
