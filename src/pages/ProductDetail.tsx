@@ -429,8 +429,9 @@ const ProductDetail = () => {
                   setSelectedImage(currentProduct.images.length - 1);
                   document.getElementById("product-image")?.scrollIntoView({ behavior: "smooth", block: "start" });
                 }}
-                className="mt-3 text-sm text-primary underline underline-offset-2 hover:text-primary/80 transition-colors"
+                className="mt-3 inline-flex items-center gap-1.5 rounded-lg border-2 border-primary/20 bg-primary/5 px-4 py-2 text-sm font-semibold text-primary shadow-sm transition-all duration-300 hover:border-primary/50 hover:bg-primary/10 hover:shadow-md active:scale-[0.97]"
               >
+                <Ruler className="w-4 h-4" />
                 Revisar tabla de tallas
               </button>
             </div>
