@@ -406,6 +406,31 @@ const ProductDetail = () => {
               </div>
             </div>
 
+            {/* Quantity Selector */}
+            <div>
+              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 text-primary">Cantidad</h3>
+              <div className="flex items-center gap-3 md:gap-4">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                  disabled={quantity <= 1}
+                  className="h-10 w-10 md:h-12 md:w-12 border-primary/30 text-primary hover:bg-primary/10"
+                >
+                  <Minus className="w-4 h-4 md:w-5 md:h-5" />
+                </Button>
+                <span className="text-xl md:text-2xl font-bold w-10 md:w-12 text-center">{quantity}</span>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => setQuantity(quantity + 1)}
+                  className="h-10 w-10 md:h-12 md:w-12 border-primary/30 text-primary hover:bg-primary/10"
+                >
+                  <Plus className="w-4 h-4 md:w-5 md:h-5" />
+                </Button>
+              </div>
+            </div>
+
             {/* Size Selector */}
             <div>
               <h3 className="text-lg md:text-xl font-semibold mb-3 text-primary">Talla</h3>
@@ -437,31 +462,6 @@ const ProductDetail = () => {
             </div>
 
 
-
-            {/* Quantity Selector */}
-            <div>
-              <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4 text-primary">Cantidad</h3>
-              <div className="flex items-center gap-3 md:gap-4">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  disabled={quantity <= 1}
-                  className="h-10 w-10 md:h-12 md:w-12 border-primary/30 text-primary hover:bg-primary/10"
-                >
-                  <Minus className="w-4 h-4 md:w-5 md:h-5" />
-                </Button>
-                <span className="text-xl md:text-2xl font-bold w-10 md:w-12 text-center">{quantity}</span>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  onClick={() => setQuantity(quantity + 1)}
-                  className="h-10 w-10 md:h-12 md:w-12 border-primary/30 text-primary hover:bg-primary/10"
-                >
-                  <Plus className="w-4 h-4 md:w-5 md:h-5" />
-                </Button>
-              </div>
-            </div>
 
 
             {/* Key Features Cards */}
