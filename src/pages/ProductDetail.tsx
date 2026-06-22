@@ -325,7 +325,7 @@ const ProductDetail = () => {
               <h1 className="text-[1.75rem] sm:text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-primary leading-tight">
                 {currentProduct.name}
               </h1>
-              <div className="flex flex-nowrap items-center gap-2 sm:gap-3 mb-3 whitespace-nowrap">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3">
                 <span className="text-xl sm:text-2xl md:text-2xl font-bold text-primary tracking-tight">
                   ${currentProduct.price.toLocaleString('es-CO')}
                 </span>
