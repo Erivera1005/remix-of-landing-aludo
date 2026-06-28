@@ -6,7 +6,7 @@ import SEOHead, { createProductSchema, createBreadcrumbSchema } from "@/componen
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { ShoppingCart, Nfc, Leaf, Heart, Droplet, Shield, Ruler, Package, Plus, Minus } from "lucide-react";
-import { PlayCircle, X } from "lucide-react";
+import { PlayCircle } from "lucide-react";
 import collarDarkGrey from "@/assets/collar-dark-grey.jpeg";
 import collarDarkGreyNew1 from "@/assets/collar-darkgrey-opt-1.jpg";
 import collarDarkGreyNew2 from "@/assets/collar-darkgrey-opt-2.jpg";
@@ -170,7 +170,6 @@ const ProductDetail = () => {
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState<number>(1);
   const [selectedImage, setSelectedImage] = useState<number>(0);
-  const [showVideo, setShowVideo] = useState<boolean>(false);
   const currentProduct = products.find(p => p.id === Number(id)) || products[0];
   const media: MediaItem[] = (currentProduct as { media?: MediaItem[] }).media
     ?? currentProduct.images.map((src) => ({ type: "image" as const, src }));
@@ -378,7 +377,7 @@ const ProductDetail = () => {
                 <Button
                   type="button"
                   variant="outline"
-                  onClick={() => setShowVideo(true)}
+                  onClick={() => navigate("/como-funciona")}
                   className="w-full h-12 md:h-14 text-base md:text-lg font-bold tracking-wide uppercase border-primary/40 text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300"
                 >
                   <PlayCircle className="w-5 h-5 mr-2 flex-shrink-0" />
@@ -647,37 +646,6 @@ const ProductDetail = () => {
       </main>
 
       <Footer />
-
-      {showVideo && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-fade-in"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Video: cómo funciona el collar ALUDO"
-          onClick={() => setShowVideo(false)}
-        >
-          <div
-            className="relative w-full max-w-[420px] aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              onClick={() => setShowVideo(false)}
-              aria-label="Cerrar video"
-              className="absolute top-3 right-3 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-black/60 hover:bg-black/80 text-white transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            <iframe
-              src="https://www.youtube.com/embed/1KCReSMesO4?autoplay=1&rel=0&playsinline=1"
-              title="Cómo funciona el Collar Inteligente ALUDO"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="absolute inset-0 w-full h-full"
-            />
-          </div>
-        </div>
-      )}
     </div>
   );
 };
