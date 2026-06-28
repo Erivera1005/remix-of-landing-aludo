@@ -190,6 +190,22 @@ const ProductDetail = () => {
         image: currentProduct.image,
         color: currentProduct.colorName,
       }, quantity);
+
+      // Meta: AddToCart (Pixel + CAPI, deduplicated by event_id)
+      trackMetaEvent("AddToCart", {
+        value: currentProduct.price * quantity,
+        currency: "COP",
+        content_ids: [String(currentProduct.id)],
+        content_name: `${currentProduct.name} - ${currentProduct.colorName}`,
+        content_type: "product",
+        contents: [{
+          id: String(currentProduct.id),
+          quantity,
+          item_price: currentProduct.price,
+        }],
+        num_items: quantity,
+      });
+
       setQuantity(1);
     }
   };
