@@ -7,6 +7,7 @@ import { CartProvider } from "@/context/CartContext";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CartDrawer from "@/components/CartDrawer";
 import ScrollToTop from "@/components/ScrollToTop";
+import MetaPageView from "@/components/MetaPageView";
 import Index from "./pages/Index";
 import Shop from "./pages/Shop";
 import ProductDetail from "./pages/ProductDetail";
@@ -27,6 +28,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          <MetaPageView />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/shop" element={<Shop />} />

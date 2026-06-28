@@ -15,6 +15,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useCart } from "@/context/CartContext";
+import { trackMetaEvent } from "@/lib/metaEvents";
 import { MessageCircle } from "lucide-react";
 
 const formatCOP = (value: number) => `$${value.toLocaleString("es-CO")}`;
@@ -73,6 +74,34 @@ const ShippingData = () => {
     const finalCity = formData.city === "Otra" ? formData.otherCity.trim() : formData.city;
     const dataToStore = { ...formData, city: finalCity };
     sessionStorage.setItem("aludo_shipping", JSON.stringify(dataToStore));
+
+    // Meta: Purchase (Pixel + CAPI, deduplicated by event_id)
+    const firstName = formData.name.trim().split(/\s+/)[0] ?? "";
+    const lastName = formData.name.trim().split(/\s+/).slice(1).join(" ");
+    trackMetaEvent(
+      "Purchase",
+      {
+        value: getTotalPrice(),
+        currency: "COP",
+        contents: cart.map((it) => ({
+          id: String(it.id),
+          quantity: it.quantity,
+          item_price: it.price,
+        })),
+        content_ids: cart.map((it) => String(it.id)),
+        content_type: "product",
+        num_items: cart.reduce((n, it) => n + it.quantity, 0),
+      },
+      {
+        first_name: firstName,
+        last_name: lastName,
+        phone: formData.phone,
+        city: finalCity,
+        country: "co",
+        external_id: formData.document,
+      },
+    );
+
     navigate("/checkout");
   };
 

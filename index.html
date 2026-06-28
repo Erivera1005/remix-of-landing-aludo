@@ -35,7 +35,8 @@
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '943491058154610');
-      fbq('track', 'PageView');
+      // PageView is fired from React (MetaPageView) with an event_id
+      // so it deduplicates with the server-side CAPI event.
     </script>
     <!-- End Meta Pixel Code -->
   </head>

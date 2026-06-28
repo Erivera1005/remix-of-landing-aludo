@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import SEOHead, { createProductSchema, createBreadcrumbSchema } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
+import { trackMetaEvent } from "@/lib/metaEvents";
 import { ShoppingCart, Nfc, Leaf, Heart, Droplet, Shield, Ruler, Package, Plus, Minus } from "lucide-react";
 import { PlayCircle } from "lucide-react";
 import collarDarkGrey from "@/assets/collar-dark-grey.jpeg";
@@ -190,6 +191,22 @@ const ProductDetail = () => {
         image: currentProduct.image,
         color: currentProduct.colorName,
       }, quantity);
+
+      // Meta: AddToCart (Pixel + CAPI, deduplicated by event_id)
+      trackMetaEvent("AddToCart", {
+        value: currentProduct.price * quantity,
+        currency: "COP",
+        content_ids: [String(currentProduct.id)],
+        content_name: `${currentProduct.name} - ${currentProduct.colorName}`,
+        content_type: "product",
+        contents: [{
+          id: String(currentProduct.id),
+          quantity,
+          item_price: currentProduct.price,
+        }],
+        num_items: quantity,
+      });
+
       setQuantity(1);
     }
   };
