@@ -18,6 +18,7 @@ import collarRosewoodNew1Asset from "@/assets/collar-rosewood-v2-1.jpg.asset.jso
 import collarRosewoodNew2Asset from "@/assets/collar-rosewood-v2-2.jpg.asset.json";
 import collarRosewoodNew3Asset from "@/assets/collar-rosewood-v2-3.jpg.asset.json";
 import collarRosewoodNew4 from "@/assets/collar-rosewood-opt-4.jpg";
+import collarRosewoodVideo from "@/assets/collar-rosewood-video.mp4";
 import guiaTallas from "@/assets/guia-tallas.png";
 
 const collarDarkGreyNew1 = collarDarkGreyNew1Asset.url;
