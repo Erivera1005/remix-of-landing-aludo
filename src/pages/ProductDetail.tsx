@@ -18,8 +18,14 @@ import collarRosewoodNew1Asset from "@/assets/collar-rosewood-v2-1.jpg.asset.jso
 import collarRosewoodNew2Asset from "@/assets/collar-rosewood-v2-2.jpg.asset.json";
 import collarRosewoodNew3Asset from "@/assets/collar-rosewood-v2-3.jpg.asset.json";
 import collarRosewoodNew4 from "@/assets/collar-rosewood-opt-4.jpg";
-import collarRosewoodVideo from "@/assets/collar-rosewood-video.mp4";
 import guiaTallas from "@/assets/guia-tallas.png";
+
+const collarDarkGreyNew1 = collarDarkGreyNew1Asset.url;
+const collarDarkGreyNew2 = collarDarkGreyNew2Asset.url;
+const collarDarkGreyNew3 = collarDarkGreyNew3Asset.url;
+const collarRosewoodNew1 = collarRosewoodNew1Asset.url;
+const collarRosewoodNew2 = collarRosewoodNew2Asset.url;
+const collarRosewoodNew3 = collarRosewoodNew3Asset.url;
 
 type MediaItem = { type: "video" | "image"; src: string; poster?: string };
 
