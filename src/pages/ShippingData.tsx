@@ -15,6 +15,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useCart } from "@/context/CartContext";
+import { trackMetaEvent } from "@/lib/metaEvents";
 import { MessageCircle } from "lucide-react";
 
 const formatCOP = (value: number) => `$${value.toLocaleString("es-CO")}`;
