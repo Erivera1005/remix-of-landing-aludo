@@ -1,11 +1,11 @@
 {
-  "version": 1,
-  "asset_id": "4e741777-c562-4ed4-85f0-53288503a280",
-  "project_id": "ee09ff65-0471-4c3d-9fb5-32739754b049",
-  "url": "/__l5e/assets-v1/4e741777-c562-4ed4-85f0-53288503a280/collar-rosewood-opt-2.jpg",
-  "r2_key": "a/v1/ee09ff65-0471-4c3d-9fb5-32739754b049/4e741777-c562-4ed4-85f0-53288503a280/collar-rosewood-opt-2.jpg",
-  "original_filename": "collar-rosewood-opt-2.jpg",
-  "size": 144429,
+  "asset_id": "307183ac-201e-4af6-afc4-82fc0ac9e400",
   "content_type": "image/jpeg",
-  "created_at": "2026-06-28T13:38:25Z"
+  "created_at": "2026-06-20T22:23:28Z",
+  "original_filename": "collar-rosewood-opt-2.jpg",
+  "project_id": "ee09ff65-0471-4c3d-9fb5-32739754b049",
+  "r2_key": "a/v1/ee09ff65-0471-4c3d-9fb5-32739754b049/307183ac-201e-4af6-afc4-82fc0ac9e400/collar-rosewood-opt-2.jpg",
+  "size": 69962,
+  "url": "/__l5e/assets-v1/307183ac-201e-4af6-afc4-82fc0ac9e400/collar-rosewood-opt-2.jpg",
+  "version": 1
 }
