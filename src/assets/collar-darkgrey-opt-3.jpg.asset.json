@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "26b23eb7-7f54-42d6-8a06-e7389a57c8e1",
-  "project_id": "9e1bf189-96f4-4e29-a66c-d823b4cbf984",
-  "url": "/__l5e/assets-v1/26b23eb7-7f54-42d6-8a06-e7389a57c8e1/collar-darkgrey-opt-3.jpg",
-  "r2_key": "a/v1/9e1bf189-96f4-4e29-a66c-d823b4cbf984/26b23eb7-7f54-42d6-8a06-e7389a57c8e1/collar-darkgrey-opt-3.jpg",
-  "original_filename": "collar-darkgrey-opt-3.jpg",
-  "size": 156140,
   "content_type": "image/jpeg",
-  "created_at": "2026-06-28T13:54:52Z"
+  "created_at": "2026-06-28T13:54:52Z",
+  "original_filename": "collar-darkgrey-opt-3.jpg",
+  "project_id": "89cd75ca-82fd-43f4-8909-58994a5ddfdd",
+  "r2_key": "a/v1/89cd75ca-82fd-43f4-8909-58994a5ddfdd/26b23eb7-7f54-42d6-8a06-e7389a57c8e1/collar-darkgrey-opt-3.jpg",
+  "size": 156140,
+  "url": "/__l5e/assets-v1/26b23eb7-7f54-42d6-8a06-e7389a57c8e1/collar-darkgrey-opt-3.jpg",
+  "version": 1
 }
