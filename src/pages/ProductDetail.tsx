@@ -6,6 +6,7 @@ import SEOHead, { createProductSchema, createBreadcrumbSchema } from "@/componen
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 import { ShoppingCart, Nfc, Leaf, Heart, Droplet, Shield, Ruler, Package, Plus, Minus } from "lucide-react";
+import { PlayCircle, X } from "lucide-react";
 import collarDarkGrey from "@/assets/collar-dark-grey.jpeg";
 import collarDarkGreyNew1 from "@/assets/collar-darkgrey-opt-1.jpg";
 import collarDarkGreyNew2 from "@/assets/collar-darkgrey-opt-2.jpg";
@@ -169,6 +170,7 @@ const ProductDetail = () => {
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState<number>(1);
   const [selectedImage, setSelectedImage] = useState<number>(0);
+  const [showVideo, setShowVideo] = useState<boolean>(false);
   const currentProduct = products.find(p => p.id === Number(id)) || products[0];
   const media: MediaItem[] = (currentProduct as { media?: MediaItem[] }).media
     ?? currentProduct.images.map((src) => ({ type: "image" as const, src }));
@@ -368,6 +370,19 @@ const ProductDetail = () => {
                   className="h-12 md:h-14 px-4 md:px-6 border-primary/30 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 flex-shrink-0"
                 >
                   <Heart className="w-5 h-5" />
+                </Button>
+              </div>
+
+              {/* Ver Cómo Funciona */}
+              <div className="mb-5 md:mb-6 min-w-0">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => setShowVideo(true)}
+                  className="w-full h-12 md:h-14 text-base md:text-lg font-bold tracking-wide uppercase border-primary/40 text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300"
+                >
+                  <PlayCircle className="w-5 h-5 mr-2 flex-shrink-0" />
+                  Ver Cómo Funciona
                 </Button>
               </div>
 
