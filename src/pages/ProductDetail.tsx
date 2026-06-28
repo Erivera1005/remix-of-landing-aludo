@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import SEOHead, { createProductSchema, createBreadcrumbSchema } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
+import { trackMetaEvent } from "@/lib/metaEvents";
 import { ShoppingCart, Nfc, Leaf, Heart, Droplet, Shield, Ruler, Package, Plus, Minus } from "lucide-react";
 import { PlayCircle } from "lucide-react";
 import collarDarkGrey from "@/assets/collar-dark-grey.jpeg";
