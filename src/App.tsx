@@ -14,6 +14,7 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import ShippingData from "./pages/ShippingData";
 import QR from "./pages/QR";
+import HowItWorks from "./pages/HowItWorks";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/datos-envio" element={<ShippingData />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/qr" element={<QR />} />
+            <Route path="/como-funciona" element={<HowItWorks />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
