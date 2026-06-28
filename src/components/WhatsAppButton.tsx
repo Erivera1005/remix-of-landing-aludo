@@ -3,7 +3,7 @@ import whatsappIcon from "@/assets/whatsapp-icon.png";
 
 const WhatsAppButton = () => {
   const location = useLocation();
-  const hiddenPaths = ["/qr", "/datos-envio"];
+  const hiddenPaths = ["/qr", "/datos-envio", "/como-funciona"];
   if (hiddenPaths.includes(location.pathname)) return null;
   if (location.pathname.startsWith("/product/")) return null;
 

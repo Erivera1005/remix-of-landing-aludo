@@ -17,7 +17,7 @@ const HowItWorks = () => {
       <header className="container mx-auto px-5 sm:px-6 pt-6 md:pt-8">
         <Button
           variant="ghost"
-          onClick={() => navigate(-1)}
+          onClick={() => navigate("/product/1")}
           className="hover:bg-primary/10 transition-all duration-300"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
@@ -42,7 +42,7 @@ const HowItWorks = () => {
 
         <div className="mt-8 w-full max-w-[420px]">
           <Button
-            onClick={() => navigate("/shop")}
+            onClick={() => navigate("/product/1")}
             className="cta-futuristic w-full h-12 md:h-14 text-base md:text-lg font-bold tracking-wide uppercase"
           >
             <ArrowLeft className="w-5 h-5 mr-2" />
