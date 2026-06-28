@@ -229,9 +229,9 @@ const ProductDetail = () => {
         </Button>
 
         {/* Product Grid */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
+        <div className="grid min-w-0 md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
           {/* Product Image */}
-          <div id="product-image" className="space-y-3 md:space-y-4 animate-fade-in scroll-mt-24">
+          <div id="product-image" className="min-w-0 space-y-3 md:space-y-4 animate-fade-in scroll-mt-24">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white">
               {media[selectedImage].type === "video" ? (
                 <video
@@ -282,7 +282,7 @@ const ProductDetail = () => {
               )}
             </div>
             {media.length > 1 && (
-              <div className="flex flex-nowrap gap-2 md:gap-3 pb-2 overflow-x-auto md:flex-wrap md:justify-center md:overflow-visible scrollbar-hide snap-x snap-mandatory">
+              <div data-product-thumbnails className="w-full max-w-full min-w-0 flex flex-nowrap gap-2 md:gap-3 pb-2 overflow-x-auto overscroll-x-contain md:flex-wrap md:justify-center md:overflow-visible scrollbar-hide snap-x snap-mandatory">
                 {media.map((item, index) => (
                   <button
                     key={index}
@@ -320,7 +320,7 @@ const ProductDetail = () => {
           </div>
 
           {/* Product Info */}
-          <div className="space-y-6 md:space-y-8 animate-fade-in">
+          <div className="min-w-0 space-y-6 md:space-y-8 animate-fade-in">
             <div>
               <h1 className="text-[1.75rem] sm:text-3xl md:text-5xl font-bold mb-3 md:mb-4 text-primary leading-tight">
                 {currentProduct.name}
