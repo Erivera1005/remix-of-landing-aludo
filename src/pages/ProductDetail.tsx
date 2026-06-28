@@ -282,7 +282,7 @@ const ProductDetail = () => {
               )}
             </div>
             {media.length > 1 && (
-              <div className="flex flex-wrap justify-center gap-2 md:gap-3 pb-2">
+              <div className="flex flex-nowrap gap-2 md:gap-3 pb-2 overflow-x-auto scrollbar-hide">
                 {media.map((item, index) => (
                   <button
                     key={index}
