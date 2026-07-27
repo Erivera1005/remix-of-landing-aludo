@@ -50,22 +50,22 @@ const ProductCard = ({ product, onAddToCart }: ProductCardProps) => {
         </div>
         
         <div className="flex items-center justify-between gap-3 mt-4 md:mt-4">
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-0.5">
+            <span className="text-2xl md:text-2xl font-bold text-primary leading-none">
+              ${product.price.toLocaleString('es-CO')}
+            </span>
             <div className="flex items-center gap-2">
-              {product.discount && (
-                <span className="inline-flex items-center rounded-full bg-destructive px-2.5 py-0.5 text-xs md:text-xs font-bold text-destructive-foreground">
-                  {product.discount}% OFF
-                </span>
-              )}
               {product.originalPrice && (
                 <span className="text-sm md:text-sm text-muted-foreground line-through">
                   ${product.originalPrice.toLocaleString('es-CO')}
                 </span>
               )}
+              {product.discount && (
+                <span className="inline-flex items-center rounded-full bg-destructive px-2 py-0.5 text-xs font-bold text-destructive-foreground">
+                  {product.discount}% OFF
+                </span>
+              )}
             </div>
-            <span className="text-2xl md:text-2xl font-bold text-primary">
-              ${product.price.toLocaleString('es-CO')}
-            </span>
           </div>
           <Button
             variant="outline"
